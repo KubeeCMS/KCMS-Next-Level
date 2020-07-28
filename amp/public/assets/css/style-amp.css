@@ -1,0 +1,26 @@
+.daftplugPublic .daftplugPublicCookieNotice {
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row wrap;
+    padding: 5px 0;
+    text-align: center;
+    background: #222222;
+}
+
+.daftplugPublic .daftplugPublicCookieNotice_message {
+    display: inline-block;
+    color: #f3f3f3;
+    margin: 0;
+    padding: 0;
+}
+
+.daftplugPublic .daftplugPublicCookieNotice_button {
+    padding: 5px 10px;
+    background: #fec33b;
+    color: #000000;
+    border-radius: 10px;
+    margin: 10px;
+    border: none;
+    outline: none;
+}

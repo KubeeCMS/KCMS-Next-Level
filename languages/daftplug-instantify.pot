@@ -1,0 +1,2573 @@
+msgid ""
+msgstr "Project-Id-Version: \n"
+"POT-Creation-Date: 2020-07-20 13:09+0400\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Plural-Forms: \n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3.1\n"
+"X-Poedit-Basepath: daftplug-instantify\n"
+"X-Poedit-KeywordsList: __;_e;esc_html__;esc_html_e\n"
+"X-Poedit-SearchPath-0: .\n"
+""
+
+#: admin/class-admin.php:110 public/class-public.php:79
+msgid "An unexpected error occured"
+msgstr ""
+
+#: admin/class-admin.php:122 admin/class-admin.php:123
+#: admin/templates/page-overview.php:9
+msgid "Overview"
+msgstr ""
+
+#: admin/class-admin.php:128 admin/templates/page-pwa.php:9
+msgid "Progressive Web Apps"
+msgstr ""
+
+#: admin/class-admin.php:129
+msgid "PWA"
+msgstr ""
+
+#: admin/class-admin.php:134 admin/templates/page-amp.php:9
+#: admin/templates/page-overview.php:129
+msgid "Google AMP"
+msgstr ""
+
+#: admin/class-admin.php:135
+msgid "AMP"
+msgstr ""
+
+#: admin/class-admin.php:140 admin/templates/page-fbia.php:9
+#: admin/templates/page-overview.php:148
+msgid "Facebook Instant Articles"
+msgstr ""
+
+#: admin/class-admin.php:141
+msgid "FBIA"
+msgstr ""
+
+#: admin/class-admin.php:146 admin/class-admin.php:147
+#: admin/templates/page-support.php:9
+msgid "Support"
+msgstr ""
+
+#: admin/class-admin.php:336
+msgid "We detected that you are using a third-party AMP plugin, so AMP features are not active. Please disable all other AMP plugins to enable AMP pages on your website."
+msgstr ""
+
+#: admin/class-admin.php:349 pwa/admin/templates/subpage-addtohomescreen.php:55
+msgid "Icon"
+msgstr ""
+
+#: admin/class-admin.php:351
+msgid "Your website has the icon."
+msgstr ""
+
+#: admin/class-admin.php:352
+msgid "Web app icon is not selected."
+msgstr ""
+
+#: admin/class-admin.php:355
+msgid "Manifest"
+msgstr ""
+
+#: admin/class-admin.php:357
+msgid "Your website has a manifest."
+msgstr ""
+
+#: admin/class-admin.php:358
+msgid "Your website failed to generate manifest."
+msgstr ""
+
+#: admin/class-admin.php:361
+msgid "Service Worker"
+msgstr ""
+
+#: admin/class-admin.php:363
+msgid "Your website has a service worker."
+msgstr ""
+
+#: admin/class-admin.php:364
+msgid "Your website failed to generate service worker."
+msgstr ""
+
+#: admin/class-admin.php:367
+msgid "PHP Version"
+msgstr ""
+
+#: admin/class-admin.php:369
+msgid "Your PHP version is supported."
+msgstr ""
+
+#: admin/class-admin.php:370
+msgid "You are not using supported PHP version."
+msgstr ""
+
+#: admin/class-admin.php:373
+msgid "HTTPS"
+msgstr ""
+
+#: admin/class-admin.php:375
+msgid "Your site is serverd over HTTPS."
+msgstr ""
+
+#: admin/class-admin.php:376
+msgid "Your site is not using HTTPS."
+msgstr ""
+
+#: admin/class-admin.php:379
+msgid "Notifications"
+msgstr ""
+
+#: admin/class-admin.php:381
+msgid "You are using OneSignal."
+msgstr ""
+
+#: admin/class-admin.php:381
+msgid "Push Notifications are enabled."
+msgstr ""
+
+#: admin/class-admin.php:382
+msgid "Push Notifications are disabled."
+msgstr ""
+
+#: admin/templates/footer.php:10
+msgid "Rate Instantify on CodeCanyon"
+msgstr ""
+
+#: admin/templates/footer.php:11
+msgid "Enjoying Instantify plugin by DaftPlug? Please star rate us on CodeCanyon. Your rating is important for us and it helps us to improve the plugin and our service."
+msgstr ""
+
+#: admin/templates/footer.php:13
+msgid "Rate Instantify"
+msgstr ""
+
+#: admin/templates/header.php:8 admin/templates/header.php:10
+msgid " Plugin"
+msgstr ""
+
+#: admin/templates/header.php:11
+#, php-format
+msgid "Version %s"
+msgstr ""
+
+#: admin/templates/header.php:13
+msgid "Need help?"
+msgstr ""
+
+#: admin/templates/page-activation.php:8
+msgid "Activation"
+msgstr ""
+
+#: admin/templates/page-activation.php:9
+msgid "Please, enter your plugin's CodeCanyon purchase code to activate the plugin and access in-plugin support with automatic updates."
+msgstr ""
+
+#: admin/templates/page-activation.php:15 admin/templates/page-support.php:87
+msgid "Enter your Envato purchase code here to verify your purchase."
+msgstr ""
+
+#: admin/templates/page-activation.php:17 admin/templates/page-overview.php:80
+#: admin/templates/page-support.php:89
+msgid "Purchase Code"
+msgstr ""
+
+#: admin/templates/page-activation.php:23
+msgid "Activate License"
+msgstr ""
+
+#: admin/templates/page-activation.php:23 admin/templates/page-overview.php:86
+#: admin/templates/page-support.php:119
+#: amp/admin/templates/subpage-advertisements.php:152
+#: amp/admin/templates/subpage-analytics.php:187
+#: amp/admin/templates/subpage-gdprconsent.php:36
+#: amp/admin/templates/subpage-general.php:85
+#: fbia/admin/templates/subpage-advertisements.php:29
+#: fbia/admin/templates/subpage-analytics.php:29
+#: fbia/admin/templates/subpage-feed.php:47
+#: fbia/admin/templates/subpage-general.php:37
+#: pwa/admin/templates/subpage-accessibility.php:270
+#: pwa/admin/templates/subpage-addtohomescreen.php:329
+#: pwa/admin/templates/subpage-offlineusage.php:115
+#: pwa/admin/templates/subpage-optimizations.php:63
+#: pwa/admin/templates/subpage-pushnotifications.php:182
+msgid "Waiting"
+msgstr ""
+
+#: admin/templates/page-activation.php:23
+msgid "License Activated"
+msgstr ""
+
+#: admin/templates/page-activation.php:23
+msgid "Activation Failed"
+msgstr ""
+
+#: admin/templates/page-activation.php:34
+msgid "What is CodeCanyon purchase code?"
+msgstr ""
+
+#: admin/templates/page-activation.php:37
+msgid "Purchase code is a license key, that you get after buying the plugin on CodeCanyon. It looks like this: 17fl4682-3k4v-6614-t863-jan17c87603."
+msgstr ""
+
+#: admin/templates/page-activation.php:45
+msgid "How do I get my purchase code?"
+msgstr ""
+
+#: admin/templates/page-activation.php:48
+msgid "After purchasing the item, go to <a class=\"daftplugAdminLink\" href=\"http://codecanyon.net/downloads\" target=\"_blank\">http://codecanyon.net/downloads</a>, click \"Download\" and select “License Certificate & Purchase Code”. You’ll find your purchase code in the downloaded file."
+msgstr ""
+
+#: admin/templates/page-activation.php:56
+msgid "How do I activate a CodeCanyon license?"
+msgstr ""
+
+#: admin/templates/page-activation.php:59
+msgid "To activate your license, in the plugin insert your purchase code into the field above and press “Activate Plugin” button. After the successful activation, you will have full access to plugin content."
+msgstr ""
+
+#: admin/templates/page-amp.php:10
+msgid "AMP provides a straightforward way to create web pages that are fast, smooth-loading and prioritize the user-experience above all else."
+msgstr ""
+
+#: admin/templates/page-amp.php:18
+msgid "Google AMP features are disabled. If you want to enable it just navigate to <a class=\"daftplugAdminLink\" href=\"#/overview/\" data-page=\"overview\">Overview</a> section and enable it."
+msgstr ""
+
+#: admin/templates/page-amp.php:30
+msgid "You are using a third-party AMP plugin, so this section and AMP features are not active. Please disable all other AMP plugins and visit this section again to enable AMP pages on your website."
+msgstr ""
+
+#: admin/templates/page-error.php:8
+msgid "Oops, something went wrong"
+msgstr ""
+
+#: admin/templates/page-error.php:9
+msgid "The requested page was not found."
+msgstr ""
+
+#: admin/templates/page-error.php:10
+msgid "Back to Home"
+msgstr ""
+
+#: admin/templates/page-fbia.php:10
+msgid "Instant Articles is a tool designed for media publishers to distribute instant, interactive articles to their readers within the Facebook mobile app."
+msgstr ""
+
+#: admin/templates/page-fbia.php:18
+msgid "Facebook Instant Articles features are disabled. If you want to enable it just navigate to <a class=\"daftplugAdminLink\" href=\"#/overview/\" data-page=\"overview\">Overview</a> section and enable it."
+msgstr ""
+
+#: admin/templates/page-overview.php:10
+#, php-format
+msgid "Welcome to <strong>%s</strong> plugin. Here you may find status, analytics, warnings or any other information related to the plugin."
+msgstr ""
+
+#: admin/templates/page-overview.php:23
+msgid "Want your PWA on PlayStore?"
+msgstr ""
+
+#: admin/templates/page-overview.php:24
+msgid "Get your PWA website in Google Play store as a native Android application. We can convert your PWA website into Google Play ready APK package on top of TWA (Trusted Web Activity) technology for $19. You will get a ready-made APK file with the tutorial how to submit it to Google Play store. Push notifications will work without permissions in your PWA Android application."
+msgstr ""
+
+#: admin/templates/page-overview.php:25
+msgid "Generate PWA App"
+msgstr ""
+
+#: admin/templates/page-overview.php:32
+msgid "Send us email for generating PWA App"
+msgstr ""
+
+#: admin/templates/page-overview.php:33
+msgid "Please write us your website URL and purchase code on <a href=\"mailto:support@daftplug.com\">support@daftplug.com</a>, so that we will be able check your website eligibility for TWA (Trusted Web Activity) and verify your purchase. If you are unable to send an email, use the <a href=\"https://codecanyon.net/user/daftplug#contact\" target=\"_blank\">contact form</a> found on our CodeCanyon profile page."
+msgstr ""
+
+#: admin/templates/page-overview.php:35
+#, php-format
+msgid "Website URL: %s"
+msgstr ""
+
+#: admin/templates/page-overview.php:38
+#, php-format
+msgid "Purchase Code: %s"
+msgstr ""
+
+#: admin/templates/page-overview.php:49
+msgid "Plugin Features"
+msgstr ""
+
+#: admin/templates/page-overview.php:51
+msgid "Progressive Web Apps (PWA)"
+msgstr ""
+
+#: admin/templates/page-overview.php:57
+msgid "Google Accelerated Mobile Pages‎ (AMP)"
+msgstr ""
+
+#: admin/templates/page-overview.php:63
+msgid "Facebook Instant Articles (FBIA)"
+msgstr ""
+
+#: admin/templates/page-overview.php:74
+msgid "License Information"
+msgstr ""
+
+#: admin/templates/page-overview.php:76
+msgid "License Status"
+msgstr ""
+
+#: admin/templates/page-overview.php:77
+msgid "Active"
+msgstr ""
+
+#: admin/templates/page-overview.php:84
+msgid "Action"
+msgstr ""
+
+#: admin/templates/page-overview.php:86
+msgid "Deactivate License"
+msgstr ""
+
+#: admin/templates/page-overview.php:86
+msgid "License Deactivated"
+msgstr ""
+
+#: admin/templates/page-overview.php:86
+msgid "Deactivation Failed"
+msgstr ""
+
+#: admin/templates/page-overview.php:86
+msgid "Are You Sure?"
+msgstr ""
+
+#: admin/templates/page-overview.php:86
+msgid "Press & Hold to deactivate license"
+msgstr ""
+
+#: admin/templates/page-overview.php:95
+msgid "Overall Status"
+msgstr ""
+
+#: admin/templates/page-overview.php:119
+msgid "PWA Installation Analytics"
+msgstr ""
+
+#: admin/templates/page-overview.php:131
+msgid "AMP URL"
+msgstr ""
+
+#: admin/templates/page-overview.php:135
+msgid "Mode"
+msgstr ""
+
+#: admin/templates/page-overview.php:136
+#, php-format
+msgid "%s"
+msgstr ""
+
+#: admin/templates/page-overview.php:139
+msgid "Design"
+msgstr ""
+
+#: admin/templates/page-overview.php:140
+msgid "Using current theme styles"
+msgstr ""
+
+#: admin/templates/page-overview.php:150
+msgid "RSS Feed URL"
+msgstr ""
+
+#: admin/templates/page-overview.php:154
+msgid "Articles"
+msgstr ""
+
+#: admin/templates/page-overview.php:158
+#: fbia/admin/templates/subpage-advertisements.php:15
+msgid "Audience Network"
+msgstr ""
+
+#: admin/templates/page-overview.php:159
+msgid "ON"
+msgstr ""
+
+#: admin/templates/page-overview.php:159
+msgid "OFF"
+msgstr ""
+
+#: admin/templates/page-pwa.php:10
+msgid "Progressive Web Apps use modern web capabilities to deliver fast, native-app experiences with no app stores or downloads, and all the goodness of the web."
+msgstr ""
+
+#: admin/templates/page-pwa.php:18
+msgid "Progressive Web Apps features are disabled. If you want to enable it just navigate to <a class=\"daftplugAdminLink\" href=\"#/overview/\" data-page=\"overview\">Overview</a> section and enable it."
+msgstr ""
+
+#: admin/templates/page-support.php:10
+msgid "We understand all the importance of product support for our customers. That’s why we are ready to solve all your issues and answer any questions related to our plugin."
+msgstr ""
+
+#: admin/templates/page-support.php:15
+msgid "Frequently Asked Questions"
+msgstr ""
+
+#: admin/templates/page-support.php:16
+msgid "Reading the FAQ is useful when you're experiencing a common issue related to the plugin. If the FAQ didn't help and you have a hard time resolving the problem, please submit a ticket."
+msgstr ""
+
+#: admin/templates/page-support.php:19
+msgid "Add To Home Screen overlays are not showing, Why?"
+msgstr ""
+
+#: admin/templates/page-support.php:20
+msgid "Make sure the installation overlays are enabled, you are visiting your website from a Chrome, Firefox or Safari mobile browser and you have not already dismissed overlay by tapping \"Continue in browser\" button."
+msgstr ""
+
+#: admin/templates/page-support.php:23
+msgid "How can I setup Push Notifications?"
+msgstr ""
+
+#: admin/templates/page-support.php:24
+msgid "Push Notifications are automatically configured for you via VAPID method, so you don't need additional configurations or Firebase project creation. Alternatively, you can use the <a class=\"daftplugAdminLink\" href=\"https://wordpress.org/plugins/onesignal-free-web-push-notifications/\" target=\"_blank\">OneSignal Push Notification</a> plugin as a push notification service."
+msgstr ""
+
+#: admin/templates/page-support.php:28
+msgid "Does Push Notifications work on iOS?"
+msgstr ""
+
+#: admin/templates/page-support.php:29
+msgid "Currently iOS Safari is not supporting web based push notifications. It will be available in future Safari updates. It is technically impossible for now to send push notifications to iPhones, but however you can send push notifications to the Macbook and iMac users."
+msgstr ""
+
+#: admin/templates/page-support.php:32
+msgid "How can I customize the design of AMP pages?"
+msgstr ""
+
+#: admin/templates/page-support.php:33
+msgid "Instantify will use your active theme's templates and styles to create accelerated mobile pages from them, that means your AMP version will look exactly as the normal version of your website. So if you'll change anything on your website, AMP version will also get that change automatically."
+msgstr ""
+
+#: admin/templates/page-support.php:36
+msgid "How to setup Facebook Instant Articles?"
+msgstr ""
+
+#: admin/templates/page-support.php:37
+msgid "Facebook uses the HTML and RSS feed of your website for converting them into instant articles. We simplified setup process as much as possible by automatically creating an RSS feed and including meta tags, but most of the settings are in Facebook page’s publishing tool section, so you'll need to setup and configure Instant Articles on Facebook."
+msgstr ""
+
+#: admin/templates/page-support.php:39
+msgid "Go to <a class=\"daftplugAdminLink\" href=\"https://www.facebook.com/instant_articles/signup\" target=\"_blank\">Instant Articles signup page</a> and choose the Facebook Page."
+msgstr ""
+
+#: admin/templates/page-support.php:43
+msgid "Scroll down a little to the Tools section on the page, expand \"Connect Your Site\" tab, copy your Page ID, enter it into the plugin settings Facebook Page field and save settings."
+msgstr ""
+
+#: admin/templates/page-support.php:48
+msgid "Back on Facebook enter your website URL in the field and click \"Submit URL\" button."
+msgstr ""
+
+#: admin/templates/page-support.php:52
+msgid "Copy your Instant Articles RSS Feed URL from plugin's Overview section, expand \"Production RSS Feed\" tab on the Facebook page's publishing tool, paste it in the field and click on the \"Save\" button."
+msgstr ""
+
+#: admin/templates/page-support.php:57
+msgid "Expand \"Styles\" tab and click \"default\" to open the style editor and custumize the look of your Instant Articles."
+msgstr ""
+
+#: admin/templates/page-support.php:62
+msgid "After custumizing your Instant Articles styles, expand \"Step 2: Submit For Review\" tab and click \"Submit for Review\" button."
+msgstr ""
+
+#: admin/templates/page-support.php:64
+msgid "Please note that you will need to have at least 5 articles. And when you submit for review, Facebook team will review your content and give feedback within 3-5 days. After getting approval, you can start publishing your Instant Articles on your Facebook Page."
+msgstr ""
+
+#: admin/templates/page-support.php:69
+msgid "How PWA, AMP and FBIA relate to each other?"
+msgstr ""
+
+#: admin/templates/page-support.php:70
+msgid "Progressive Web Apps, Google AMP and Facebook Instant Articles work great together. In fact, in many cases, they complement each other in one way or another. Instantify will preload your PWA from your AMP pages, so the entry point of your website will be lightning fast and it will also warm up the PWA behind the scenes for the onward journey. FBIA will bring this kind of instant experience to your website within the Facebook mobile app."
+msgstr ""
+
+#: admin/templates/page-support.php:73
+msgid "Is the plugin compatible with all themes and plugins?"
+msgstr ""
+
+#: admin/templates/page-support.php:74
+msgid "PWAs, AMPs and FBIAs designed by Instantify is fully compatible with all kinds of WordPress configuration, including plugins and themes. Please note that you should disable all other plugins that deliver the same functionality as Instantify in order to avoid compatibility issues."
+msgstr ""
+
+#: admin/templates/page-support.php:77
+msgid "How can I update the plugin?"
+msgstr ""
+
+#: admin/templates/page-support.php:78
+#, php-format
+msgid "There are two ways to update the plugin to the newer version: Using a WordPress built-in update system which will automatically check for updates and show you a notification on an <a class=\"daftplugAdminLink\" href=\"%s\">admin plugins page</a> when there will be an update available or manually download latest version of plugin from <a class=\"daftplugAdminLink\" href=\"https://codecanyon.net/downloads\" target=\"_blank\">Codecanyon</a> and re-install it."
+msgstr ""
+
+#: admin/templates/page-support.php:84
+msgid "Open a ticket at our Support Center"
+msgstr ""
+
+#: admin/templates/page-support.php:85
+msgid "Before submitting a ticket, please make sure that the FAQ didn't help, you're using the latest version of the plugin and there are no javascript errors on your website."
+msgstr ""
+
+#: admin/templates/page-support.php:93
+msgid "Enter your name and email address where we'll send our response."
+msgstr ""
+
+#: admin/templates/page-support.php:95
+msgid "Your Name"
+msgstr ""
+
+#: admin/templates/page-support.php:98
+msgid "Contact Email"
+msgstr ""
+
+#: admin/templates/page-support.php:102
+msgid "Please be as descriptive as possible regarding the details of this ticket."
+msgstr ""
+
+#: admin/templates/page-support.php:104
+msgid "Problem Description"
+msgstr ""
+
+#: admin/templates/page-support.php:108
+msgid "In most cases we need a temporary access to your WordPress Dashboard to check and fix the issue."
+msgstr ""
+
+#: admin/templates/page-support.php:110
+msgid "WordPress Username"
+msgstr ""
+
+#: admin/templates/page-support.php:113
+msgid "WordPress Password"
+msgstr ""
+
+#: admin/templates/page-support.php:119
+msgid "Submit Ticket"
+msgstr ""
+
+#: admin/templates/page-support.php:119
+msgid "Ticket Submitted"
+msgstr ""
+
+#: admin/templates/page-support.php:119
+msgid "Submit Failed"
+msgstr ""
+
+#: admin/templates/page-support.php:129
+msgid "Our Support Includes"
+msgstr ""
+
+#: admin/templates/page-support.php:136
+msgid "Fixing product bugs"
+msgstr ""
+
+#: admin/templates/page-support.php:138
+msgid "Our product doesn’t work properly on your website? Report your issue or bug by describing it in detail and providing us with a link to your website. We will do our best to find a solution."
+msgstr ""
+
+#: admin/templates/page-support.php:145
+msgid "Life-time updates"
+msgstr ""
+
+#: admin/templates/page-support.php:147
+msgid "We release new updates and features on a regular basis. Just don’t forget to check for the latest version in your WordPress admin panel."
+msgstr ""
+
+#: admin/templates/page-support.php:154
+msgid "Customer-friendly development"
+msgstr ""
+
+#: admin/templates/page-support.php:156
+msgid "We are open to your ideas. If you need some specific features, that might also improve our products, then just drop us a line. We will consider implementing them in our future updates."
+msgstr ""
+
+#: admin/templates/page-support.php:161
+msgid "Our Support Doesn’t Include"
+msgstr ""
+
+#: admin/templates/page-support.php:168
+msgid "Plugin installation"
+msgstr ""
+
+#: admin/templates/page-support.php:170
+msgid "We don’t provide installation services for our plugins. However, if any errors come up during installation, feel free to contact us."
+msgstr ""
+
+#: admin/templates/page-support.php:177
+msgid "Plugin customization"
+msgstr ""
+
+#: admin/templates/page-support.php:179
+msgid "We don’t provide plugin customization services. If you need to modify the way some features work, share your ideas with us, and we will consider them for future updates."
+msgstr ""
+
+#: admin/templates/page-support.php:186
+msgid "3rd-party issues"
+msgstr ""
+
+#: admin/templates/page-support.php:188
+msgid "We don’t fix bugs or issues related to other plugins and themes, created by 3rd-party developers. Also, we don’t provide integration services for 3rd-party plugins and themes."
+msgstr ""
+
+#: amp/admin/class-admin.php:64 fbia/admin/class-admin.php:64
+msgid "General"
+msgstr ""
+
+#: amp/admin/class-admin.php:69 fbia/admin/class-admin.php:74
+msgid "Advertisements"
+msgstr ""
+
+#: amp/admin/class-admin.php:74 fbia/admin/class-admin.php:79
+#: fbia/admin/templates/subpage-analytics.php:11
+#: fbia/admin/templates/subpage-analytics.php:15
+msgid "Analytics"
+msgstr ""
+
+#: amp/admin/class-admin.php:79
+msgid "GDPR Consent"
+msgstr ""
+
+#: amp/admin/templates/subpage-advertisements.php:11
+#: amp/admin/templates/subpage-advertisements.php:15
+msgid "AdSense Auto Ads"
+msgstr ""
+
+#: amp/admin/templates/subpage-advertisements.php:12
+msgid "From this section you can set up automatic AdSense ads. Using machine learning, Auto ads show ads only when they are likely to perform well and provide a good user experience."
+msgstr ""
+
+#: amp/admin/templates/subpage-advertisements.php:14
+msgid "Enable or disable AdSense auto ads."
+msgstr ""
+
+#: amp/admin/templates/subpage-advertisements.php:21
+#: amp/admin/templates/subpage-advertisements.php:55
+#: amp/admin/templates/subpage-advertisements.php:96
+#: amp/admin/templates/subpage-advertisements.php:137
+msgid "Enter your data-ad-client from the AdSense ad code. It's like ca-pub-3087XXXXXXXXX642."
+msgstr ""
+
+#: amp/admin/templates/subpage-advertisements.php:22
+#: amp/admin/templates/subpage-advertisements.php:24
+#: amp/admin/templates/subpage-advertisements.php:56
+#: amp/admin/templates/subpage-advertisements.php:58
+#: amp/admin/templates/subpage-advertisements.php:97
+#: amp/admin/templates/subpage-advertisements.php:99
+#: amp/admin/templates/subpage-advertisements.php:138
+#: amp/admin/templates/subpage-advertisements.php:140
+msgid "Data Ad Client"
+msgstr ""
+
+#: amp/admin/templates/subpage-advertisements.php:29
+msgid "Advertisement Above Content"
+msgstr ""
+
+#: amp/admin/templates/subpage-advertisements.php:30
+msgid "This AdSense advertisement will show up above your content on your AMP pages."
+msgstr ""
+
+#: amp/admin/templates/subpage-advertisements.php:32
+msgid "Enable or disable advertisement above the content."
+msgstr ""
+
+#: amp/admin/templates/subpage-advertisements.php:33
+msgid "Ad Above Content"
+msgstr ""
+
+#: amp/admin/templates/subpage-advertisements.php:39
+#: amp/admin/templates/subpage-advertisements.php:80
+#: amp/admin/templates/subpage-advertisements.php:121
+msgid "Select the size of the advertisement."
+msgstr ""
+
+#: amp/admin/templates/subpage-advertisements.php:40
+#: amp/admin/templates/subpage-advertisements.php:42
+#: amp/admin/templates/subpage-advertisements.php:81
+#: amp/admin/templates/subpage-advertisements.php:122
+msgid "Ad Size"
+msgstr ""
+
+#: amp/admin/templates/subpage-advertisements.php:43
+#: amp/admin/templates/subpage-advertisements.php:84
+#: amp/admin/templates/subpage-advertisements.php:125
+msgid "Responsive"
+msgstr ""
+
+#: amp/admin/templates/subpage-advertisements.php:62
+#: amp/admin/templates/subpage-advertisements.php:103
+#: amp/admin/templates/subpage-advertisements.php:144
+msgid "Enter your data-ad-slot from the AdSense ad code. It's like 82XXXXXX13."
+msgstr ""
+
+#: amp/admin/templates/subpage-advertisements.php:63
+#: amp/admin/templates/subpage-advertisements.php:65
+#: amp/admin/templates/subpage-advertisements.php:104
+#: amp/admin/templates/subpage-advertisements.php:106
+#: amp/admin/templates/subpage-advertisements.php:145
+#: amp/admin/templates/subpage-advertisements.php:147
+msgid "Data Ad Slot"
+msgstr ""
+
+#: amp/admin/templates/subpage-advertisements.php:70
+msgid "Advertisement Inside Content"
+msgstr ""
+
+#: amp/admin/templates/subpage-advertisements.php:71
+msgid "This AdSense advertisement will show up inside your content on your AMP pages."
+msgstr ""
+
+#: amp/admin/templates/subpage-advertisements.php:73
+msgid "Enable or disable advertisement inside the content."
+msgstr ""
+
+#: amp/admin/templates/subpage-advertisements.php:74
+msgid "Ad Inside Content"
+msgstr ""
+
+#: amp/admin/templates/subpage-advertisements.php:111
+msgid "Advertisement Below Content"
+msgstr ""
+
+#: amp/admin/templates/subpage-advertisements.php:112
+msgid "This AdSense advertisement will show up below your content on your AMP pages."
+msgstr ""
+
+#: amp/admin/templates/subpage-advertisements.php:114
+msgid "Enable or disable advertisement below the content."
+msgstr ""
+
+#: amp/admin/templates/subpage-advertisements.php:115
+msgid "Ad Below Content"
+msgstr ""
+
+#: amp/admin/templates/subpage-advertisements.php:152
+#: amp/admin/templates/subpage-analytics.php:187
+#: amp/admin/templates/subpage-gdprconsent.php:36
+#: amp/admin/templates/subpage-general.php:85
+#: fbia/admin/templates/subpage-advertisements.php:29
+#: fbia/admin/templates/subpage-analytics.php:29
+#: fbia/admin/templates/subpage-feed.php:47
+#: fbia/admin/templates/subpage-general.php:37
+#: pwa/admin/templates/subpage-accessibility.php:270
+#: pwa/admin/templates/subpage-addtohomescreen.php:329
+#: pwa/admin/templates/subpage-offlineusage.php:115
+#: pwa/admin/templates/subpage-optimizations.php:63
+#: pwa/admin/templates/subpage-pushnotifications.php:182
+msgid "Save Settings"
+msgstr ""
+
+#: amp/admin/templates/subpage-advertisements.php:152
+#: amp/admin/templates/subpage-analytics.php:187
+#: amp/admin/templates/subpage-gdprconsent.php:36
+#: amp/admin/templates/subpage-general.php:85
+#: fbia/admin/templates/subpage-advertisements.php:29
+#: fbia/admin/templates/subpage-analytics.php:29
+#: fbia/admin/templates/subpage-feed.php:47
+#: fbia/admin/templates/subpage-general.php:37
+#: pwa/admin/templates/subpage-accessibility.php:270
+#: pwa/admin/templates/subpage-addtohomescreen.php:329
+#: pwa/admin/templates/subpage-offlineusage.php:115
+#: pwa/admin/templates/subpage-optimizations.php:63
+#: pwa/admin/templates/subpage-pushnotifications.php:182
+msgid "Settings Saved"
+msgstr ""
+
+#: amp/admin/templates/subpage-advertisements.php:152
+#: amp/admin/templates/subpage-analytics.php:187
+#: amp/admin/templates/subpage-gdprconsent.php:36
+#: amp/admin/templates/subpage-general.php:85
+#: fbia/admin/templates/subpage-advertisements.php:29
+#: fbia/admin/templates/subpage-analytics.php:29
+#: fbia/admin/templates/subpage-feed.php:47
+#: fbia/admin/templates/subpage-general.php:37
+#: pwa/admin/templates/subpage-accessibility.php:270
+#: pwa/admin/templates/subpage-addtohomescreen.php:329
+#: pwa/admin/templates/subpage-offlineusage.php:115
+#: pwa/admin/templates/subpage-optimizations.php:63
+#: pwa/admin/templates/subpage-pushnotifications.php:182
+msgid "Saving Failed"
+msgstr ""
+
+#: amp/admin/templates/subpage-analytics.php:11
+#: amp/admin/templates/subpage-analytics.php:15
+msgid "Google Analytics"
+msgstr ""
+
+#: amp/admin/templates/subpage-analytics.php:12
+msgid "You are able to use Google Analytics tracking on your AMP pages. To use Google Analytics, you have to enter your Tracking ID."
+msgstr ""
+
+#: amp/admin/templates/subpage-analytics.php:14
+msgid "Enable or disable Google Analytics."
+msgstr ""
+
+#: amp/admin/templates/subpage-analytics.php:21
+msgid "Enter your Google Analytics tracking ID. It's like UA-XXXXX-Y."
+msgstr ""
+
+#: amp/admin/templates/subpage-analytics.php:22
+#: amp/admin/templates/subpage-analytics.php:24
+msgid "Tracking ID"
+msgstr ""
+
+#: amp/admin/templates/subpage-analytics.php:28
+msgid "Enable or disable AMP Linker. It is a new feature in AMP that helps keep user session in sync."
+msgstr ""
+
+#: amp/admin/templates/subpage-analytics.php:29
+msgid "AMP Linker"
+msgstr ""
+
+#: amp/admin/templates/subpage-analytics.php:36
+#: amp/admin/templates/subpage-analytics.php:40
+msgid "Facebook Pixel"
+msgstr ""
+
+#: amp/admin/templates/subpage-analytics.php:37
+msgid "You are able to use Facebook Pixel tracking on your AMP pages. To use Facebook Pixel, you have to enter your Facebook Pixel ID."
+msgstr ""
+
+#: amp/admin/templates/subpage-analytics.php:39
+msgid "Enable or disable Facebook Pixel."
+msgstr ""
+
+#: amp/admin/templates/subpage-analytics.php:46
+msgid "Enter your Facebook Pixel ID. It's like 15XXXXXXXXXXX48."
+msgstr ""
+
+#: amp/admin/templates/subpage-analytics.php:47
+#: amp/admin/templates/subpage-analytics.php:49
+msgid "Pixel ID"
+msgstr ""
+
+#: amp/admin/templates/subpage-analytics.php:54
+#: amp/admin/templates/subpage-analytics.php:58
+msgid "Segment Analytics"
+msgstr ""
+
+#: amp/admin/templates/subpage-analytics.php:55
+msgid "You are able to use Segment Analytics tracking on your AMP pages. To use Segment Analytics, you have to enter your Segment Analytics write key."
+msgstr ""
+
+#: amp/admin/templates/subpage-analytics.php:57
+msgid "Enable or disable Segment Analytics."
+msgstr ""
+
+#: amp/admin/templates/subpage-analytics.php:64
+msgid "Enter your Segment Analytics write key."
+msgstr ""
+
+#: amp/admin/templates/subpage-analytics.php:65
+#: amp/admin/templates/subpage-analytics.php:67
+msgid "Write Key"
+msgstr ""
+
+#: amp/admin/templates/subpage-analytics.php:72
+#: amp/admin/templates/subpage-analytics.php:76
+msgid "StatCounter"
+msgstr ""
+
+#: amp/admin/templates/subpage-analytics.php:73
+msgid "You are able to use StatCounter tracking on your AMP pages. To use StatCounter, you have to enter your StatCounter URL."
+msgstr ""
+
+#: amp/admin/templates/subpage-analytics.php:75
+msgid "Enable or disable StatCounter."
+msgstr ""
+
+#: amp/admin/templates/subpage-analytics.php:82
+msgid "Enter your StatCounter URL."
+msgstr ""
+
+#: amp/admin/templates/subpage-analytics.php:83
+#: amp/admin/templates/subpage-analytics.php:85
+#: pwa/admin/templates/subpage-addtohomescreen.php:142
+#: pwa/admin/templates/subpage-addtohomescreen.php:163
+#: pwa/admin/templates/subpage-addtohomescreen.php:184
+#: pwa/admin/templates/subpage-addtohomescreen.php:205
+#: pwa/admin/templates/subpage-pushnotifications.php:244
+#: pwa/admin/templates/subpage-pushnotifications.php:268
+#: pwa/admin/templates/subpage-pushnotifications.php:284
+msgid "URL"
+msgstr ""
+
+#: amp/admin/templates/subpage-analytics.php:90
+#: amp/admin/templates/subpage-analytics.php:94
+msgid "Histats Analytics"
+msgstr ""
+
+#: amp/admin/templates/subpage-analytics.php:91
+msgid "You are able to use Histats Analytics tracking on your AMP pages. To use Histats Analytics, you have to enter your Histats Analytics ID."
+msgstr ""
+
+#: amp/admin/templates/subpage-analytics.php:93
+msgid "Enable or disable Histats Analytics."
+msgstr ""
+
+#: amp/admin/templates/subpage-analytics.php:100
+msgid "Enter your Histats Analytics ID."
+msgstr ""
+
+#: amp/admin/templates/subpage-analytics.php:101
+#: amp/admin/templates/subpage-analytics.php:103
+msgid "ID"
+msgstr ""
+
+#: amp/admin/templates/subpage-analytics.php:108
+#: amp/admin/templates/subpage-analytics.php:112
+msgid "Yandex Metrika"
+msgstr ""
+
+#: amp/admin/templates/subpage-analytics.php:109
+msgid "You are able to use Yandex Metrika tracking on your AMP pages. To use Yandex Metrika, you have to enter your Counter ID."
+msgstr ""
+
+#: amp/admin/templates/subpage-analytics.php:111
+msgid "Enable or disable Yandex Metrika."
+msgstr ""
+
+#: amp/admin/templates/subpage-analytics.php:118
+msgid "Enter your Counter ID."
+msgstr ""
+
+#: amp/admin/templates/subpage-analytics.php:119
+#: amp/admin/templates/subpage-analytics.php:121
+msgid "Counter ID"
+msgstr ""
+
+#: amp/admin/templates/subpage-analytics.php:126
+#: amp/admin/templates/subpage-analytics.php:130
+msgid "Chartbeat Analytics"
+msgstr ""
+
+#: amp/admin/templates/subpage-analytics.php:127
+msgid "You are able to use Chartbeat Analytics tracking on your AMP pages. To use Chartbeat Analytics, you have to enter your Account ID."
+msgstr ""
+
+#: amp/admin/templates/subpage-analytics.php:129
+msgid "Enable or disable Chartbeat Analytics."
+msgstr ""
+
+#: amp/admin/templates/subpage-analytics.php:136
+msgid "Enter your Account ID."
+msgstr ""
+
+#: amp/admin/templates/subpage-analytics.php:137
+#: amp/admin/templates/subpage-analytics.php:139
+msgid "Account ID"
+msgstr ""
+
+#: amp/admin/templates/subpage-analytics.php:144
+#: amp/admin/templates/subpage-analytics.php:148
+msgid "Clicky Analytics"
+msgstr ""
+
+#: amp/admin/templates/subpage-analytics.php:145
+msgid "You are able to use Clicky Analytics tracking on your AMP pages. To use Clicky Analytics, you have to enter your Site ID."
+msgstr ""
+
+#: amp/admin/templates/subpage-analytics.php:147
+msgid "Enable or disable Clicky Analytics."
+msgstr ""
+
+#: amp/admin/templates/subpage-analytics.php:154
+msgid "Enter your Site ID."
+msgstr ""
+
+#: amp/admin/templates/subpage-analytics.php:155
+#: amp/admin/templates/subpage-analytics.php:157
+msgid "Site ID"
+msgstr ""
+
+#: amp/admin/templates/subpage-analytics.php:162
+#: amp/admin/templates/subpage-analytics.php:166
+msgid "Alexa Metrics"
+msgstr ""
+
+#: amp/admin/templates/subpage-analytics.php:163
+msgid "You are able to use Alexa Metrics tracking on your AMP pages. To use Alexa Metrics, you have to enter your Account and Domain."
+msgstr ""
+
+#: amp/admin/templates/subpage-analytics.php:165
+msgid "Enable or disable Alexa Metrics."
+msgstr ""
+
+#: amp/admin/templates/subpage-analytics.php:172
+msgid "Enter your Account."
+msgstr ""
+
+#: amp/admin/templates/subpage-analytics.php:173
+#: amp/admin/templates/subpage-analytics.php:175
+msgid "Account"
+msgstr ""
+
+#: amp/admin/templates/subpage-analytics.php:179
+msgid "Enter your Domain."
+msgstr ""
+
+#: amp/admin/templates/subpage-analytics.php:180
+#: amp/admin/templates/subpage-analytics.php:182
+msgid "Domain"
+msgstr ""
+
+#: amp/admin/templates/subpage-gdprconsent.php:11
+#: amp/admin/templates/subpage-gdprconsent.php:15
+msgid "Cookie Notice"
+msgstr ""
+
+#: amp/admin/templates/subpage-gdprconsent.php:12
+msgid "Cookie Notice allows you to elegantly inform users on AMP pages that your site uses cookies and to comply with the EU cookie law GDPR regulations."
+msgstr ""
+
+#: amp/admin/templates/subpage-gdprconsent.php:14
+msgid "Enable or disable Cookie notice."
+msgstr ""
+
+#: amp/admin/templates/subpage-gdprconsent.php:21
+msgid "Enter the message about cookie usage on your website."
+msgstr ""
+
+#: amp/admin/templates/subpage-gdprconsent.php:22
+#: amp/admin/templates/subpage-gdprconsent.php:24
+msgid "Message"
+msgstr ""
+
+#: amp/admin/templates/subpage-gdprconsent.php:28
+msgid "Enter the button text which will appear on the notice."
+msgstr ""
+
+#: amp/admin/templates/subpage-gdprconsent.php:29
+#: amp/admin/templates/subpage-gdprconsent.php:31
+#: pwa/admin/templates/subpage-addtohomescreen.php:308
+#: pwa/admin/templates/subpage-addtohomescreen.php:310
+msgid "Button Text"
+msgstr ""
+
+#: amp/admin/templates/subpage-general.php:11
+#: amp/admin/templates/subpage-general.php:15
+#: amp/admin/templates/subpage-general.php:17
+msgid "AMP Mode"
+msgstr ""
+
+#: amp/admin/templates/subpage-general.php:12
+msgid "From this section you are able to choose AMP mode. It determines the behavior of your website when accessed from mobile devices. If you choose AMP-First, your website will always load AMP only and all your links will be AMP. If you choose Paired, your website will have both, non-AMP and AMP versions of your content."
+msgstr ""
+
+#: amp/admin/templates/subpage-general.php:14
+msgid "Select AMP mode. We recommend paired mode as your website will maintain PWA features and will also have a corresponding AMP version."
+msgstr ""
+
+#: amp/admin/templates/subpage-general.php:18
+msgid "AMP-First"
+msgstr ""
+
+#: amp/admin/templates/subpage-general.php:19
+msgid "Paired"
+msgstr ""
+
+#: amp/admin/templates/subpage-general.php:25
+msgid "AMP Generation Strategy"
+msgstr ""
+
+#: amp/admin/templates/subpage-general.php:26
+msgid "From this section you are able to choose an AMP generation strategy. Instantify will automatically get all the currently using styles and will remove the unused CSS for particular pages, but if your website is too heavy, it may lose some styles on AMP version. If there are some issues with the look of your website on AMP version, try switching between the strategies and it may fix those style issues."
+msgstr ""
+
+#: amp/admin/templates/subpage-general.php:28
+msgid "Select AMP generation strategy. We recommend to select the first strategy, but if you are experiencing some issues with the look of your website's AMP version, try switching between these and select strategy which will look the best."
+msgstr ""
+
+#: amp/admin/templates/subpage-general.php:29
+#: amp/admin/templates/subpage-general.php:31
+msgid "AMP Strategy"
+msgstr ""
+
+#: amp/admin/templates/subpage-general.php:32
+msgid "Strategy 1"
+msgstr ""
+
+#: amp/admin/templates/subpage-general.php:33
+msgid "Strategy 2"
+msgstr ""
+
+#: amp/admin/templates/subpage-general.php:34
+msgid "Strategy 3"
+msgstr ""
+
+#: amp/admin/templates/subpage-general.php:35
+msgid "Strategy 4"
+msgstr ""
+
+#: amp/admin/templates/subpage-general.php:36
+msgid "Strategy 5"
+msgstr ""
+
+#: amp/admin/templates/subpage-general.php:37
+msgid "Strategy 6"
+msgstr ""
+
+#: amp/admin/templates/subpage-general.php:38
+msgid "Strategy 7"
+msgstr ""
+
+#: amp/admin/templates/subpage-general.php:44
+msgid "AMP Support"
+msgstr ""
+
+#: amp/admin/templates/subpage-general.php:45
+msgid "From this section you are able to enable or disable AMP support on particular post types and pages, including custom post types."
+msgstr ""
+
+#: amp/admin/templates/subpage-general.php:47
+msgid "Enable or disable AMP on all post types and pages. If turned on, this will allow all content on your site to have a corresponding AMP version. We recommend to enable AMP on all content to serve all pages as AMP."
+msgstr ""
+
+#: amp/admin/templates/subpage-general.php:48
+msgid "All Content"
+msgstr ""
+
+#: amp/admin/templates/subpage-general.php:54
+msgid "Select particular post types where you want AMP version to be available."
+msgstr ""
+
+#: amp/admin/templates/subpage-general.php:55
+#: amp/admin/templates/subpage-general.php:57
+#: fbia/admin/templates/subpage-general.php:22
+#: fbia/admin/templates/subpage-general.php:26
+#: fbia/admin/templates/subpage-general.php:28
+msgid "Supported Post Types"
+msgstr ""
+
+#: amp/admin/templates/subpage-general.php:69
+msgid "Select particular pages where you want AMP version to be available."
+msgstr ""
+
+#: amp/admin/templates/subpage-general.php:70
+#: amp/admin/templates/subpage-general.php:72
+msgid "Supported Pages"
+msgstr ""
+
+#: daftplug-instantify.php:20
+msgid "DaftPlug Instantify - PWA & Google AMP & Facebook IA"
+msgstr ""
+
+#: daftplug-instantify.php:21
+msgid "Take the user experience to the next level with future of mobile web: Progressive Web Apps (PWA), Google Accelerated Mobile Pages (AMP) and Facebook Instant Articles (FBIA)."
+msgstr ""
+
+#: daftplug-instantify.php:31
+msgid "Instantify"
+msgstr ""
+
+#: fbia/admin/class-admin.php:69
+msgid "Feed"
+msgstr ""
+
+#: fbia/admin/class-feed.php:44
+msgid "Exclude from FB Instant Articles"
+msgstr ""
+
+#: fbia/admin/class-feed.php:53
+msgid "Instant Articles"
+msgstr ""
+
+#: fbia/admin/templates/subpage-advertisements.php:11
+msgid "Facebook Audience Network"
+msgstr ""
+
+#: fbia/admin/templates/subpage-advertisements.php:12
+msgid "Facebook Audience Network helps you monetize your Instant Articles by showing highly targeted ads that match the interests of your users."
+msgstr ""
+
+#: fbia/admin/templates/subpage-advertisements.php:14
+msgid "Enable or disable Facebook Audience Network."
+msgstr ""
+
+#: fbia/admin/templates/subpage-advertisements.php:21
+msgid "Enter the placement ID of your ad. It will be automatically reused and placed within your Instant Articles in order to simplify the process of inserting blocks of ad code throughout the content."
+msgstr ""
+
+#: fbia/admin/templates/subpage-advertisements.php:22
+#: fbia/admin/templates/subpage-advertisements.php:24
+msgid "Placement ID"
+msgstr ""
+
+#: fbia/admin/templates/subpage-analytics.php:12
+msgid "Instant Articles allow publishers to track the engagement with their articles through data that Facebook provides as well as data that publishers can gather by embedding in-house analytics tools or third-party measurement services."
+msgstr ""
+
+#: fbia/admin/templates/subpage-analytics.php:14
+msgid "Enable or disable third-party analytics for Instant Articles."
+msgstr ""
+
+#: fbia/admin/templates/subpage-analytics.php:21
+msgid "Enter the full analytics code for any other analytics services you wish to use, for example Google Analytics code."
+msgstr ""
+
+#: fbia/admin/templates/subpage-analytics.php:22
+#: fbia/admin/templates/subpage-analytics.php:24
+msgid "Analytics Code"
+msgstr ""
+
+#: fbia/admin/templates/subpage-feed.php:11
+msgid "Feed Preferences"
+msgstr ""
+
+#: fbia/admin/templates/subpage-feed.php:12
+msgid "From this section you are allowed to set FBIA feed preferences. You can set custom copyright details, enable RTL publishing and define number of latest articles in your feed."
+msgstr ""
+
+#: fbia/admin/templates/subpage-feed.php:14
+msgid "Enter the standard copyright details for your instant articles."
+msgstr ""
+
+#: fbia/admin/templates/subpage-feed.php:15
+#: fbia/admin/templates/subpage-feed.php:17
+msgid "Copyright"
+msgstr ""
+
+#: fbia/admin/templates/subpage-feed.php:21
+msgid "Enable or disable Right to Left Publishing for Arabic, Hebrew, Persian and other languages."
+msgstr ""
+
+#: fbia/admin/templates/subpage-feed.php:22
+msgid "RTL Publishing"
+msgstr ""
+
+#: fbia/admin/templates/subpage-feed.php:28
+msgid "Choose the number of latest articles, that will be rendered on your FBIA feed."
+msgstr ""
+
+#: fbia/admin/templates/subpage-feed.php:29
+#: fbia/admin/templates/subpage-feed.php:31
+msgid "Article Quantity"
+msgstr ""
+
+#: fbia/admin/templates/subpage-feed.php:36
+#: fbia/admin/templates/subpage-feed.php:40
+msgid "Article Interaction"
+msgstr ""
+
+#: fbia/admin/templates/subpage-feed.php:37
+msgid "Article interaction allow users to like and comment the whole single article in your Facebook Instant Articles feed."
+msgstr ""
+
+#: fbia/admin/templates/subpage-feed.php:39
+msgid "Enable or disable Article Interaction."
+msgstr ""
+
+#: fbia/admin/templates/subpage-general.php:11
+msgid "Facebook Page"
+msgstr ""
+
+#: fbia/admin/templates/subpage-general.php:12
+msgid "Connect your Facebook page to the instant articles by getting the numeric ID of your page and entering it in the field below."
+msgstr ""
+
+#: fbia/admin/templates/subpage-general.php:14
+msgid "Enter the numeric ID of your Facebook page. If you have trouble finding it use <a class=\"daftplugAdminLink\" href=\"https://findmyfbid.com/\" target=\"_blank\">this service</a> to get it."
+msgstr ""
+
+#: fbia/admin/templates/subpage-general.php:15
+#: fbia/admin/templates/subpage-general.php:17
+msgid "Facebook Page ID"
+msgstr ""
+
+#: fbia/admin/templates/subpage-general.php:17
+msgid "Facebook page ID must contain only numbers."
+msgstr ""
+
+#: fbia/admin/templates/subpage-general.php:23
+msgid "You can select which post types to be included in your Instant Articles Feed. Select the post types where you have rich-text informative articles."
+msgstr ""
+
+#: fbia/admin/templates/subpage-general.php:25
+msgid "Select particular post types for Instant Articles."
+msgstr ""
+
+#: includes/class-plugin.php:275
+msgid "⚠️ Instantify features require later version of WordPress core. Please upgrade your WordPress core to later versions."
+msgstr ""
+
+#: includes/class-plugin.php:279
+msgid "⚠️ Instantify features require at least PHP version 7.0 to function properly."
+msgstr ""
+
+#: includes/class-plugin.php:283
+msgid "⚠️ Instantify features require <i>curl</i> extension to function properly."
+msgstr ""
+
+#: includes/class-plugin.php:287
+msgid "⚠️ Instantify features require <i>dom</i> extension to function properly."
+msgstr ""
+
+#: includes/class-plugin.php:291
+msgid "⚠️ Instantify features require <i>iconv</i> extension to function properly."
+msgstr ""
+
+#: includes/class-plugin.php:295
+msgid "⚠️ Instantify features require <i>libxml</i> extension to function properly."
+msgstr ""
+
+#: includes/class-plugin.php:299
+msgid "⚠️ Instantify features require <i>spl</i> extension to function properly."
+msgstr ""
+
+#: includes/class-plugin.php:306
+msgid "If you have trouble fixing this, please contact us on"
+msgstr ""
+
+#: includes/class-plugin.php:353
+msgid "Once Weekly"
+msgstr ""
+
+#: pwa/admin/class-admin.php:67
+msgid "Add To Home Screen"
+msgstr ""
+
+#: pwa/admin/class-admin.php:72 pwa/admin/templates/subpage-offlineusage.php:11
+msgid "Offline Usage"
+msgstr ""
+
+#: pwa/admin/class-admin.php:77
+msgid "Accessibility"
+msgstr ""
+
+#: pwa/admin/class-admin.php:82
+msgid "Optimizations"
+msgstr ""
+
+#: pwa/admin/class-admin.php:87 pwa/admin/class-pushnotifications.php:119
+msgid "Push Notifications"
+msgstr ""
+
+#: pwa/admin/class-pushnotifications.php:86
+msgid "Don't Send New Product Notification"
+msgstr ""
+
+#: pwa/admin/class-pushnotifications.php:92
+msgid "Don't Send Price Drop Notification"
+msgstr ""
+
+#: pwa/admin/class-pushnotifications.php:98
+msgid "Don't Send Sale Price Notification"
+msgstr ""
+
+#: pwa/admin/class-pushnotifications.php:104
+msgid "Don't Send Back In Stock Notification"
+msgstr ""
+
+#: pwa/admin/class-pushnotifications.php:111
+msgid "Don't Send New Post Notification"
+msgstr ""
+
+#: pwa/admin/class-pushnotifications.php:183
+#, php-format
+msgid "New %s - %s"
+msgstr ""
+
+#: pwa/admin/class-pushnotifications.php:206
+#, php-format
+msgid "New Product - %s"
+msgstr ""
+
+#: pwa/admin/class-pushnotifications.php:224
+#, php-format
+msgid "Price Drop - %s"
+msgstr ""
+
+#: pwa/admin/class-pushnotifications.php:225
+#, php-format
+msgid "Price dropped from %s to %s"
+msgstr ""
+
+#: pwa/admin/class-pushnotifications.php:241
+#, php-format
+msgid "New Sale Price - %s"
+msgstr ""
+
+#: pwa/admin/class-pushnotifications.php:242
+#, php-format
+msgid "New Sale Price: %s"
+msgstr ""
+
+#: pwa/admin/class-pushnotifications.php:258
+#, php-format
+msgid "Back In Stock - %s"
+msgstr ""
+
+#: pwa/admin/class-pushnotifications.php:259
+#, php-format
+msgid "%s is now back in stock"
+msgstr ""
+
+#: pwa/admin/templates/subpage-accessibility.php:11
+#: pwa/admin/templates/subpage-accessibility.php:15
+msgid "Ajaxify"
+msgstr ""
+
+#: pwa/admin/templates/subpage-accessibility.php:12
+msgid "Ajaxify brings a true native app like experience by loading your content without reloading entire page. For the best results we recommend to also enable Preloader feature. If you want to exclude certain links or forms from ajaxify, just add <code>no-ajaxy</code> class on the element."
+msgstr ""
+
+#: pwa/admin/templates/subpage-accessibility.php:14
+msgid "Enable or disable ajaxifying your website."
+msgstr ""
+
+#: pwa/admin/templates/subpage-accessibility.php:21
+msgid "Enable or disable also ajaxifying forms."
+msgstr ""
+
+#: pwa/admin/templates/subpage-accessibility.php:22
+msgid "Ajaxify Forms"
+msgstr ""
+
+#: pwa/admin/templates/subpage-accessibility.php:29
+#: pwa/admin/templates/subpage-accessibility.php:33
+msgid "Navigation Tab Bar"
+msgstr ""
+
+#: pwa/admin/templates/subpage-accessibility.php:30
+msgid "Navigation tab bar provides app like experience by adding tabbed navigation menu bar on the bottom of your web app when accessed from mobile devices. If you want to hide some tabs, just select <code>*Disabled*</code> option."
+msgstr ""
+
+#: pwa/admin/templates/subpage-accessibility.php:32
+msgid "Enable or disable navigation tab bar."
+msgstr ""
+
+#: pwa/admin/templates/subpage-accessibility.php:39
+msgid "Select the background color of navigation tab bar."
+msgstr ""
+
+#: pwa/admin/templates/subpage-accessibility.php:40
+#: pwa/admin/templates/subpage-accessibility.php:42
+#: pwa/admin/templates/subpage-accessibility.php:208
+#: pwa/admin/templates/subpage-accessibility.php:210
+#: pwa/admin/templates/subpage-addtohomescreen.php:121
+#: pwa/admin/templates/subpage-addtohomescreen.php:123
+#: pwa/admin/templates/subpage-addtohomescreen.php:258
+#: pwa/admin/templates/subpage-addtohomescreen.php:260
+#: pwa/admin/templates/subpage-addtohomescreen.php:315
+#: pwa/admin/templates/subpage-addtohomescreen.php:317
+msgid "Background Color"
+msgstr ""
+
+#: pwa/admin/templates/subpage-accessibility.php:46
+msgid "Select the color of icons in navigation tab bar."
+msgstr ""
+
+#: pwa/admin/templates/subpage-accessibility.php:47
+#: pwa/admin/templates/subpage-accessibility.php:49
+msgid "Icon Color"
+msgstr ""
+
+#: pwa/admin/templates/subpage-accessibility.php:53
+msgid "Select the color of active icon in navigation tab bar."
+msgstr ""
+
+#: pwa/admin/templates/subpage-accessibility.php:54
+#: pwa/admin/templates/subpage-accessibility.php:56
+msgid "Active Icon Color"
+msgstr ""
+
+#: pwa/admin/templates/subpage-accessibility.php:60
+msgid "Select the home page of your web app."
+msgstr ""
+
+#: pwa/admin/templates/subpage-accessibility.php:61
+#: pwa/admin/templates/subpage-accessibility.php:63
+#: pwa/admin/templates/subpage-accessibility.php:64
+#: pwa/admin/templates/subpage-addtohomescreen.php:39
+msgid "Home Page"
+msgstr ""
+
+#: pwa/admin/templates/subpage-accessibility.php:68
+#: pwa/admin/templates/subpage-accessibility.php:81
+#: pwa/admin/templates/subpage-accessibility.php:94
+#: pwa/admin/templates/subpage-accessibility.php:106
+#: pwa/admin/templates/subpage-accessibility.php:118
+#: pwa/admin/templates/subpage-accessibility.php:131
+#: pwa/admin/templates/subpage-accessibility.php:143
+#: pwa/admin/templates/subpage-accessibility.php:155
+#: pwa/admin/templates/subpage-accessibility.php:167
+#: pwa/admin/templates/subpage-accessibility.php:179
+#: pwa/admin/templates/subpage-accessibility.php:191
+msgid "*Disabled*"
+msgstr ""
+
+#: pwa/admin/templates/subpage-accessibility.php:73
+msgid "Select the search page of your web app."
+msgstr ""
+
+#: pwa/admin/templates/subpage-accessibility.php:74
+#: pwa/admin/templates/subpage-accessibility.php:76
+msgid "Search Page"
+msgstr ""
+
+#: pwa/admin/templates/subpage-accessibility.php:77
+msgid "*Direct Search*"
+msgstr ""
+
+#: pwa/admin/templates/subpage-accessibility.php:87
+msgid "Select the shop page of your web app."
+msgstr ""
+
+#: pwa/admin/templates/subpage-accessibility.php:88
+#: pwa/admin/templates/subpage-accessibility.php:90
+msgid "Shop Page"
+msgstr ""
+
+#: pwa/admin/templates/subpage-accessibility.php:99
+msgid "Select the cart page of your web app."
+msgstr ""
+
+#: pwa/admin/templates/subpage-accessibility.php:100
+#: pwa/admin/templates/subpage-accessibility.php:102
+msgid "Cart Page"
+msgstr ""
+
+#: pwa/admin/templates/subpage-accessibility.php:111
+msgid "Select the checkout page of your web app."
+msgstr ""
+
+#: pwa/admin/templates/subpage-accessibility.php:112
+#: pwa/admin/templates/subpage-accessibility.php:114
+msgid "Checkout Page"
+msgstr ""
+
+#: pwa/admin/templates/subpage-accessibility.php:124
+msgid "Select the notifications page of your web app."
+msgstr ""
+
+#: pwa/admin/templates/subpage-accessibility.php:125
+#: pwa/admin/templates/subpage-accessibility.php:127
+msgid "Notifications Page"
+msgstr ""
+
+#: pwa/admin/templates/subpage-accessibility.php:136
+msgid "Select the categories page of your web app."
+msgstr ""
+
+#: pwa/admin/templates/subpage-accessibility.php:137
+#: pwa/admin/templates/subpage-accessibility.php:139
+msgid "Categories Page"
+msgstr ""
+
+#: pwa/admin/templates/subpage-accessibility.php:148
+msgid "Select the profile page of your web app."
+msgstr ""
+
+#: pwa/admin/templates/subpage-accessibility.php:149
+#: pwa/admin/templates/subpage-accessibility.php:151
+msgid "Profile Page"
+msgstr ""
+
+#: pwa/admin/templates/subpage-accessibility.php:160
+msgid "Select the about page of your web app."
+msgstr ""
+
+#: pwa/admin/templates/subpage-accessibility.php:161
+#: pwa/admin/templates/subpage-accessibility.php:163
+msgid "About Page"
+msgstr ""
+
+#: pwa/admin/templates/subpage-accessibility.php:172
+msgid "Select the contact page of your web app."
+msgstr ""
+
+#: pwa/admin/templates/subpage-accessibility.php:173
+#: pwa/admin/templates/subpage-accessibility.php:175
+msgid "Contact Page"
+msgstr ""
+
+#: pwa/admin/templates/subpage-accessibility.php:184
+msgid "Select the settings page of your web app."
+msgstr ""
+
+#: pwa/admin/templates/subpage-accessibility.php:185
+#: pwa/admin/templates/subpage-accessibility.php:187
+msgid "Settings Page"
+msgstr ""
+
+#: pwa/admin/templates/subpage-accessibility.php:197
+#: pwa/admin/templates/subpage-accessibility.php:201
+msgid "Pull Down Navigation"
+msgstr ""
+
+#: pwa/admin/templates/subpage-accessibility.php:198
+msgid "Pull down navigation touchscreen gesture allows your users to drag the screen and then release it, as a signal to the application to refresh contents or navigate your web app."
+msgstr ""
+
+#: pwa/admin/templates/subpage-accessibility.php:200
+msgid "Enable or disable pull down navigation touchscreen gesture."
+msgstr ""
+
+#: pwa/admin/templates/subpage-accessibility.php:207
+msgid "Select the background color of pull down navigation touchscreen gesture."
+msgstr ""
+
+#: pwa/admin/templates/subpage-accessibility.php:215
+#: pwa/admin/templates/subpage-accessibility.php:219
+msgid "Swipe Navigation"
+msgstr ""
+
+#: pwa/admin/templates/subpage-accessibility.php:216
+msgid "Swipe Navigation allows your users to execute web browser's \"Back\" and \"Next\" actions by simple swiping on the screen anywhere on the website. Swiping left will result in going back and swiping right will result in going next."
+msgstr ""
+
+#: pwa/admin/templates/subpage-accessibility.php:218
+msgid "Enable or disable swipe navigation touchscreen gesture."
+msgstr ""
+
+#: pwa/admin/templates/subpage-accessibility.php:226
+#: pwa/admin/templates/subpage-accessibility.php:230
+msgid "Shake To Refresh"
+msgstr ""
+
+#: pwa/admin/templates/subpage-accessibility.php:227
+msgid "Shake to refresh gesture brings amazing UX experience to your users by simply shaking phone as a signal to your web application to refresh the contents of the screen."
+msgstr ""
+
+#: pwa/admin/templates/subpage-accessibility.php:229
+msgid "Enable or disable shake to refresh gesture."
+msgstr ""
+
+#: pwa/admin/templates/subpage-accessibility.php:237
+#: pwa/admin/templates/subpage-accessibility.php:241
+msgid "Vibration"
+msgstr ""
+
+#: pwa/admin/templates/subpage-accessibility.php:238
+msgid "Vibration feature creates vibes on tapping for mobile users. That can help mobile users recognize when they are tapping and clicking on your website."
+msgstr ""
+
+#: pwa/admin/templates/subpage-accessibility.php:240
+msgid "Enable or disable vibration support for your web app."
+msgstr ""
+
+#: pwa/admin/templates/subpage-accessibility.php:248
+#: pwa/admin/templates/subpage-accessibility.php:252
+msgid "Preloader"
+msgstr ""
+
+#: pwa/admin/templates/subpage-accessibility.php:249
+msgid "Preloader feature adds a nice page loader with a bouncing site icon on your website's background color. Loader appears at the start of page load and disappears after it is fully loaded."
+msgstr ""
+
+#: pwa/admin/templates/subpage-accessibility.php:251
+msgid "Enable or disable preloader for your web app."
+msgstr ""
+
+#: pwa/admin/templates/subpage-accessibility.php:259
+#: pwa/admin/templates/subpage-accessibility.php:263
+msgid "Toast Messages"
+msgstr ""
+
+#: pwa/admin/templates/subpage-accessibility.php:260
+msgid "Toast Messages provide simple feedback about an operation in a small popup. It only fills the amount of space required for the message and the current activity remains visible and interactive. Toasts automatically disappear after a timeout."
+msgstr ""
+
+#: pwa/admin/templates/subpage-accessibility.php:262
+msgid "Enable or disable toast messages for your web app."
+msgstr ""
+
+#: pwa/admin/templates/subpage-addtohomescreen.php:11
+msgid "Web App Manifest"
+msgstr ""
+
+#: pwa/admin/templates/subpage-addtohomescreen.php:12
+msgid "The web app manifest is a simple JSON file that tells the browser about your web application and how it should behave when \"installed\" on the user's mobile device or desktop. Having a manifest is required by browsers to show the Add to Home Screen prompt."
+msgstr ""
+
+#: pwa/admin/templates/subpage-addtohomescreen.php:14
+msgid "Dynamic Manifest option gives you ability to make each of your pages and posts installable individually. That means that your app name, short name, description and URL will be automatically fetched from the current singular page that the user is accessing. This will apply only on singular pages, so on the homepage app name, short name, description and URL will be taken from the settings below."
+msgstr ""
+
+#: pwa/admin/templates/subpage-addtohomescreen.php:15
+msgid "Dynamic Manifest"
+msgstr ""
+
+#: pwa/admin/templates/subpage-addtohomescreen.php:21
+msgid "Enter the name of your web app."
+msgstr ""
+
+#: pwa/admin/templates/subpage-addtohomescreen.php:22
+#: pwa/admin/templates/subpage-addtohomescreen.php:24
+#: pwa/admin/templates/subpage-addtohomescreen.php:137
+#: pwa/admin/templates/subpage-addtohomescreen.php:158
+#: pwa/admin/templates/subpage-addtohomescreen.php:179
+#: pwa/admin/templates/subpage-addtohomescreen.php:200
+msgid "Name"
+msgstr ""
+
+#: pwa/admin/templates/subpage-addtohomescreen.php:28
+msgid "Enter the shortened name of your web app. Maximum 12 characters."
+msgstr ""
+
+#: pwa/admin/templates/subpage-addtohomescreen.php:29
+#: pwa/admin/templates/subpage-addtohomescreen.php:31
+msgid "Short Name"
+msgstr ""
+
+#: pwa/admin/templates/subpage-addtohomescreen.php:35
+msgid "Select the start page of your web application."
+msgstr ""
+
+#: pwa/admin/templates/subpage-addtohomescreen.php:36
+#: pwa/admin/templates/subpage-addtohomescreen.php:38
+msgid "Start Page"
+msgstr ""
+
+#: pwa/admin/templates/subpage-addtohomescreen.php:47
+msgid "Describe your web application. The description should contain your web app's purpose and goals."
+msgstr ""
+
+#: pwa/admin/templates/subpage-addtohomescreen.php:48
+#: pwa/admin/templates/subpage-addtohomescreen.php:50
+msgid "Description"
+msgstr ""
+
+#: pwa/admin/templates/subpage-addtohomescreen.php:54
+#, php-format
+msgid "Your web app icon and WordPress Site Icon are the same, so we will use your site icon as a PWA icon if you have set the site icon in the <a class=\"daftplugAdminLink\" href=\"%s\">WordPress customizer</a>. Alternatively, if you're not using WP Site Icon feature, you can set PWA icon manually."
+msgstr ""
+
+#: pwa/admin/templates/subpage-addtohomescreen.php:73
+msgid "Maskable icons is a new icon format that ensures that your PWA icon looks great on all Android devices. On newer Android devices, PWA icons that don't follow the maskable icon format are a given a white background. When you use a maskable icon, it ensures that the icon takes up all of the space that Android provides for it."
+msgstr ""
+
+#: pwa/admin/templates/subpage-addtohomescreen.php:74
+msgid "Maskable Icon"
+msgstr ""
+
+#: pwa/admin/templates/subpage-addtohomescreen.php:80
+msgid "Select the display mode of your web application. We recommend to choose Standalone, as it provides a native app feeling."
+msgstr ""
+
+#: pwa/admin/templates/subpage-addtohomescreen.php:81
+#: pwa/admin/templates/subpage-addtohomescreen.php:83
+msgid "Display Mode"
+msgstr ""
+
+#: pwa/admin/templates/subpage-addtohomescreen.php:84
+msgid "Fullscreen - App takes whole display"
+msgstr ""
+
+#: pwa/admin/templates/subpage-addtohomescreen.php:85
+msgid "Standalone - Native app feeling"
+msgstr ""
+
+#: pwa/admin/templates/subpage-addtohomescreen.php:86
+msgid "Minimal UI - App with browser controls"
+msgstr ""
+
+#: pwa/admin/templates/subpage-addtohomescreen.php:91
+msgid "Select orientation of your web application. We recommend to choose Portrait, as it provides a more native app feeling."
+msgstr ""
+
+#: pwa/admin/templates/subpage-addtohomescreen.php:92
+#: pwa/admin/templates/subpage-addtohomescreen.php:94
+msgid "Orientation"
+msgstr ""
+
+#: pwa/admin/templates/subpage-addtohomescreen.php:95
+msgid "Both"
+msgstr ""
+
+#: pwa/admin/templates/subpage-addtohomescreen.php:96
+msgid "Portrait"
+msgstr ""
+
+#: pwa/admin/templates/subpage-addtohomescreen.php:97
+msgid "Landscape"
+msgstr ""
+
+#: pwa/admin/templates/subpage-addtohomescreen.php:102
+msgid "Select the iOS status bar style for your web application when accessed from Apple devices."
+msgstr ""
+
+#: pwa/admin/templates/subpage-addtohomescreen.php:103
+#: pwa/admin/templates/subpage-addtohomescreen.php:105
+msgid "iOS Status Bar Style"
+msgstr ""
+
+#: pwa/admin/templates/subpage-addtohomescreen.php:106
+msgid "White bar with black text"
+msgstr ""
+
+#: pwa/admin/templates/subpage-addtohomescreen.php:107
+msgid "Black bar with white text"
+msgstr ""
+
+#: pwa/admin/templates/subpage-addtohomescreen.php:108
+msgid "Transparent bar with white text"
+msgstr ""
+
+#: pwa/admin/templates/subpage-addtohomescreen.php:113
+msgid "Select the theme color of your web application. It should be same as the main color palette of your website."
+msgstr ""
+
+#: pwa/admin/templates/subpage-addtohomescreen.php:114
+#: pwa/admin/templates/subpage-addtohomescreen.php:116
+msgid "Theme Color"
+msgstr ""
+
+#: pwa/admin/templates/subpage-addtohomescreen.php:120
+msgid "Select the background color of your web application. It should be same as the background color of your website."
+msgstr ""
+
+#: pwa/admin/templates/subpage-addtohomescreen.php:128
+msgid "App Shortcuts"
+msgstr ""
+
+#: pwa/admin/templates/subpage-addtohomescreen.php:129
+msgid "App shortcuts help users quickly start common or recommended tasks within your web app. Easy access to those tasks from anywhere the app icon is displayed will enhance users productivity as well as increase their engagement with the web app. The app shortcuts menu is invoked by right-clicking the app icon in the taskbar (Windows) or dock (macOS) on the user's desktop, or long pressing the app's launcher icon on Android."
+msgstr ""
+
+#: pwa/admin/templates/subpage-addtohomescreen.php:131
+msgid "App Shortcut 1"
+msgstr ""
+
+#: pwa/admin/templates/subpage-addtohomescreen.php:152
+msgid "App Shortcut 2"
+msgstr ""
+
+#: pwa/admin/templates/subpage-addtohomescreen.php:173
+msgid "App Shortcut 3"
+msgstr ""
+
+#: pwa/admin/templates/subpage-addtohomescreen.php:194
+msgid "App Shortcut 4"
+msgstr ""
+
+#: pwa/admin/templates/subpage-addtohomescreen.php:216
+msgid "+ Add App Shortcut"
+msgstr ""
+
+#: pwa/admin/templates/subpage-addtohomescreen.php:221
+#: pwa/admin/templates/subpage-addtohomescreen.php:225
+msgid "Installation Overlays"
+msgstr ""
+
+#: pwa/admin/templates/subpage-addtohomescreen.php:222
+msgid "Display an \"Add to Home Screen\" overlays for major mobile browsers to make your website installable and grant a prominent place on the user's home screen, right next to the native apps."
+msgstr ""
+
+#: pwa/admin/templates/subpage-addtohomescreen.php:224
+msgid "Enable or disable installation overlays."
+msgstr ""
+
+#: pwa/admin/templates/subpage-addtohomescreen.php:231
+msgid "Select the supported web browsers for installation overlays. We recommend to choose all the browsers available."
+msgstr ""
+
+#: pwa/admin/templates/subpage-addtohomescreen.php:232
+#: pwa/admin/templates/subpage-addtohomescreen.php:234
+#: pwa/admin/templates/subpage-addtohomescreen.php:297
+#: pwa/admin/templates/subpage-addtohomescreen.php:299
+msgid "Supported Browsers"
+msgstr ""
+
+#: pwa/admin/templates/subpage-addtohomescreen.php:235
+#: pwa/admin/templates/subpage-addtohomescreen.php:300
+msgid "Google Chrome"
+msgstr ""
+
+#: pwa/admin/templates/subpage-addtohomescreen.php:236
+#: pwa/admin/templates/subpage-addtohomescreen.php:301
+msgid "Mozilla Firefox"
+msgstr ""
+
+#: pwa/admin/templates/subpage-addtohomescreen.php:237
+#: pwa/admin/templates/subpage-addtohomescreen.php:302
+msgid "Apple Safari"
+msgstr ""
+
+#: pwa/admin/templates/subpage-addtohomescreen.php:242
+msgid "Select the installation banner types for your overlays. We recommend not to choose fullscreen and header banner types together. Navigation menu overlay is an experimental feature and it may not look natural on your theme."
+msgstr ""
+
+#: pwa/admin/templates/subpage-addtohomescreen.php:243
+#: pwa/admin/templates/subpage-addtohomescreen.php:245
+msgid "Overlay Types"
+msgstr ""
+
+#: pwa/admin/templates/subpage-addtohomescreen.php:246
+msgid "Fullscreen"
+msgstr ""
+
+#: pwa/admin/templates/subpage-addtohomescreen.php:247
+msgid "Navigation Menu"
+msgstr ""
+
+#: pwa/admin/templates/subpage-addtohomescreen.php:248
+msgid "Header Banner"
+msgstr ""
+
+#: pwa/admin/templates/subpage-addtohomescreen.php:249
+msgid "Post Popup"
+msgstr ""
+
+#: pwa/admin/templates/subpage-addtohomescreen.php:251
+msgid "WooCommerce Checkout"
+msgstr ""
+
+#: pwa/admin/templates/subpage-addtohomescreen.php:257
+msgid "Select the background color of installation banners."
+msgstr ""
+
+#: pwa/admin/templates/subpage-addtohomescreen.php:264
+msgid "Select the text color of installation banners."
+msgstr ""
+
+#: pwa/admin/templates/subpage-addtohomescreen.php:265
+#: pwa/admin/templates/subpage-addtohomescreen.php:267
+#: pwa/admin/templates/subpage-addtohomescreen.php:322
+#: pwa/admin/templates/subpage-addtohomescreen.php:324
+msgid "Text Color"
+msgstr ""
+
+#: pwa/admin/templates/subpage-addtohomescreen.php:271
+msgid "Choose when to show installation overlays again if they were dismissed. Timeout is in days."
+msgstr ""
+
+#: pwa/admin/templates/subpage-addtohomescreen.php:272
+#: pwa/admin/templates/subpage-addtohomescreen.php:274
+msgid "Timeout"
+msgstr ""
+
+#: pwa/admin/templates/subpage-addtohomescreen.php:279
+#: pwa/admin/templates/subpage-addtohomescreen.php:283
+msgid "Installation Button"
+msgstr ""
+
+#: pwa/admin/templates/subpage-addtohomescreen.php:280
+msgid "You are able to insert an installation button anywhere on your website using the shortcode."
+msgstr ""
+
+#: pwa/admin/templates/subpage-addtohomescreen.php:282
+msgid "Enable or disable installation button."
+msgstr ""
+
+#: pwa/admin/templates/subpage-addtohomescreen.php:289
+msgid "You can insert an installation button anywhere on your website using the shortcode below."
+msgstr ""
+
+#: pwa/admin/templates/subpage-addtohomescreen.php:290
+#: pwa/admin/templates/subpage-addtohomescreen.php:292
+msgid "Button Shortcode"
+msgstr ""
+
+#: pwa/admin/templates/subpage-addtohomescreen.php:296
+msgid "Select the supported web browsers for installation button. We recommend to choose all the browsers available."
+msgstr ""
+
+#: pwa/admin/templates/subpage-addtohomescreen.php:307
+msgid "Insert your installation text which will be displayed on the button."
+msgstr ""
+
+#: pwa/admin/templates/subpage-addtohomescreen.php:314
+msgid "Select the background color of installation button."
+msgstr ""
+
+#: pwa/admin/templates/subpage-addtohomescreen.php:321
+msgid "Select the text color of installation button."
+msgstr ""
+
+#: pwa/admin/templates/subpage-offlineusage.php:12
+msgid "Offline usage adds offline support and reliable performance on your web app. This allows a visitor to load any previously viewed page while they are offline or on low connectivity network. The plugin also defines a special “Offline Page”, which allows you to customize a message and the experience if the app is offline and the page is not in the offline cache."
+msgstr ""
+
+#: pwa/admin/templates/subpage-offlineusage.php:14
+msgid "Select the special offline fallback page for your web application. This page will show up your users when they navigate your website without an Internet connection."
+msgstr ""
+
+#: pwa/admin/templates/subpage-offlineusage.php:15
+#: pwa/admin/templates/subpage-offlineusage.php:17
+msgid "Offline Page"
+msgstr ""
+
+#: pwa/admin/templates/subpage-offlineusage.php:25
+msgid "Select the pages that should be available for offline usage. This pages will be accessible when the user navigates your website without an internet connection."
+msgstr ""
+
+#: pwa/admin/templates/subpage-offlineusage.php:26
+#: pwa/admin/templates/subpage-offlineusage.php:28
+msgid "Offline Content"
+msgstr ""
+
+#: pwa/admin/templates/subpage-offlineusage.php:36
+msgid "Enable or disable live reconnecting notification for your users when they go offline or their connection interrupts on your website."
+msgstr ""
+
+#: pwa/admin/templates/subpage-offlineusage.php:37
+msgid "Offline Notification"
+msgstr ""
+
+#: pwa/admin/templates/subpage-offlineusage.php:43
+msgid "Enable or disable offline form submission. If enabled, the forms data will be saved, then your website will automatically sync it once the user is online and submit pending forms in background using AJAX."
+msgstr ""
+
+#: pwa/admin/templates/subpage-offlineusage.php:44
+msgid "Offline Forms"
+msgstr ""
+
+#: pwa/admin/templates/subpage-offlineusage.php:50
+msgid "Enable or disable offline Google Analytics support. If enabled, Instantify will store the data and sync it as soon as the user is online again."
+msgstr ""
+
+#: pwa/admin/templates/subpage-offlineusage.php:51
+msgid "Offline Google Analytics"
+msgstr ""
+
+#: pwa/admin/templates/subpage-offlineusage.php:58
+msgid "Caching Strategies"
+msgstr ""
+
+#: pwa/admin/templates/subpage-offlineusage.php:59
+msgid "All network requests are cached by Instantify, so that your website can serve content from cache if available and display requested content as fast as possible. Here you are able to manually change the caching strategy for some request types. Available caching strategies (hover for description):"
+msgstr ""
+
+#: pwa/admin/templates/subpage-offlineusage.php:60
+msgid "This strategy will use a cached response for a request if it is available and update the cache in the background with a response form the network. (If it’s not cached it will wait for the network response and use that). This is a fairly safe strategy as it means users are regularly updating their cache. The downside of this strategy is that it’s always requesting an asset from the network, using up the user’s bandwidth."
+msgstr ""
+
+#: pwa/admin/templates/subpage-offlineusage.php:60
+#: pwa/admin/templates/subpage-offlineusage.php:70
+#: pwa/admin/templates/subpage-offlineusage.php:82
+#: pwa/admin/templates/subpage-offlineusage.php:94
+#: pwa/admin/templates/subpage-offlineusage.php:106
+msgid "Stale While Revalidate"
+msgstr ""
+
+#: pwa/admin/templates/subpage-offlineusage.php:61
+msgid "This will try and get a request from the network first. If it receives a response, it’ll pass that to the browser and also save it to a cache. If the network request fails, the last cached response will be used."
+msgstr ""
+
+#: pwa/admin/templates/subpage-offlineusage.php:61
+#: pwa/admin/templates/subpage-offlineusage.php:71
+#: pwa/admin/templates/subpage-offlineusage.php:83
+#: pwa/admin/templates/subpage-offlineusage.php:95
+#: pwa/admin/templates/subpage-offlineusage.php:107
+msgid "Network First"
+msgstr ""
+
+#: pwa/admin/templates/subpage-offlineusage.php:62
+msgid "This strategy will check the cache for a response first and use that if one is available. If the request isn’t in the cache, the network will be used and any valid response will be added to the cache before being passed to the browser."
+msgstr ""
+
+#: pwa/admin/templates/subpage-offlineusage.php:62
+#: pwa/admin/templates/subpage-offlineusage.php:72
+#: pwa/admin/templates/subpage-offlineusage.php:84
+#: pwa/admin/templates/subpage-offlineusage.php:96
+#: pwa/admin/templates/subpage-offlineusage.php:108
+msgid "Cache First"
+msgstr ""
+
+#: pwa/admin/templates/subpage-offlineusage.php:63
+msgid "This strategy won't chache anything. The network will be used and the response will be passed directly to the browser (That's how the browser would handle the request without the Instantify)."
+msgstr ""
+
+#: pwa/admin/templates/subpage-offlineusage.php:63
+#: pwa/admin/templates/subpage-offlineusage.php:73
+#: pwa/admin/templates/subpage-offlineusage.php:85
+#: pwa/admin/templates/subpage-offlineusage.php:97
+#: pwa/admin/templates/subpage-offlineusage.php:109
+msgid "Network Only"
+msgstr ""
+
+#: pwa/admin/templates/subpage-offlineusage.php:66
+msgid "Select the default caching strategy for your web application. This strategy will be used on all content except assets, fonts and images."
+msgstr ""
+
+#: pwa/admin/templates/subpage-offlineusage.php:67
+#: pwa/admin/templates/subpage-offlineusage.php:69
+msgid "Default Strategy"
+msgstr ""
+
+#: pwa/admin/templates/subpage-offlineusage.php:78
+msgid "Select the caching strategy for your assets (CSS and JS files). We recommend you to set it on Stale While Revalidate to improve performance and always update users with latest version of your website in their cache."
+msgstr ""
+
+#: pwa/admin/templates/subpage-offlineusage.php:79
+#: pwa/admin/templates/subpage-offlineusage.php:81
+msgid "Assets Strategy"
+msgstr ""
+
+#: pwa/admin/templates/subpage-offlineusage.php:90
+msgid "Select the caching strategy for your fonts (WOFF, WOFF2, EOT, TTF and SVG files). We recommend you to set it on Cache First to load fonts faster."
+msgstr ""
+
+#: pwa/admin/templates/subpage-offlineusage.php:91
+#: pwa/admin/templates/subpage-offlineusage.php:93
+msgid "Fonts Strategy"
+msgstr ""
+
+#: pwa/admin/templates/subpage-offlineusage.php:102
+msgid "Select the caching strategy for your images (PNG, JPG, JPEG, GIF and ICO files). We recommend you to set it on Cache First to load images faster."
+msgstr ""
+
+#: pwa/admin/templates/subpage-offlineusage.php:103
+#: pwa/admin/templates/subpage-offlineusage.php:105
+msgid "Images Strategy"
+msgstr ""
+
+#: pwa/admin/templates/subpage-optimizations.php:11
+#: pwa/admin/templates/subpage-optimizations.php:15
+msgid "Cache And Minify"
+msgstr ""
+
+#: pwa/admin/templates/subpage-optimizations.php:12
+msgid "Caching And minifying assets help your website load faster by minifying and storing your CSS and JS files in cache to serve assets from there when necessary."
+msgstr ""
+
+#: pwa/admin/templates/subpage-optimizations.php:14
+msgid "Enable or disable caching and minifying your assets."
+msgstr ""
+
+#: pwa/admin/templates/subpage-optimizations.php:22
+msgid "Clear Cache"
+msgstr ""
+
+#: pwa/admin/templates/subpage-optimizations.php:27
+msgid "Delivery Optimization"
+msgstr ""
+
+#: pwa/admin/templates/subpage-optimizations.php:28
+msgid "Delivery optimization feature optimizes your CSS and JS files delivery by loading them asynchronously in the correct order for better performance."
+msgstr ""
+
+#: pwa/admin/templates/subpage-optimizations.php:30
+msgid "Enable or disable optimization for your CSS files delivery."
+msgstr ""
+
+#: pwa/admin/templates/subpage-optimizations.php:31
+msgid "Optimize CSS Delivery"
+msgstr ""
+
+#: pwa/admin/templates/subpage-optimizations.php:37
+msgid "Enable or disable optimization for your JS files delivery."
+msgstr ""
+
+#: pwa/admin/templates/subpage-optimizations.php:38
+msgid "Optimize JS Delivery"
+msgstr ""
+
+#: pwa/admin/templates/subpage-optimizations.php:45
+msgid "Compression and Caching Headers"
+msgstr ""
+
+#: pwa/admin/templates/subpage-optimizations.php:46
+msgid "Compression and caching headers feature allows your web server to compress static files and set Cache-Control Headers to your .htaccess for better assets serving."
+msgstr ""
+
+#: pwa/admin/templates/subpage-optimizations.php:48
+msgid "Enable or disable static files compression."
+msgstr ""
+
+#: pwa/admin/templates/subpage-optimizations.php:49
+msgid "Compress Static Files"
+msgstr ""
+
+#: pwa/admin/templates/subpage-optimizations.php:55
+msgid "Enable or disable caching headers in your .htaccess."
+msgstr ""
+
+#: pwa/admin/templates/subpage-optimizations.php:56
+msgid "Set Caching Headers"
+msgstr ""
+
+#: pwa/admin/templates/subpage-pushnotifications.php:15
+msgid "Subscription List"
+msgstr ""
+
+#: pwa/admin/templates/subpage-pushnotifications.php:16
+msgid "Below is a list of your users with their device information who subscribed your website for push notifications."
+msgstr ""
+
+#: pwa/admin/templates/subpage-pushnotifications.php:21
+#: pwa/admin/templates/subpage-pushnotifications.php:209
+msgid "Send Push Notification"
+msgstr ""
+
+#: pwa/admin/templates/subpage-pushnotifications.php:30
+msgid "Device Information"
+msgstr ""
+
+#: pwa/admin/templates/subpage-pushnotifications.php:31
+msgid "Registration Date"
+msgstr ""
+
+#: pwa/admin/templates/subpage-pushnotifications.php:32
+msgid "Country"
+msgstr ""
+
+#: pwa/admin/templates/subpage-pushnotifications.php:33
+msgid "Actions"
+msgstr ""
+
+#: pwa/admin/templates/subpage-pushnotifications.php:42
+msgid "No subscribed devices"
+msgstr ""
+
+#: pwa/admin/templates/subpage-pushnotifications.php:52
+#: pwa/admin/templates/subpage-pushnotifications.php:218
+msgid "Unknown"
+msgstr ""
+
+#: pwa/admin/templates/subpage-pushnotifications.php:54
+msgid "Notify"
+msgstr ""
+
+#: pwa/admin/templates/subpage-pushnotifications.php:59
+msgid "Remove"
+msgstr ""
+
+#: pwa/admin/templates/subpage-pushnotifications.php:75
+msgid "Push Notifications Settings"
+msgstr ""
+
+#: pwa/admin/templates/subpage-pushnotifications.php:76
+msgid "Web push notifications allow users to opt-in to timely updates from sites they love and allow you to effectively re-engage them with customized, relevant content."
+msgstr ""
+
+#: pwa/admin/templates/subpage-pushnotifications.php:78
+msgid "Enable or disable to prompt your users to subscribe for notifications as soon as your website loads on their screens."
+msgstr ""
+
+#: pwa/admin/templates/subpage-pushnotifications.php:79
+msgid "Prompt On Load"
+msgstr ""
+
+#: pwa/admin/templates/subpage-pushnotifications.php:85
+msgid "This image will represent the notification when there is not enough space to display the notification itself, such as, for example, the Android Notification Bar. It will be automatically masked. For the best result use a single-color graphic with a transparent background. Has to be at least 92x92 px."
+msgstr ""
+
+#: pwa/admin/templates/subpage-pushnotifications.php:86
+msgid "Notification Bar Icon"
+msgstr ""
+
+#: pwa/admin/templates/subpage-pushnotifications.php:93
+msgid "Push Notifications Automation"
+msgstr ""
+
+#: pwa/admin/templates/subpage-pushnotifications.php:94
+msgid "From this section you can enable sending automatic predefined push notifications on certain events to re-engage your users and increase conversion. You will also be allowed to exclude particular post events from sending automatic push notification via meta boxes."
+msgstr ""
+
+#: pwa/admin/templates/subpage-pushnotifications.php:96
+msgid "Enable or disable automatic notification on publishing new post. Notification will include post title, content and featured image."
+msgstr ""
+
+#: pwa/admin/templates/subpage-pushnotifications.php:97
+msgid "New Post Publish"
+msgstr ""
+
+#: pwa/admin/templates/subpage-pushnotifications.php:103
+msgid "Select allowed post types for new post publish notification."
+msgstr ""
+
+#: pwa/admin/templates/subpage-pushnotifications.php:104
+#: pwa/admin/templates/subpage-pushnotifications.php:106
+msgid "New Post Publish Post Types"
+msgstr ""
+
+#: pwa/admin/templates/subpage-pushnotifications.php:115
+msgid "Enable or disable automatic notification on adding new product. Notification will include product title, content and featured image."
+msgstr ""
+
+#: pwa/admin/templates/subpage-pushnotifications.php:116
+msgid "WooCommerce New Product"
+msgstr ""
+
+#: pwa/admin/templates/subpage-pushnotifications.php:122
+msgid "Enable or disable automatic notification on product price drop. Notification will include product title and featured image."
+msgstr ""
+
+#: pwa/admin/templates/subpage-pushnotifications.php:123
+msgid "WooCommerce Price Drop"
+msgstr ""
+
+#: pwa/admin/templates/subpage-pushnotifications.php:129
+msgid "Enable or disable automatic notification when sale price is added to the product. Notification will include product title and featured image."
+msgstr ""
+
+#: pwa/admin/templates/subpage-pushnotifications.php:130
+msgid "WooCommerce Sale Price"
+msgstr ""
+
+#: pwa/admin/templates/subpage-pushnotifications.php:136
+msgid "Enable or disable automatic notification when product is back in stock. Notification will include product title and featured image."
+msgstr ""
+
+#: pwa/admin/templates/subpage-pushnotifications.php:137
+msgid "WooCommerce Back In Stock"
+msgstr ""
+
+#: pwa/admin/templates/subpage-pushnotifications.php:145
+msgid "Push Notifications Button"
+msgstr ""
+
+#: pwa/admin/templates/subpage-pushnotifications.php:146
+msgid "The push notifications button is a custom subscription button on your website to increase opt-in rate and allow your users to fully control when they want to subscribe and unsubscribe for your push notifications."
+msgstr ""
+
+#: pwa/admin/templates/subpage-pushnotifications.php:148
+msgid "Enable or disable subscribe push notifications button on your website."
+msgstr ""
+
+#: pwa/admin/templates/subpage-pushnotifications.php:149
+msgid "Subscribe Button"
+msgstr ""
+
+#: pwa/admin/templates/subpage-pushnotifications.php:155
+msgid "Select the bell icon color on your subscribe notifications button."
+msgstr ""
+
+#: pwa/admin/templates/subpage-pushnotifications.php:156
+#: pwa/admin/templates/subpage-pushnotifications.php:158
+msgid "Bell Icon Color"
+msgstr ""
+
+#: pwa/admin/templates/subpage-pushnotifications.php:162
+msgid "Select the background color of your subscribe notifications button."
+msgstr ""
+
+#: pwa/admin/templates/subpage-pushnotifications.php:163
+#: pwa/admin/templates/subpage-pushnotifications.php:165
+msgid "Button Background Color"
+msgstr ""
+
+#: pwa/admin/templates/subpage-pushnotifications.php:169
+msgid "Select position of your subscribe notifications button on your website."
+msgstr ""
+
+#: pwa/admin/templates/subpage-pushnotifications.php:170
+#: pwa/admin/templates/subpage-pushnotifications.php:172
+msgid "Button Position"
+msgstr ""
+
+#: pwa/admin/templates/subpage-pushnotifications.php:173
+msgid "Bottom Left"
+msgstr ""
+
+#: pwa/admin/templates/subpage-pushnotifications.php:174
+msgid "Top Left"
+msgstr ""
+
+#: pwa/admin/templates/subpage-pushnotifications.php:175
+msgid "Bottom Right"
+msgstr ""
+
+#: pwa/admin/templates/subpage-pushnotifications.php:176
+msgid "Top Right"
+msgstr ""
+
+#: pwa/admin/templates/subpage-pushnotifications.php:190
+msgid "Unsupported PHP version or missing extensions"
+msgstr ""
+
+#: pwa/admin/templates/subpage-pushnotifications.php:191
+msgid "Push Notification features need PHP version 7.1 or higher and <i style=\"font-style: italic;\"\n"
+"                >gmp</i>, <i style=\"font-style: italic;\">mbstring</i> and <i style=\"font-style: italic;\">openssl</i> extensions to function properly. If you're having trouble to update your PHP version or enable extensions, please contact your hosting provider to do this in your stead."
+msgstr ""
+
+#: pwa/admin/templates/subpage-pushnotifications.php:199
+msgid "OneSignal Detected"
+msgstr ""
+
+#: pwa/admin/templates/subpage-pushnotifications.php:200
+msgid "You are using the <a class=\"daftplugAdminLink\" href=\"https://wordpress.org/plugins/onesignal-free-web-push-notifications/\" target=\"_blank\">OneSignal Push Notification</a> plugin as a push notification service, so this section is disabled. If you want to use built-in Firebase push notifications, please disable OneSignal plugin and visit this section again."
+msgstr ""
+
+#: pwa/admin/templates/subpage-pushnotifications.php:211
+msgid "Select what segment of your subscribers should receive this notification."
+msgstr ""
+
+#: pwa/admin/templates/subpage-pushnotifications.php:213
+msgid "Segment"
+msgstr ""
+
+#: pwa/admin/templates/subpage-pushnotifications.php:214
+msgid "All Users"
+msgstr ""
+
+#: pwa/admin/templates/subpage-pushnotifications.php:215
+msgid "Mobile Users"
+msgstr ""
+
+#: pwa/admin/templates/subpage-pushnotifications.php:216
+msgid "Desktop Users"
+msgstr ""
+
+#: pwa/admin/templates/subpage-pushnotifications.php:224
+msgid "Enter the title of your notification."
+msgstr ""
+
+#: pwa/admin/templates/subpage-pushnotifications.php:226
+msgid "Title"
+msgstr ""
+
+#: pwa/admin/templates/subpage-pushnotifications.php:230
+msgid "Enter the body of your notification (text description)."
+msgstr ""
+
+#: pwa/admin/templates/subpage-pushnotifications.php:232
+msgid "Body"
+msgstr ""
+
+#: pwa/admin/templates/subpage-pushnotifications.php:236
+msgid "Select the image of notification. it will be displayed as large image on notification."
+msgstr ""
+
+#: pwa/admin/templates/subpage-pushnotifications.php:242
+msgid "Enter the redirect URL of your notification. Your users will be redirected here after they click on your notification."
+msgstr ""
+
+#: pwa/admin/templates/subpage-pushnotifications.php:248
+msgid "Select the icon of notification. We recommend to use your website logo or site icon."
+msgstr ""
+
+#: pwa/admin/templates/subpage-pushnotifications.php:254
+msgid "You can add up to two action buttons to the notification. Currently action buttons are only supported by Chrome browsers."
+msgstr ""
+
+#: pwa/admin/templates/subpage-pushnotifications.php:257
+msgid "Action Button 1"
+msgstr ""
+
+#: pwa/admin/templates/subpage-pushnotifications.php:263
+#: pwa/admin/templates/subpage-pushnotifications.php:279
+msgid "Text"
+msgstr ""
+
+#: pwa/admin/templates/subpage-pushnotifications.php:273
+msgid "Action Button 2"
+msgstr ""
+
+#: pwa/admin/templates/subpage-pushnotifications.php:290
+msgid "+ Add Action Button"
+msgstr ""
+
+#: pwa/admin/templates/subpage-pushnotifications.php:296
+msgid "Send Notification"
+msgstr ""
+
+#: pwa/admin/templates/subpage-pushnotifications.php:296
+msgid "Sending"
+msgstr ""
+
+#: pwa/admin/templates/subpage-pushnotifications.php:296
+msgid "Notification Sent"
+msgstr ""
+
+#: pwa/admin/templates/subpage-pushnotifications.php:296
+msgid "Sending Failed"
+msgstr ""
+
+#: pwa/public/class-accessibility.php:72
+msgid "Homepage Opened"
+msgstr ""
+
+#: pwa/public/class-accessibility.php:73
+msgid "Post Opened"
+msgstr ""
+
+#: pwa/public/class-accessibility.php:74
+msgid "Page Opened"
+msgstr ""
+
+#: pwa/public/class-accessibility.php:75
+msgid "Page Not Found"
+msgstr ""
+
+#: pwa/public/class-accessibility.php:76
+msgid "Search Results"
+msgstr ""
+
+#: pwa/public/class-accessibility.php:77
+msgid "Category Opened"
+msgstr ""
+
+#: pwa/public/class-accessibility.php:78
+msgid "Archive Opened"
+msgstr ""
+
+#: pwa/public/class-accessibility.php:79
+msgid "Tag Opened"
+msgstr ""
+
+#: pwa/public/class-accessibility.php:80
+msgid "Author Opened"
+msgstr ""
+
+#: pwa/public/class-addtohomescreen.php:206
+msgid "Find what you need faster with our web app!"
+msgstr ""
+
+#: pwa/public/class-addtohomescreen.php:209
+#: pwa/public/partials/display-checkoutoverlay.php:9
+msgid "Not now"
+msgstr ""
+
+#: pwa/public/class-addtohomescreen.php:210
+#: pwa/public/partials/display-checkoutoverlay.php:10
+#: pwa/public/partials/display-headeroverlay.php:9
+msgid "Install"
+msgstr ""
+
+#: pwa/public/partials/display-checkoutoverlay.php:6
+msgid "Keep track of your orders. Our web app is fast, small and works offline."
+msgstr ""
+
+#: pwa/public/partials/display-fullscreenoverlays.php:12
+msgid "Continue in browser"
+msgstr ""
+
+#: pwa/public/partials/display-fullscreenoverlays.php:13
+msgid "To install tap"
+msgstr ""
+
+#: pwa/public/partials/display-fullscreenoverlays.php:14
+msgid "and choose"
+msgstr ""
+
+#: pwa/public/partials/display-fullscreenoverlays.php:15
+msgid "Add to Home Screen"
+msgstr ""
+
+#: pwa/public/partials/display-headeroverlay.php:8
+msgid "Get our web app. It won't take up space on your phone."
+msgstr ""
+
+#: pwa/public/partials/display-navigationtabbar.php:37
+msgid "Search for something..."
+msgstr ""
+
+#: pwa/public/partials/display-postoverlay.php:14
+msgid "See this post in..."
+msgstr ""
+
+#: pwa/public/partials/display-postoverlay.php:15
+msgid "Open"
+msgstr ""
+
+#: pwa/public/partials/display-postoverlay.php:16
+msgid "Continue"
+msgstr ""
+
+#: pwa/public/partials/display-rotatenotice.php:5
+msgid "Please rotate your device"
+msgstr ""

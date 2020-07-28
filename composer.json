@@ -1,0 +1,27 @@
+{
+  "name": "kubeecms/kcms-drive",
+  "type": "wordpress-plugin",
+  "license": "GNU",
+  "description":
+    "Take the user experience to the next level with future of mobile web...",
+  "homepage": "https://github.com/KubeeCMS/KCMS-Next-Level/",
+  "keywords": ["kubeecms", "kubee", "kcms-drive"],
+  "support": {
+    "issues": "https://github.com/KubeeCMS/KCMS-Next-Level/issues/",
+    "forum": "https://discourse.kubee.com/"
+  },
+  "autoload": {
+    "psr-4": {
+      "Kubeecms\\Kcms\\": "src/"
+    }
+  },
+  "require": {
+    "php": ">=7.1.0"
+  },
+  "require-dev": {
+    "squizlabs/php_codesniffer": "^3.1"
+  },
+  "scripts": {
+    "test": ["phpcs --ignore=vendor --extensions=php --standard=PSR2 ."]
+  }
+}

@@ -1,0 +1,615 @@
+.daftplugPublic .daftplugPublicNavigationTabBar {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    z-index: 999999999999999;
+    height: 50px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.daftplugPublic .daftplugPublicNavigationTabBar_list {
+    list-style: none;
+    width: 95%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0;
+}
+
+.daftplugPublic .daftplugPublicNavigationTabBar_item {
+    margin: 0;
+    padding: 0;
+}
+
+.daftplugPublic .daftplugPublicNavigationTabBar_link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.daftplugPublic .daftplugPublicNavigationTabBar_icon {
+    width: 30px;
+}
+
+.daftplugPublic .daftplugPublicNavigationTabBar_search {
+    display: none;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.daftplugPublic .daftplugPublicNavigationTabBar_searchForm {
+    height: 100%;
+    width: 100%;
+    border: 0;
+    margin: 0;
+    outline: 0;
+}
+
+.daftplugPublic .daftplugPublicNavigationTabBar_searchField {
+    height: 100%;
+    width: 100%;
+    border: 0;
+    margin: 0;
+    outline: 0;
+    padding: 10px;
+    font-family: inherit;
+    font-size: 15px;
+    border-radius: 0;
+    box-shadow: none;
+    -webkit-appearance: none;
+    opacity: 1;
+    z-index: 1;
+    visibility: visible;
+}
+
+.daftplugPublic .daftplugPublicSubscribeButton {
+    position: fixed;
+    display: none;
+    white-space: nowrap;
+    height: 60px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    border-radius: 50%;
+    vertical-align: middle;
+    text-decoration: none;
+    box-shadow: 0 14px 26px -12px rgba(0, 0, 0, .15), 0 4px 23px 0 rgba(0, 0, 0, .06), 0 8px 10px -5px rgba(0, 0, 0, .15);
+    cursor: pointer;
+    z-index: 999999999999999;
+}
+
+.daftplugPublic .daftplugPublicSubscribeButton_icon {
+    display: none;
+    width: 27px;
+    height: 27px;
+    stroke-width: 2.2;
+    vertical-align: middle;
+    border: none;
+    outline: none;
+}
+
+.daftplugPublic .daftplugPublicSubscribeButton.-loading {
+    pointer-events: none;
+}
+
+.daftplugPublic .daftplugPublicSubscribeButton.-on .daftplugPublicSubscribeButton_icon.-iconBell,
+.daftplugPublic .daftplugPublicSubscribeButton.-off .daftplugPublicSubscribeButton_icon.-iconBellOff {
+    display: inline-block;
+}
+
+.daftplugPublic .daftplugPublicSubscribeButton.-loading .daftplugPublicSubscribeButton_icon.-iconLoading {
+    display: inline-block;
+    -webkit-animation: daftplugTurn 1.2s linear infinite forwards, daftplugPath 1.2s linear infinite forwards;
+    animation: daftplugTurn 1.2s linear infinite forwards, daftplugPath 1.2s linear infinite forwards;
+}
+
+.daftplugPublic .daftplugPublicRotateNotice {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: black;
+    z-index: 999999999999999999;
+    pointer-events: none;
+}
+
+.daftplugPublic .daftplugPublicRotateNotice_phone {
+    height: 50px;
+    width: 100px;
+    border: 3px solid #fff;
+    border-radius: 10px;
+    animation: daftplugRotate 1.5s ease-in-out infinite alternate;
+}
+
+.daftplugPublic .daftplugPublicRotateNotice_text {
+    color: #fff;
+    font-size: 1em;
+    margin-top: 40px;
+}
+
+.daftplugPublic .daftplugPublicPreloader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999999999999999;
+    -webkit-animation: daftplugBounce .4s infinite alternate;
+    -moz-animation: daftplugBounce .4s infinite alternate;
+    animation: daftplugBounce .4s infinite alternate;
+}
+
+.daftplugPublic .daftplugPublicPreloader_icon {
+    width: 150px;
+    height: 150px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.daftplugPublic .daftplugPublicInstallButton {
+    display: none;
+    vertical-align: middle;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 35px;
+    padding: 0 17px;
+    height: 35px;
+    border: none;
+    outline: none;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.daftplugPublic .daftplugPublicFullscreenOverlay.-chrome,
+.daftplugPublic .daftplugPublicFullscreenOverlay.-chrome2,
+.daftplugPublic .daftplugPublicFullscreenOverlay.-firefox,
+.daftplugPublic .daftplugPublicFullscreenOverlay.-safari,
+.daftplugPublic .daftplugPublicHeaderOverlay,
+.daftplugPublic .daftplugPublicMenuOverlay,
+.daftplugPublic .daftplugPublicCheckoutOverlay,
+.daftplugPublic .daftplugPublicPostOverlay {
+    display: none;
+}
+
+.daftplugPublic .daftplugPublicFullscreenOverlay {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    text-align: center;
+    color: #fff;
+    padding: 10vh 5vw;
+    box-sizing: border-box;
+    z-index: 9999999999999999;
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+.daftplugPublic .daftplugPublicFullscreenOverlay.-chrome .daftplugPublicFullscreenOverlay_close,
+.daftplugPublic .daftplugPublicFullscreenOverlay.-safari .daftplugPublicFullscreenOverlay_close {
+    margin: -45px 0 40px;
+    opacity: 0.8;
+    text-align: right;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.daftplugPublic .daftplugPublicFullscreenOverlay.-chrome2 .daftplugPublicFullscreenOverlay_close,
+.daftplugPublic .daftplugPublicFullscreenOverlay.-firefox .daftplugPublicFullscreenOverlay_close {
+    margin-top: 55px;
+    opacity: 0.8;
+    text-align: center;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.daftplugPublic .daftplugPublicFullscreenOverlay_logo {
+    background-repeat: no-repeat;
+    background-position: center 0;
+    padding-top: 130px;
+    margin: 0 45px;
+    background-size: 120px;
+    font-size: 24px;
+    margin-top: 15vh;
+}
+
+.daftplugPublic .daftplugPublicFullscreenOverlay_icon.-pointer {
+    margin-top: 5vh;
+    background: url('../img/image-mobileicons.png') no-repeat top left;
+    background-position: center -40px;
+    width: 100%;
+    height: 50px;
+    background-size: 40px;
+    -webkit-animation-duration: 0.5s;
+    animation-duration: 0.5s;
+    -webkit-animation-name: daftplugTopToBottom;
+    animation-name: daftplugTopToBottom;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
+}
+
+.daftplugPublic .daftplugPublicFullscreenOverlay.-chrome2 .daftplugPublicFullscreenOverlay_icon.-pointer {
+    margin-top: -8vh;
+    margin-left: 12px;
+    background-position: right -344px;
+}
+
+.daftplugPublic .daftplugPublicFullscreenOverlay.-firefox .daftplugPublicFullscreenOverlay_icon.-pointer {
+    margin-top: -8vh;
+    background-position: right -344px;
+    width: 77%;
+}
+
+.daftplugPublic .daftplugPublicFullscreenOverlay_icon.-home {
+    vertical-align: text-bottom;
+    width: 35px;
+    height: 35px;
+    display: inline-block;
+    background-size: cover;
+    background-image: url('../img/image-mobileicons.png');
+}
+
+.daftplugPublic .daftplugPublicFullscreenOverlay.-chrome2 .daftplugPublicFullscreenOverlay_icon.-home {
+    background-position: center -113px;
+}
+
+.daftplugPublic .daftplugPublicFullscreenOverlay.-firefox .daftplugPublicFullscreenOverlay_icon.-home {
+    width: 47px;
+    height: 27px;
+    background-position: center 33px;
+}
+
+.daftplugPublic .daftplugPublicFullscreenOverlay.-chrome .daftplugPublicFullscreenOverlay_button {
+    background-color: transparent;
+    margin: 5vh auto;
+    display: inline-block;
+    font-weight: 600;
+    color: #fff;
+    border: 2px solid #fff;
+    padding: 10px 16px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer; 
+}
+
+.daftplugPublic .daftplugPublicFullscreenOverlay_text {
+    padding-top: 3vh;
+    line-height: 1.5;
+    font-size: 18px;  
+}
+
+.daftplugPublic .daftplugPublicFullscreenOverlay.-safari .daftplugPublicFullscreenOverlay_text {
+    padding-top: 10vh;
+    line-height: 1.5;
+    font-size: 18px;
+}
+
+.daftplugPublic .daftplugPublicHeaderOverlay {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 12px;
+    position: fixed;
+	top: 0;
+    right: 0;
+    left: 0;
+    z-index: 9999999999999999;
+}
+
+.daftplugPublic .daftplugPublicHeaderOverlay_dismiss {
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    stroke-width: 3px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.daftplugPublic .daftplugPublicHeaderOverlay_message {
+    width: 222px;
+    margin-right: 10px;
+}
+
+.daftplugPublic .daftplugPublicHeaderOverlay_appname {
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.daftplugPublic .daftplugPublicHeaderOverlay_text {
+    font-size: 14px;
+}
+
+.daftplugPublic .daftplugPublicHeaderOverlay_button {
+    cursor: pointer;
+    border-radius: 30px;
+    padding: 5px 15px;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.daftplugPublic .daftplugPublicMenuOverlay,
+.daftplugPublic .daftplugPublicCheckoutOverlay {
+    -webkit-box-align: center;
+    flex-flow: column wrap;
+    -ms-flex-align: center;
+    align-items: center;
+    border-radius: 4px;
+    margin-top: 10px;
+    padding: 16px 12px;
+    z-index: 9999999999999999;
+}
+
+.daftplugPublic .daftplugPublicMenuOverlay_content,
+.daftplugPublic .daftplugPublicCheckoutOverlay_content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.daftplugPublic .daftplugPublicMenuOverlay_icon {
+    width: 55px;
+    margin-right: 10px;
+}
+
+.daftplugPublic .daftplugPublicCheckoutOverlay_icon {
+    width: 85px;
+    margin-right: 10px;
+}
+
+.daftplugPublic .daftplugPublicMenuOverlay_msg,
+.daftplugPublic .daftplugPublicCheckoutOverlay_msg {
+    font-size: 15px;
+    padding: 0;
+    margin: 0;
+}
+
+.daftplugPublic .daftplugPublicMenuOverlay_buttons,
+.daftplugPublic .daftplugPublicCheckoutOverlay_buttons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    font-size: 18px;
+}
+
+.daftplugPublic .daftplugPublicMenuOverlay_dismiss,
+.daftplugPublic .daftplugPublicCheckoutOverlay_dismiss {
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.daftplugPublic .daftplugPublicMenuOverlay_install,
+.daftplugPublic .daftplugPublicCheckoutOverlay_install {
+    cursor: pointer;
+    border-radius: 30px;
+    padding: 5px 15px;
+    font-weight: 500;
+}
+
+
+
+.daftplugPublic .daftplugPublicPostOverlay {
+
+}
+
+.daftplugPublic .daftplugPublicPostOverlay_background {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    color: #fff;
+    z-index: 9999999999999999;
+    background-color: rgba(0, 0, 0, 0.7);
+    pointer-events: none;
+}
+
+.daftplugPublic .daftplugPublicPostOverlay_content {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    padding: 0 20px;
+    background-color: #fff;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    z-index: 99999999999999999;
+    animation: .3s daftplugSlideUp;
+    animation-delay: .5s;
+    animation-fill-mode: backwards;
+    pointer-events: all;
+}
+
+.daftplugPublic .daftplugPublicPostOverlay_header {
+    border-bottom: 1px solid;
+    border-color: #e3ebf3;
+    color: #1a1a1b;
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+    line-height: 26px;
+    padding: 12px 0;
+}
+
+.daftplugPublic .daftplugPublicPostOverlay_actions {
+    padding: 15px 0;
+}
+
+.daftplugPublic .daftplugPublicPostOverlayAction {
+    -ms-flex-align: center;
+    align-items: center;
+    display: -ms-flexbox;
+    display: flex;
+    height: auto;
+    position: relative;
+}
+
+.daftplugPublic .daftplugPublicPostOverlayAction:first-child {
+    margin-bottom: 15px;
+}
+
+.daftplugPublic .daftplugPublicPostOverlayAction_logo {
+    background-color: transparent;
+    border: 1px solid #edeff1;
+    border-radius: 8px;
+    margin-right: 12px;
+    padding: 5px;
+    width: 52px;
+    height: 52px;
+}
+
+.daftplugPublic .daftplugPublicPostOverlayAction_name {
+    color: #1a1a1b;
+    font-size: 16px;
+    font-weight: 700;
+    left: 0;
+    line-height: 32px;
+    position: relative;
+}
+
+.daftplugPublic .daftplugPublicPostOverlayAction_button {
+    background-color: #d9dee2;
+    color: #787c7e;
+    border: 1px solid #d3d6da;
+    border-radius: 40px;
+    font-size: 14px;
+    font-weight: 700;
+    height: 40px;
+    line-height: 38px;
+    outline: none;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    text-transform: capitalize;
+    width: 94px;
+}
+
+.daftplugPublic .daftplugPublicPostOverlayAction_button.-install {
+	border: none;
+}
+
+
+
+@-webkit-keyframes daftplugTurn {
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes daftplugTurn {
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes daftplugTopToBottom {
+    from {
+        transform: translate(0, 0);
+    }
+    to {
+        transform: translate(0, 20px);
+    }
+}
+
+@keyframes daftplugTopToBottom {
+    from {
+        transform: translate(0, 0);
+    }
+    to {
+        transform: translate(0, 20px);
+    }
+}
+
+@-webkit-keyframes daftplugRotate {
+    0% {
+        transform: rotate(0deg)
+    }
+    50% {
+        transform: rotate(-90deg)
+    }
+    100% {
+        transform: rotate(-90deg)
+    }
+}
+
+@keyframes daftplugRotate {
+    0% {
+        transform: rotate(0deg)
+    }
+    50% {
+        transform: rotate(-90deg)
+    }
+    100% {
+        transform: rotate(-90deg)
+    }
+}
+
+@-webkit-keyframes daftplugBounce {
+    to { 
+        transform: scale(1.07); 
+    }
+}
+
+@keyframes daftplugBounce {
+    to { 
+        transform: scale(1.07); 
+    }
+}
+
+@-webkit-keyframes daftplugSlideUp {
+    0% {
+        transform: translateY(224px)
+    }
+
+    to {
+        transform: translateY(0)
+    }
+}
+
+@keyframes daftplugSlideUp {
+    0% {
+        transform: translateY(224px)
+    }
+
+    to {
+        transform: translateY(0)
+    }
+}
