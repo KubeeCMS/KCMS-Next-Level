@@ -10,6 +10,6 @@ if (!defined('ABSPATH')) exit;
     <span class="daftplugAdminHeader_title"><?php esc_html_e($this->name . ' Plugin', $this->textDomain); ?></span>
     <span class="daftplugAdminHeader_versionText"><?php printf(__('Version %s', $this->textDomain), $this->version); ?></span>
     <div class="daftplugAdminHeader_support">
-        <a class="daftplugAdminButton" href="#/support/" data-page="support"><?php esc_html_e('Need help?', $this->textDomain); ?></a>
+        <a class="daftplugAdminButton" href="#/support/" data-page="support"><?php esc_html_e('Need Help?', $this->textDomain); ?></a>
     </div>
 </header>

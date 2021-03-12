@@ -8,26 +8,8 @@ if (!defined('ABSPATH')) exit;
         <div class="daftplugAdminSettings -flexAuto">
             <form name="daftplugAdminSettings_form" class="daftplugAdminSettings_form" data-nonce="<?php echo wp_create_nonce("{$this->optionName}_settings_nonce"); ?>" spellcheck="false" autocomplete="off">
                 <fieldset class="daftplugAdminFieldset">
-                    <h4 class="daftplugAdminFieldset_title"><?php esc_html_e('Ajaxify', $this->textDomain); ?></h4>
-                    <p class="daftplugAdminFieldset_description"><?php _e('Ajaxify brings a true native app like experience by loading your content without reloading entire page. For the best results we recommend to also enable Preloader feature. If you want to exclude certain links or forms from ajaxify, just add <code>no-ajaxy</code> class on the element.', $this->textDomain); ?></p>
-                    <div class="daftplugAdminField">
-                        <p class="daftplugAdminField_description"><?php esc_html_e('Enable or disable ajaxifying your website.', $this->textDomain); ?></p>
-                        <label for="pwaAjaxify" class="daftplugAdminField_label -flex4"><?php esc_html_e('Ajaxify', $this->textDomain); ?></label>
-                        <label class="daftplugAdminInputCheckbox -flexAuto">
-                            <input type="checkbox" name="pwaAjaxify" id="pwaAjaxify" class="daftplugAdminInputCheckbox_field" <?php checked(daftplugInstantify::getSetting('pwaAjaxify'), 'on'); ?>>
-                        </label>
-                    </div>
-                    <div class="daftplugAdminField -pwaAjaxifyDependentDisableD">
-                        <p class="daftplugAdminField_description"><?php esc_html_e('Enable or disable also ajaxifying forms.', $this->textDomain); ?></p>
-                        <label for="pwaAjaxifyForms" class="daftplugAdminField_label -flex4"><?php esc_html_e('Ajaxify Forms', $this->textDomain); ?></label>
-                        <label class="daftplugAdminInputCheckbox -flexAuto">
-                            <input type="checkbox" name="pwaAjaxifyForms" id="pwaAjaxifyForms" class="daftplugAdminInputCheckbox_field" <?php checked(daftplugInstantify::getSetting('pwaAjaxifyForms'), 'on'); ?>>
-                        </label>
-                    </div>
-                </fieldset>
-                <fieldset class="daftplugAdminFieldset">
                     <h4 class="daftplugAdminFieldset_title"><?php esc_html_e('Navigation Tab Bar', $this->textDomain); ?></h4>
-                    <p class="daftplugAdminFieldset_description"><?php _e('Navigation tab bar provides app like experience by adding tabbed navigation menu bar on the bottom of your web app when accessed from mobile devices. If you want to hide some tabs, just select <code>*Disabled*</code> option.', $this->textDomain); ?></p>
+                    <p class="daftplugAdminFieldset_description"><?php _e('Navigation tab bar provides app like experience by adding tabbed navigation menu bar on the bottom of your web app when accessed from mobile devices.', $this->textDomain); ?></p>
                     <div class="daftplugAdminField">
                         <p class="daftplugAdminField_description"><?php esc_html_e('Enable or disable navigation tab bar.', $this->textDomain); ?></p>
                         <label for="pwaNavigationTabBar" class="daftplugAdminField_label -flex4"><?php esc_html_e('Navigation Tab Bar', $this->textDomain); ?></label>
@@ -49,146 +31,140 @@ if (!defined('ABSPATH')) exit;
                             <input type="text" name="pwaNavigationTabBarIconColor" id="pwaNavigationTabBarIconColor" class="daftplugAdminInputColor_field" value="<?php echo daftplugInstantify::getSetting('pwaNavigationTabBarIconColor'); ?>" data-placeholder="<?php esc_html_e('Icon Color', $this->textDomain); ?>" required>
                         </div>
                     </div>
-                    <div class="daftplugAdminField -pwaNavigationTabBarDependentDisableD">
+                    <div class="daftplugAdminField -pwaNavigationTabBarIconActiveColor -pwaNavigationTabBarDependentDisableD">
                         <p class="daftplugAdminField_description"><?php esc_html_e('Select the color of active icon in navigation tab bar.', $this->textDomain); ?></p>
-                        <label for="pwaNavigationTabBarIconActiveColor" class="daftplugAdminField_label -flex4"><?php esc_html_e('Active Icon Color', $this->textDomain); ?></label>
+                        <label for="pwaNavigationTabBarIconActiveColor" class="daftplugAdminField_label -flex4"><?php esc_html_e('Icon Active Color', $this->textDomain); ?></label>
                         <div class="daftplugAdminInputColor -flexAuto">
                             <input type="text" name="pwaNavigationTabBarIconActiveColor" id="pwaNavigationTabBarIconActiveColor" class="daftplugAdminInputColor_field" value="<?php echo daftplugInstantify::getSetting('pwaNavigationTabBarIconActiveColor'); ?>" data-placeholder="<?php esc_html_e('Active Icon Color', $this->textDomain); ?>" required>
                         </div>
                     </div>
-                    <div class="daftplugAdminField -pwaNavigationTabBarDependentDisableD">
-                        <p class="daftplugAdminField_description"><?php esc_html_e('Select the home page of your web app.', $this->textDomain); ?></p>
-                        <label for="pwaNavigationTabBarHome" class="daftplugAdminField_label -flex4"><?php esc_html_e('Home Page', $this->textDomain); ?></label>
-                        <div class="daftplugAdminInputSelect -flexAuto">
-                            <select name="pwaNavigationTabBarHome" id="pwaNavigationTabBarHome" class="daftplugAdminInputSelect_field" data-placeholder="<?php esc_html_e('Home Page', $this->textDomain); ?>" autocomplete="off" required>
-                                <option value="<?php echo trailingslashit(home_url('/', 'https')); ?>" <?php selected(daftplugInstantify::getSetting('pwaNavigationTabBarHome'), trailingslashit(home_url('/', 'https'))) ?>><?php esc_html_e('Home Page', $this->textDomain); ?></option>
-                            	<?php foreach (get_pages() as $page) { ?>
-                                <option value="<?php echo get_page_link($page->ID) ?>" <?php selected(daftplugInstantify::getSetting('pwaNavigationTabBarHome'), get_page_link($page->ID)) ?>><?php echo $page->post_title ?></option>
-                                <?php } ?>
-                                <option value="*disabled*" <?php selected(daftplugInstantify::getSetting('pwaNavigationTabBarHome'), '*disabled*') ?>><?php esc_html_e('*Disabled*', $this->textDomain); ?></option>
-                            </select>
+                    <div class="daftplugAdminField -pwaNavigationTabBarIconActiveBgColor -pwaNavigationTabBarDependentDisableD">
+                        <p class="daftplugAdminField_description"><?php esc_html_e('Select the background color of active icon in navigation tab bar.', $this->textDomain); ?></p>
+                        <label for="pwaNavigationTabBarIconActiveBgColor" class="daftplugAdminField_label -flex4"><?php esc_html_e('Icon Active Background Color', $this->textDomain); ?></label>
+                        <div class="daftplugAdminInputColor -flexAuto">
+                            <input type="text" name="pwaNavigationTabBarIconActiveBgColor" id="pwaNavigationTabBarIconActiveBgColor" class="daftplugAdminInputColor_field" value="<?php echo daftplugInstantify::getSetting('pwaNavigationTabBarIconActiveBgColor'); ?>" data-placeholder="<?php esc_html_e('Active Icon Background Color', $this->textDomain); ?>" required>
                         </div>
                     </div>
-                    <div class="daftplugAdminField -pwaNavigationTabBarDependentDisableD">
-                        <p class="daftplugAdminField_description"><?php esc_html_e('Select the search page of your web app.', $this->textDomain); ?></p>
-                        <label for="pwaNavigationTabBarSearch" class="daftplugAdminField_label -flex4"><?php esc_html_e('Search Page', $this->textDomain); ?></label>
-                        <div class="daftplugAdminInputSelect -flexAuto">
-                            <select name="pwaNavigationTabBarSearch" id="pwaNavigationTabBarSearch" class="daftplugAdminInputSelect_field" data-placeholder="<?php esc_html_e('Search Page', $this->textDomain); ?>" autocomplete="off" required>
-                                <option value="*directSearch*" <?php selected(daftplugInstantify::getSetting('pwaNavigationTabBarSearch'), '*directSearch*') ?>><?php esc_html_e('*Direct Search*', $this->textDomain); ?></option>
-                            	<?php foreach (get_pages() as $page) { ?>
-                                <option value="<?php echo get_page_link($page->ID) ?>" <?php selected(daftplugInstantify::getSetting('pwaNavigationTabBarSearch'), get_page_link($page->ID)) ?>><?php echo $page->post_title ?></option>
-                                <?php } ?>
-                                <option value="*disabled*" <?php selected(daftplugInstantify::getSetting('pwaNavigationTabBarSearch'), '*disabled*') ?>><?php esc_html_e('*Disabled*', $this->textDomain); ?></option>
-                            </select>
+                    <div class="daftplugAdminField -pwaNavigationTabBarItem -pwaNavigationTabBarDependentDisableD">
+                        <p class="daftplugAdminField_description"><?php _e('Add items to the navigation tab bar. Instantify is using <a class="daftplugAdminLink" href="https://fontawesome.com/icons?d=gallery" target="_blank">Font Awesome</a> icons, so you have to enter desired icon class in Icon field. Example: fas fa-home', $this->textDomain); ?></p>
+                        <label for="pwaNavigationTabBarItem" class="daftplugAdminField_label -flex4"><?php esc_html_e('Navigation Items', $this->textDomain); ?></label>
+                        <div class="daftplugAdminInputAddField -flexAuto">
+                            <span class="daftplugAdminButton -addField" data-add="pwaNavigationTabBarItem" data-max="11"><?php esc_html_e('+ Add Navigation Item', $this->textDomain); ?></span>
                         </div>
                     </div>
-                    <?php if (daftplugInstantify::isWooCommerceActive()) { ?>
-                    <div class="daftplugAdminField -pwaNavigationTabBarDependentDisableD">
-                        <p class="daftplugAdminField_description"><?php esc_html_e('Select the shop page of your web app.', $this->textDomain); ?></p>
-                        <label for="pwaNavigationTabBarShop" class="daftplugAdminField_label -flex4"><?php esc_html_e('Shop Page', $this->textDomain); ?></label>
-                        <div class="daftplugAdminInputSelect -flexAuto">
-                            <select name="pwaNavigationTabBarShop" id="pwaNavigationTabBarShop" class="daftplugAdminInputSelect_field" data-placeholder="<?php esc_html_e('Shop Page', $this->textDomain); ?>" autocomplete="off" required>
-                                <?php foreach (get_pages() as $page) { ?>
-                                <option value="<?php echo get_page_link($page->ID) ?>" <?php selected(daftplugInstantify::getSetting('pwaNavigationTabBarShop'), get_page_link($page->ID)) ?>><?php echo $page->post_title ?></option>
-                                <?php } ?>
-                                <option value="*disabled*" <?php selected(daftplugInstantify::getSetting('pwaNavigationTabBarShop'), '*disabled*') ?>><?php esc_html_e('*Disabled*', $this->textDomain); ?></option>
-                            </select>
+                    <?php for ($ntb = 1; $ntb <= 7; $ntb++) { ?>
+                    <fieldset class="daftplugAdminFieldset -miniFieldset -pwaNavigationTabBarItem<?php echo $ntb; ?> -pwaNavigationTabBarDependentDisableD">
+                        <h5 class="daftplugAdminFieldset_title"><?php printf(__('Navigation Item %s', $this->textDomain), $ntb); ?></h5>
+                        <label class="daftplugAdminInputCheckbox -flexAuto -hidden">
+                            <input type="checkbox" name="pwaNavigationTabBarItem<?php echo $ntb; ?>" id="pwaNavigationTabBarItem<?php echo $ntb; ?>" class="daftplugAdminInputCheckbox_field" <?php checked(daftplugInstantify::getSetting(sprintf('pwaNavigationTabBarItem%s', $ntb)), 'on'); ?>>
+                        </label>
+                        <div class="daftplugAdminField">
+                            <label for="pwaNavigationTabBarItem<?php echo $ntb; ?>Icon" class="daftplugAdminField_label -flex2"><?php esc_html_e('Icon', $this->textDomain); ?></label>
+                            <div class="daftplugAdminInputText -flexAuto">
+                                <input type="text" name="pwaNavigationTabBarItem<?php echo $ntb; ?>Icon" id="pwaNavigationTabBarItem<?php echo $ntb; ?>Icon" class="daftplugAdminInputText_field" value="<?php echo daftplugInstantify::getSetting(sprintf('pwaNavigationTabBarItem%sIcon', $ntb)); ?>" data-placeholder="<?php esc_html_e('Icon', $this->textDomain); ?>" autocomplete="off" required>
+                            </div>
                         </div>
-                    </div>
-                    <div class="daftplugAdminField -pwaNavigationTabBarDependentDisableD">
-                        <p class="daftplugAdminField_description"><?php esc_html_e('Select the cart page of your web app.', $this->textDomain); ?></p>
-                        <label for="pwaNavigationTabBarCart" class="daftplugAdminField_label -flex4"><?php esc_html_e('Cart Page', $this->textDomain); ?></label>
-                        <div class="daftplugAdminInputSelect -flexAuto">
-                            <select name="pwaNavigationTabBarCart" id="pwaNavigationTabBarCart" class="daftplugAdminInputSelect_field" data-placeholder="<?php esc_html_e('Cart Page', $this->textDomain); ?>" autocomplete="off" required>
-                            	<?php foreach (get_pages() as $page) { ?>
-                                <option value="<?php echo get_page_link($page->ID) ?>" <?php selected(daftplugInstantify::getSetting('pwaNavigationTabBarCart'), get_page_link($page->ID)) ?>><?php echo $page->post_title ?></option>
-                                <?php } ?>
-                                <option value="*disabled*" <?php selected(daftplugInstantify::getSetting('pwaNavigationTabBarCart'), '*disabled*') ?>><?php esc_html_e('*Disabled*', $this->textDomain); ?></option>
-                            </select>
+                        <div class="daftplugAdminField">
+                            <label for="pwaNavigationTabBarItem<?php echo $ntb; ?>Label" class="daftplugAdminField_label -flex2"><?php esc_html_e('Label', $this->textDomain); ?></label>
+                            <div class="daftplugAdminInputText -flexAuto">
+                                <input type="text" name="pwaNavigationTabBarItem<?php echo $ntb; ?>Label" id="pwaNavigationTabBarItem<?php echo $ntb; ?>Label" class="daftplugAdminInputText_field" value="<?php echo daftplugInstantify::getSetting(sprintf('pwaNavigationTabBarItem%sLabel', $ntb)); ?>" data-placeholder="<?php esc_html_e('Label', $this->textDomain); ?>" autocomplete="off">
+                            </div>
                         </div>
-                    </div>
-                    <div class="daftplugAdminField -pwaNavigationTabBarDependentDisableD">
-                        <p class="daftplugAdminField_description"><?php esc_html_e('Select the checkout page of your web app.', $this->textDomain); ?></p>
-                        <label for="pwaNavigationTabBarCheckout" class="daftplugAdminField_label -flex4"><?php esc_html_e('Checkout Page', $this->textDomain); ?></label>
-                        <div class="daftplugAdminInputSelect -flexAuto">
-                            <select name="pwaNavigationTabBarCheckout" id="pwaNavigationTabBarCheckout" class="daftplugAdminInputSelect_field" data-placeholder="<?php esc_html_e('Checkout Page', $this->textDomain); ?>" autocomplete="off" required>
-                                <?php foreach (get_pages() as $page) { ?>
-                                <option value="<?php echo get_page_link($page->ID) ?>" <?php selected(daftplugInstantify::getSetting('pwaNavigationTabBarCheckout'), get_page_link($page->ID)) ?>><?php echo $page->post_title ?></option>
-                                <?php } ?>
-                                <option value="*disabled*" <?php selected(daftplugInstantify::getSetting('pwaNavigationTabBarCheckout'), '*disabled*') ?>><?php esc_html_e('*Disabled*', $this->textDomain); ?></option>
-                            </select>
+                        <div class="daftplugAdminField -pwaNavigationTabBarItem<?php echo $ntb; ?>CustomUrlDependentHideE">
+                            <label for="pwaNavigationTabBarItem<?php echo $ntb; ?>Page" class="daftplugAdminField_label -flex2"><?php esc_html_e('Page', $this->textDomain); ?></label>
+                            <div class="daftplugAdminInputSelect -flexAuto">
+                                <select name="pwaNavigationTabBarItem<?php echo $ntb; ?>Page" id="pwaNavigationTabBarItem<?php echo $ntb; ?>Page" class="daftplugAdminInputSelect_field" data-placeholder="<?php esc_html_e('Page', $this->textDomain); ?>" autocomplete="off" required>
+                                    <option value="<?php echo trailingslashit(strtok(home_url('/', 'https'), '?')); ?>" <?php selected(daftplugInstantify::getSetting(sprintf('pwaNavigationTabBarItem%sPage', $ntb)), trailingslashit(strtok(home_url('/', 'https'), '?'))); ?>><?php esc_html_e('Home Page', $this->textDomain); ?></option>
+                                    <option value="*directSearch*" <?php selected(daftplugInstantify::getSetting(sprintf('pwaNavigationTabBarItem%sPage', $ntb)), '*directSearch*'); ?>><?php esc_html_e('*Direct Search*', $this->textDomain); ?></option>
+                                    <?php foreach (get_pages() as $page) { ?>
+                                    <option value="<?php echo get_page_link($page->ID) ?>" <?php selected(daftplugInstantify::getSetting(sprintf('pwaNavigationTabBarItem%sPage', $ntb)), get_page_link($page->ID)); ?>><?php echo $page->post_title ?></option>
+                                    <?php } ?>
+                                </select>
+                            </div>
                         </div>
-                    </div>
+                        <div class="daftplugAdminField -pwaNavigationTabBarItem<?php echo $ntb; ?>CustomUrlDependentHideD" style="display: none;">
+                            <label for="pwaNavigationTabBarItem<?php echo $ntb; ?>Url" class="daftplugAdminField_label -flex2"><?php esc_html_e('URL', $this->textDomain); ?></label>
+                            <div class="daftplugAdminInputText -flexAuto">
+                                <input type="url" name="pwaNavigationTabBarItem<?php echo $ntb; ?>Url" id="pwaNavigationTabBarItem<?php echo $ntb; ?>Url" class="daftplugAdminInputText_field" value="<?php echo daftplugInstantify::getSetting(sprintf('pwaNavigationTabBarItem%sUrl', $ntb)); ?>" data-placeholder="<?php esc_html_e('URL', $this->textDomain); ?>" autocomplete="off" required>
+                            </div>
+                        </div>
+                        <div class="daftplugAdminField">
+                            <label for="pwaNavigationTabBarItem<?php echo $ntb; ?>CustomUrl" class="daftplugAdminField_label -flex4"><?php esc_html_e('Custom URL', $this->textDomain); ?></label>
+                            <label class="daftplugAdminInputCheckbox -flexAuto">
+                                <input type="checkbox" name="pwaNavigationTabBarItem<?php echo $ntb; ?>CustomUrl" id="pwaNavigationTabBarItem<?php echo $ntb; ?>CustomUrl" class="daftplugAdminInputCheckbox_field" <?php checked(daftplugInstantify::getSetting(sprintf('pwaNavigationTabBarItem%sCustomUrl', $ntb)), 'on'); ?>>
+                            </label>
+                        </div>
+                    </fieldset>
                     <?php } ?>
-                    <div class="daftplugAdminField -pwaNavigationTabBarDependentDisableD">
-                        <p class="daftplugAdminField_description"><?php esc_html_e('Select the notifications page of your web app.', $this->textDomain); ?></p>
-                        <label for="pwaNavigationTabBarNotifications" class="daftplugAdminField_label -flex4"><?php esc_html_e('Notifications Page', $this->textDomain); ?></label>
+                </fieldset>
+                <fieldset class="daftplugAdminFieldset" data-feature-type="new">
+                    <h4 class="daftplugAdminFieldset_title"><?php esc_html_e('Dark Mode', $this->textDomain); ?></h4>
+                    <p class="daftplugAdminFieldset_description"><?php esc_html_e('Dark mode gives you the ability to add a simple dark mode switch button on your website and suggest your users an option for switching to the dark version of your website. You can also enable automatic switching on dark mode if user display preference is set to Dark Mode in their device OS settings and if their battery level is low, saving their device\'s energy.', $this->textDomain); ?></p>
+                    <div class="daftplugAdminField">
+                        <p class="daftplugAdminField_description"><?php esc_html_e('Enable or disable dark mode on your website.', $this->textDomain); ?></p>
+                        <label for="pwaDarkMode" class="daftplugAdminField_label -flex4"><?php esc_html_e('Dark Mode', $this->textDomain); ?></label>
+                        <label class="daftplugAdminInputCheckbox -flexAuto">
+                            <input type="checkbox" name="pwaDarkMode" id="pwaDarkMode" class="daftplugAdminInputCheckbox_field" <?php checked(daftplugInstantify::getSetting('pwaDarkMode'), 'on'); ?>>
+                        </label>
+                    </div>
+                    <div class="daftplugAdminField -pwaDarkModeDependentDisableD">
+                        <p class="daftplugAdminField_description"><?php esc_html_e('Select position of your dark mode switch button on your website.', $this->textDomain); ?></p>
+                        <label for="pwaDarkModeSwitchButtonPosition" class="daftplugAdminField_label -flex4"><?php esc_html_e('Switch Button Position', $this->textDomain); ?></label>
                         <div class="daftplugAdminInputSelect -flexAuto">
-                            <select name="pwaNavigationTabBarNotifications" id="pwaNavigationTabBarNotifications" class="daftplugAdminInputSelect_field" data-placeholder="<?php esc_html_e('Notifications Page', $this->textDomain); ?>" autocomplete="off" required>
-                            	<?php foreach (get_pages() as $page) { ?>
-                                <option value="<?php echo get_page_link($page->ID) ?>" <?php selected(daftplugInstantify::getSetting('pwaNavigationTabBarNotifications'), get_page_link($page->ID)) ?>><?php echo $page->post_title ?></option>
-                                <?php } ?>
-                                <option value="*disabled*" <?php selected(daftplugInstantify::getSetting('pwaNavigationTabBarNotifications'), '*disabled*') ?>><?php esc_html_e('*Disabled*', $this->textDomain); ?></option>
+                            <select name="pwaDarkModeSwitchButtonPosition" id="pwaDarkModeSwitchButtonPosition" class="daftplugAdminInputSelect_field" data-placeholder="<?php esc_html_e('Switch Button Position', $this->textDomain); ?>" autocomplete="off" required>
+                                <option value="bottom-left" <?php selected(daftplugInstantify::getSetting('pwaDarkModeSwitchButtonPosition'), 'bottom-left') ?>><?php esc_html_e('Bottom Left', $this->textDomain); ?></option>
+                                <option value="bottom-right" <?php selected(daftplugInstantify::getSetting('pwaDarkModeSwitchButtonPosition'), 'bottom-right') ?>><?php esc_html_e('Bottom Right', $this->textDomain); ?></option>
                             </select>
                         </div>
                     </div>
-                    <div class="daftplugAdminField -pwaNavigationTabBarDependentDisableD">
-                        <p class="daftplugAdminField_description"><?php esc_html_e('Select the categories page of your web app.', $this->textDomain); ?></p>
-                        <label for="pwaNavigationTabBarCategories" class="daftplugAdminField_label -flex4"><?php esc_html_e('Categories Page', $this->textDomain); ?></label>
-                        <div class="daftplugAdminInputSelect -flexAuto">
-                            <select name="pwaNavigationTabBarCategories" id="pwaNavigationTabBarCategories" class="daftplugAdminInputSelect_field" data-placeholder="<?php esc_html_e('Categories Page', $this->textDomain); ?>" autocomplete="off" required>
-                            	<?php foreach (get_pages() as $page) { ?>
-                                <option value="<?php echo get_page_link($page->ID) ?>" <?php selected(daftplugInstantify::getSetting('pwaNavigationTabBarCategories'), get_page_link($page->ID)) ?>><?php echo $page->post_title ?></option>
-                                <?php } ?>
-                                <option value="*disabled*" <?php selected(daftplugInstantify::getSetting('pwaNavigationTabBarCategories'), '*disabled*') ?>><?php esc_html_e('*Disabled*', $this->textDomain); ?></option>
-                            </select>
+                    <div class="daftplugAdminField -pwaDarkModeDependentDisableD">
+                        <p class="daftplugAdminField_description"><?php esc_html_e('OS aware dark mode automatically switches your website to a dark mode if your user\'s device OS preference is set to Dark Mode in display settings.', $this->textDomain); ?></p>
+                        <label for="pwaDarkModeOSAware" class="daftplugAdminField_label -flex4"><?php esc_html_e('OS Aware Dark Mode', $this->textDomain); ?></label>
+                        <label class="daftplugAdminInputCheckbox -flexAuto">
+                            <input type="checkbox" name="pwaDarkModeOSAware" id="pwaDarkModeOSAware" class="daftplugAdminInputCheckbox_field" <?php checked(daftplugInstantify::getSetting('pwaDarkModeOSAware'), 'on'); ?>>
+                        </label>
+                    </div>
+                    <div class="daftplugAdminField -pwaDarkModeDependentDisableD">
+                        <p class="daftplugAdminField_description"><?php esc_html_e('Battery low dark mode automatically switches your website to a dark mode if your user\'s device battery level is less than 10%, thus saving their battery from draining fast.', $this->textDomain); ?></p>
+                        <label for="pwaDarkModeBatteryLow" class="daftplugAdminField_label -flex4"><?php esc_html_e('Battery Low Dark Mode', $this->textDomain); ?></label>
+                        <label class="daftplugAdminInputCheckbox -flexAuto">
+                            <input type="checkbox" name="pwaDarkModeBatteryLow" id="pwaDarkModeBatteryLow" class="daftplugAdminInputCheckbox_field" <?php checked(daftplugInstantify::getSetting('pwaDarkModeBatteryLow'), 'on'); ?>>
+                        </label>
+                    </div>
+                </fieldset>
+                <fieldset class="daftplugAdminFieldset">
+                    <h4 class="daftplugAdminFieldset_title"><?php esc_html_e('Web Share Button', $this->textDomain); ?></h4>
+                    <p class="daftplugAdminFieldset_description"><?php esc_html_e('With the Web Share API, web apps are able to use the same system-provided share capabilities as platform-specific apps. From this section you can enable floating share button with the native share functionality for your mobile device users.', $this->textDomain); ?></p>
+                    <div class="daftplugAdminField">
+                        <p class="daftplugAdminField_description"><?php esc_html_e('Enable or disable web share button on your website.', $this->textDomain); ?></p>
+                        <label for="pwaWebShareButton" class="daftplugAdminField_label -flex4"><?php esc_html_e('Web Share Button', $this->textDomain); ?></label>
+                        <label class="daftplugAdminInputCheckbox -flexAuto">
+                            <input type="checkbox" name="pwaWebShareButton" id="pwaWebShareButton" class="daftplugAdminInputCheckbox_field" <?php checked(daftplugInstantify::getSetting('pwaWebShareButton'), 'on'); ?>>
+                        </label>
+                    </div>
+                    <div class="daftplugAdminField -pwaWebShareButtonDependentDisableD">
+                        <p class="daftplugAdminField_description"><?php esc_html_e('Select the share icon color on your web share button.', $this->textDomain); ?></p>
+                        <label for="pwaWebShareButtonIconColor" class="daftplugAdminField_label -flex4"><?php esc_html_e('Button Icon Color', $this->textDomain); ?></label>
+                        <div class="daftplugAdminInputColor -flexAuto">
+                            <input type="text" name="pwaWebShareButtonIconColor" id="pwaWebShareButtonIconColor" class="daftplugAdminInputColor_field" value="<?php echo daftplugInstantify::getSetting('pwaWebShareButtonIconColor'); ?>" data-placeholder="<?php esc_html_e('Button Icon Color', $this->textDomain); ?>" required>
                         </div>
                     </div>
-                    <div class="daftplugAdminField -pwaNavigationTabBarDependentDisableD">
-                        <p class="daftplugAdminField_description"><?php esc_html_e('Select the profile page of your web app.', $this->textDomain); ?></p>
-                        <label for="pwaNavigationTabBarProfile" class="daftplugAdminField_label -flex4"><?php esc_html_e('Profile Page', $this->textDomain); ?></label>
-                        <div class="daftplugAdminInputSelect -flexAuto">
-                            <select name="pwaNavigationTabBarProfile" id="pwaNavigationTabBarProfile" class="daftplugAdminInputSelect_field" data-placeholder="<?php esc_html_e('Profile Page', $this->textDomain); ?>" autocomplete="off" required>
-                            	<?php foreach (get_pages() as $page) { ?>
-                                <option value="<?php echo get_page_link($page->ID) ?>" <?php selected(daftplugInstantify::getSetting('pwaNavigationTabBarProfile'), get_page_link($page->ID)) ?>><?php echo $page->post_title ?></option>
-                                <?php } ?>
-                                <option value="*disabled*" <?php selected(daftplugInstantify::getSetting('pwaNavigationTabBarProfile'), '*disabled*') ?>><?php esc_html_e('*Disabled*', $this->textDomain); ?></option>
-                            </select>
+                    <div class="daftplugAdminField -pwaWebShareButtonDependentDisableD">
+                        <p class="daftplugAdminField_description"><?php esc_html_e('Select the background color of your web share button.', $this->textDomain); ?></p>
+                        <label for="pwaWebShareButtonBgColor" class="daftplugAdminField_label -flex4"><?php esc_html_e('Button Background Color', $this->textDomain); ?></label>
+                        <div class="daftplugAdminInputColor -flexAuto">
+                            <input type="text" name="pwaWebShareButtonBgColor" id="pwaWebShareButtonBgColor" class="daftplugAdminInputColor_field" value="<?php echo daftplugInstantify::getSetting('pwaWebShareButtonBgColor'); ?>" data-placeholder="<?php esc_html_e('Button Background Color', $this->textDomain); ?>" required>
                         </div>
                     </div>
-                    <div class="daftplugAdminField -pwaNavigationTabBarDependentDisableD">
-                        <p class="daftplugAdminField_description"><?php esc_html_e('Select the about page of your web app.', $this->textDomain); ?></p>
-                        <label for="pwaNavigationTabBarAbout" class="daftplugAdminField_label -flex4"><?php esc_html_e('About Page', $this->textDomain); ?></label>
+                    <div class="daftplugAdminField -pwaWebShareButtonDependentDisableD">
+                        <p class="daftplugAdminField_description"><?php esc_html_e('Select position of your web share button on your website.', $this->textDomain); ?></p>
+                        <label for="pwaWebShareButtonPosition" class="daftplugAdminField_label -flex4"><?php esc_html_e('Button Position', $this->textDomain); ?></label>
                         <div class="daftplugAdminInputSelect -flexAuto">
-                            <select name="pwaNavigationTabBarAbout" id="pwaNavigationTabBarAbout" class="daftplugAdminInputSelect_field" data-placeholder="<?php esc_html_e('About Page', $this->textDomain); ?>" autocomplete="off" required>
-                                <?php foreach (get_pages() as $page) { ?>
-                                <option value="<?php echo get_page_link($page->ID) ?>" <?php selected(daftplugInstantify::getSetting('pwaNavigationTabBarAbout'), get_page_link($page->ID)) ?>><?php echo $page->post_title ?></option>
-                                <?php } ?>
-                                <option value="*disabled*" <?php selected(daftplugInstantify::getSetting('pwaNavigationTabBarAbout'), '*disabled*') ?>><?php esc_html_e('*Disabled*', $this->textDomain); ?></option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="daftplugAdminField -pwaNavigationTabBarDependentDisableD">
-                        <p class="daftplugAdminField_description"><?php esc_html_e('Select the contact page of your web app.', $this->textDomain); ?></p>
-                        <label for="pwaNavigationTabBarContact" class="daftplugAdminField_label -flex4"><?php esc_html_e('Contact Page', $this->textDomain); ?></label>
-                        <div class="daftplugAdminInputSelect -flexAuto">
-                            <select name="pwaNavigationTabBarContact" id="pwaNavigationTabBarContact" class="daftplugAdminInputSelect_field" data-placeholder="<?php esc_html_e('Contact Page', $this->textDomain); ?>" autocomplete="off" required>
-                            	<?php foreach (get_pages() as $page) { ?>
-                                <option value="<?php echo get_page_link($page->ID) ?>" <?php selected(daftplugInstantify::getSetting('pwaNavigationTabBarContact'), get_page_link($page->ID)) ?>><?php echo $page->post_title ?></option>
-                                <?php } ?>
-                                <option value="*disabled*" <?php selected(daftplugInstantify::getSetting('pwaNavigationTabBarContact'), '*disabled*') ?>><?php esc_html_e('*Disabled*', $this->textDomain); ?></option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="daftplugAdminField -pwaNavigationTabBarDependentDisableD">
-                        <p class="daftplugAdminField_description"><?php esc_html_e('Select the settings page of your web app.', $this->textDomain); ?></p>
-                        <label for="pwaNavigationTabBarSettings" class="daftplugAdminField_label -flex4"><?php esc_html_e('Settings Page', $this->textDomain); ?></label>
-                        <div class="daftplugAdminInputSelect -flexAuto">
-                            <select name="pwaNavigationTabBarSettings" id="pwaNavigationTabBarSettings" class="daftplugAdminInputSelect_field" data-placeholder="<?php esc_html_e('Settings Page', $this->textDomain); ?>" autocomplete="off" required>
-                            	<?php foreach (get_pages() as $page) { ?>
-                                <option value="<?php echo get_page_link($page->ID) ?>" <?php selected(daftplugInstantify::getSetting('pwaNavigationTabBarSettings'), get_page_link($page->ID)) ?>><?php echo $page->post_title ?></option>
-                                <?php } ?>
-                                <option value="*disabled*" <?php selected(daftplugInstantify::getSetting('pwaNavigationTabBarSettings'), '*disabled*') ?>><?php esc_html_e('*Disabled*', $this->textDomain); ?></option>
+                            <select name="pwaWebShareButtonPosition" id="pwaWebShareButtonPosition" class="daftplugAdminInputSelect_field" data-placeholder="<?php esc_html_e('Button Position', $this->textDomain); ?>" autocomplete="off" required>
+                                <option value="bottom-left" <?php selected(daftplugInstantify::getSetting('pwaWebShareButtonPosition'), 'bottom-left') ?>><?php esc_html_e('Bottom Left', $this->textDomain); ?></option>
+                                <option value="top-left" <?php selected(daftplugInstantify::getSetting('pwaWebShareButtonPosition'), 'top-left') ?>><?php esc_html_e('Top Left', $this->textDomain); ?></option>
+                                <option value="bottom-right" <?php selected(daftplugInstantify::getSetting('pwaWebShareButtonPosition'), 'bottom-right') ?>><?php esc_html_e('Bottom Right', $this->textDomain); ?></option>
+                                <option value="top-right" <?php selected(daftplugInstantify::getSetting('pwaWebShareButtonPosition'), 'top-right') ?>><?php esc_html_e('Top Right', $this->textDomain); ?></option>
                             </select>
                         </div>
                     </div>
@@ -234,25 +210,28 @@ if (!defined('ABSPATH')) exit;
                     </div>
                 </fieldset>
                 <fieldset class="daftplugAdminFieldset">
-                	<h4 class="daftplugAdminFieldset_title"><?php esc_html_e('Vibration', $this->textDomain); ?></h4>
-                    <p class="daftplugAdminFieldset_description"><?php esc_html_e('Vibration feature creates vibes on tapping for mobile users. That can help mobile users recognize when they are tapping and clicking on your website.', $this->textDomain); ?></p>
-                    <div class="daftplugAdminField">
-                        <p class="daftplugAdminField_description"><?php esc_html_e('Enable or disable vibration support for your web app.', $this->textDomain); ?></p>
-                        <label for="pwaVibration" class="daftplugAdminField_label -flex4"><?php esc_html_e('Vibration', $this->textDomain); ?></label>
-                        <label class="daftplugAdminInputCheckbox -flexAuto">
-                            <input type="checkbox" name="pwaVibration" id="pwaVibration" class="daftplugAdminInputCheckbox_field" <?php checked(daftplugInstantify::getSetting('pwaVibration'), 'on'); ?>>
-                        </label>
-                    </div>
-                </fieldset>
-                <fieldset class="daftplugAdminFieldset">
                 	<h4 class="daftplugAdminFieldset_title"><?php esc_html_e('Preloader', $this->textDomain); ?></h4>
-                    <p class="daftplugAdminFieldset_description"><?php esc_html_e('Preloader feature adds a nice page loader with a bouncing site icon on your website\'s background color. Loader appears at the start of page load and disappears after it is fully loaded.', $this->textDomain); ?></p>
+                    <p class="daftplugAdminFieldset_description"><?php esc_html_e('Preloader feature gives you ability to show a nice loader animation between page loadings. Loader appears at the start of page load and disappears after it is fully loaded.', $this->textDomain); ?></p>
                     <div class="daftplugAdminField">
                         <p class="daftplugAdminField_description"><?php esc_html_e('Enable or disable preloader for your web app.', $this->textDomain); ?></p>
                         <label for="pwaPreloader" class="daftplugAdminField_label -flex4"><?php esc_html_e('Preloader', $this->textDomain); ?></label>
                         <label class="daftplugAdminInputCheckbox -flexAuto">
                             <input type="checkbox" name="pwaPreloader" id="pwaPreloader" class="daftplugAdminInputCheckbox_field" <?php checked(daftplugInstantify::getSetting('pwaPreloader'), 'on'); ?>>
                         </label>
+                    </div>
+                    <div class="daftplugAdminField -pwaPreloaderDependentDisableD">
+                        <p class="daftplugAdminField_description"><?php esc_html_e('Select the preloader style.', $this->textDomain); ?></p>
+                        <label for="pwaPreloaderStyle" class="daftplugAdminField_label -flex4"><?php esc_html_e('Style', $this->textDomain); ?></label>
+                        <div class="daftplugAdminInputSelect -flexAuto">
+                            <select name="pwaPreloaderStyle" id="pwaPreloaderStyle" class="daftplugAdminInputSelect_field" data-placeholder="<?php esc_html_e('Style', $this->textDomain); ?>" autocomplete="off" required>
+                                <option value="default" <?php selected(daftplugInstantify::getSetting('pwaPreloaderStyle'), 'default') ?>><?php esc_html_e('Default', $this->textDomain); ?></option>
+                                <option value="skeleton" <?php selected(daftplugInstantify::getSetting('pwaPreloaderStyle'), 'skeleton') ?>><?php esc_html_e('Skeleton', $this->textDomain); ?></option>
+                                <option value="spinner" <?php selected(daftplugInstantify::getSetting('pwaPreloaderStyle'), 'spinner') ?>><?php esc_html_e('Spinner', $this->textDomain); ?></option>
+                                <option value="redirect" <?php selected(daftplugInstantify::getSetting('pwaPreloaderStyle'), 'redirect') ?>><?php esc_html_e('Redirect', $this->textDomain); ?></option>
+                                <option value="percent" <?php selected(daftplugInstantify::getSetting('pwaPreloaderStyle'), 'percent') ?>><?php esc_html_e('Percent', $this->textDomain); ?></option>
+                                <option value="fade" <?php selected(daftplugInstantify::getSetting('pwaPreloaderStyle'), 'fade') ?>><?php esc_html_e('Fade', $this->textDomain); ?></option>
+                            </select>
+                        </div>
                     </div>
                 </fieldset>
                 <fieldset class="daftplugAdminFieldset">

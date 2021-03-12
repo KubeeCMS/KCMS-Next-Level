@@ -14,19 +14,19 @@ if (!defined('ABSPATH')) exit;
         ?>
         <div class="daftplugAdminPage_content -flex8">
             <fieldset class="daftplugAdminFieldset">
-                <h4 class="daftplugAdminFieldset_title">AMP Disabled</h4>
+                <h4 class="daftplugAdminFieldset_title"><?php _e('AMP Disabled', $this->textDomain); ?></h4>
                 <p class="daftplugAdminFieldset_description"><?php _e('Google AMP features are disabled. If you want to enable it just navigate to <a class="daftplugAdminLink" href="#/overview/" data-page="overview">Overview</a> section and enable it.', $this->textDomain); ?></p>
             </fieldset>
         </div>
         <?php
     } else {
-        if (!$this->daftplugInstantifyAmp->isAmpPluginActive()) {
+        if (!daftplugInstantify::isAmpPluginActive()) {
             $this->daftplugInstantifyAmp->daftplugInstantifyAmpAdmin->getSubpages();
         } else {
             ?>
             <div class="daftplugAdminPage_content -flex8">
                 <fieldset class="daftplugAdminFieldset">
-                    <h4 class="daftplugAdminFieldset_title">AMP Plugin Detected</h4>
+                    <h4 class="daftplugAdminFieldset_title"><?php _e('AMP Plugin Detected', $this->textDomain); ?></h4>
                     <p class="daftplugAdminFieldset_description"><?php esc_html_e('You are using a third-party AMP plugin, so this section and AMP features are not active. Please disable all other AMP plugins and visit this section again to enable AMP pages on your website.', $this->textDomain); ?></p>
                 </fieldset>
             </div>

@@ -18,6 +18,7 @@ if (!class_exists('daftplugInstantifyPwaPublicOfflineusage')) {
 
         public $daftplugInstantifyPwaPublic;
 
+        public static $serviceWorkerName;
         public $serviceWorker;
 
         public function __construct($config, $daftplugInstantifyPwaPublic) {
@@ -35,112 +36,135 @@ if (!class_exists('daftplugInstantifyPwaPublicOfflineusage')) {
 
             $this->daftplugInstantifyPwaPublic = $daftplugInstantifyPwaPublic;
 
+            self::$serviceWorkerName = (daftplugInstantify::isOnesignalActive() ? 'OneSignalSDKWorker.js' : 'serviceworker.sw');
             $this->serviceWorker = '';
 
             add_action('parse_request', array($this, 'generateServiceWorker'));
-            add_filter('query_vars', array($this, 'addServiceWorkerQueryVar'));
             add_action('wp_head', array($this, 'renderRegisterServiceWorker'));
         }
 
         public function generateServiceWorker() {
-            if (isset($GLOBALS['wp']->query_vars['daftplugInstantifyPwaServiceWorker'])) {
-                if ($GLOBALS['wp']->query_vars['daftplugInstantifyPwaServiceWorker'] == 1) {
-                    header('Content-Type: text/javascript; charset=utf-8');
-                    $homePage = trailingslashit(home_url('/', 'https'));
-                    $offlinePage = daftplugInstantify::getSetting('pwaOfflinePage');
-                    $offlineContents = (array)daftplugInstantify::getSetting('pwaOfflineContent');
-                    array_unshift($offlineContents, $offlinePage);
-                    array_unshift($offlineContents, $homePage);
-                    $cachedPages = json_encode(array_values(array_unique(array_filter($offlineContents, 'strlen'))));
+            global $wp;
+            if ($wp->request == self::$serviceWorkerName) {
+                header('Content-Type: application/javascript; charset=utf-8');
+                $offlinePage = daftplugInstantify::getSetting('pwaOfflineFallbackPage');
+                $cacheExpiration = daftplugInstantify::getSetting('pwaOfflineCacheExpiration');
+                $routes = array(
+                    'html' => array(
+                        'destination' => 'document',
+                        'strategy' => daftplugInstantify::getSetting('pwaOfflineHtmlStrategy'),
+                    ),
+                    'javascript' => array(
+                        'destination' => 'script',
+                        'strategy' => daftplugInstantify::getSetting('pwaOfflineJavascriptStrategy'),
+                    ),
+                    'stylesheets' => array(
+                        'destination' => 'style',
+                        'strategy' => daftplugInstantify::getSetting('pwaOfflineStylesheetsStrategy'),
+                    ),
+                    'images'  => array(
+                        'destination' => 'image',
+                        'strategy' => daftplugInstantify::getSetting('pwaOfflineImagesStrategy'),
+                    ),
+                    'fonts' => array(
+                        'destination' => 'font',
+                        'strategy' => daftplugInstantify::getSetting('pwaOfflineFontsStrategy'),
+                    ),
+                );
 
-                    $routes = array(
-                        'assets'  => array(
-                            'regex'   => trailingslashit(home_url('/', 'https')).'.*\.(css|js)',
-                            'strategy' => daftplugInstantify::getSetting('pwaOfflineAssetsStrategy'),
-                        ),
-                        'fonts'   => array(
-                            'regex'   => trailingslashit(home_url('/', 'https')).'.*\.(woff|eot|woff2|ttf|svg)',
-                            'strategy' => daftplugInstantify::getSetting('pwaOfflineFontsStrategy'),
-                        ),
-                        'images'  => array(
-                            'regex' => trailingslashit(home_url('/', 'https')).'.*\.(png|jpg|jpeg|gif|ico)',
-                            'strategy' => daftplugInstantify::getSetting('pwaOfflineImagesStrategy'),
-                        ),
-                        'default' => array(
-                            'regex' => trailingslashit(home_url('/', 'https')).'.*',
-                            'strategy' => daftplugInstantify::getSetting('pwaOfflineDefaultStrategy'),
-                        ),
-                    );
+                $this->serviceWorker .= "importScripts('https://storage.googleapis.com/workbox-cdn/releases/5.1.2/workbox-sw.js');\n\n";
 
-                    $this->serviceWorker .= "importScripts('https://storage.googleapis.com/workbox-cdn/releases/4.0.0/workbox-sw.js');\n\n";
-                    $this->serviceWorker .= "self.addEventListener('message', (event) => {
-                                                if (event.data && event.data.type === 'SKIP_WAITING') {
-                                                    self.skipWaiting();
-                                                }
-                                             });\n";
-                    $this->serviceWorker .= "\nif (workbox) {\n";
-                    $this->serviceWorker .= "workbox.precaching.precache({$cachedPages});\n";
-                    $this->serviceWorker .= "workbox.routing.registerRoute(/wp-admin(.*)|wp-json(.*)|(.*)preview=true(.*)/, workbox.strategies.networkOnly());\n";
-                    $this->serviceWorker .= "workbox.routing.registerRoute(/(.*)fonts\.googleapis\.com(.*)/, workbox.strategies.staleWhileRevalidate({
-                        cacheName: cacheName + '-google-fonts', plugins: [new workbox.cacheableResponse.Plugin({statuses: [0, 200]})]}));\n";
-                    $this->serviceWorker .= "workbox.routing.registerRoute(/(.*)fonts\.gstatic\.com(.*)/, workbox.strategies.staleWhileRevalidate({cacheName: cacheName + '-google-fonts', plugins: [new workbox.cacheableResponse.Plugin({statuses: [0, 200]})]}));\n";
-                    $this->serviceWorker .= "workbox.routing.registerRoute(/(.*)secure\.gravatar\.com(.*)/, workbox.strategies.staleWhileRevalidate({cacheName: cacheName + '-gravatar', plugins: [new workbox.cacheableResponse.Plugin({statuses: [0, 200]})]}));\n";
-                    foreach ($routes as $key => $values) {
-                        if ($key == 'default') {
-                            $this->serviceWorker .= "workbox.routing.registerRoute(new RegExp('{$values['regex']}'),
-                                async (args) => {
-                                    try {
-                                        const response = await workbox.strategies.{$values['strategy']}({cacheName: cacheName + '-{$key}'}).handle(args);
-                                        return response || await caches.match('{$offlinePage}');
-                                    } catch (error) {
-                                        console.log('catch:',error);
-                                        return await caches.match('{$offlinePage}');
-                                    }
-                                }
-                            );\n";
-                        } else {
-                            $this->serviceWorker .= "workbox.routing.registerRoute(new RegExp('{$values['regex']}'), workbox.strategies.{$values['strategy']}({cacheName: cacheName + '-{$key}'}));\n";
-                        }
+                $this->serviceWorker .= "if (workbox) {\n";
+                    $this->serviceWorker .= "workbox.core.skipWaiting();\n";
+                    $this->serviceWorker .= "workbox.core.clientsClaim();\n";
+
+                    if (!empty($offlinePage)) {
+                        $this->serviceWorker .= "self.addEventListener('install', async (event) => {
+                                                    event.waitUntil(caches.open(CACHE + '-html').then((cache) => cache.add('{$offlinePage}')));
+                                                });\n";
                     }
 
+                    $this->serviceWorker .= "workbox.routing.registerRoute(/wp-admin(.*)|wp-json(.*)|(.*)preview=true(.*)/, new workbox.strategies.NetworkOnly());\n";
+                    foreach ($routes as $key => $values) {
+                        if ($key == 'html') {
+                            $this->serviceWorker .= "workbox.routing.registerRoute(({event}) => event.request.destination === '{$values['destination']}',
+                                                        async (args) => {
+                                                            try {
+                                                                const response = await new workbox.strategies.{$values['strategy']}({
+                                                                    cacheName: CACHE + '-{$key}',
+                                                                    plugins: [
+                                                                        new workbox.expiration.ExpirationPlugin({
+                                                                            maxEntries: 50,
+                                                                            maxAgeSeconds: 60 * 60 * 24 * {$cacheExpiration},
+                                                                        }),
+                                                                        new workbox.cacheableResponse.CacheableResponsePlugin({
+                                                                            statuses: [0, 200]
+                                                                        }),
+                                                                    ],
+                                                                }).handle(args);
+                                                                return response || await caches.match('{$offlinePage}');
+                                                            } catch (error) {
+                                                                console.log('catch:', error);
+                                                                return await caches.match('{$offlinePage}');
+                                                            }
+                                                        }
+                                                    );\n\n";
+                        } else {
+                            $this->serviceWorker .= "workbox.routing.registerRoute(({event}) => event.request.destination === '{$values['destination']}',
+                                                        new workbox.strategies.{$values['strategy']}({
+                                                            cacheName: CACHE + '-{$key}',
+                                                            plugins: [
+                                                                new workbox.expiration.ExpirationPlugin({
+                                                                    maxEntries: 30,
+                                                                    maxAgeSeconds: 60 * 60 * 24 * {$cacheExpiration},
+                                                                }),
+                                                                new workbox.cacheableResponse.CacheableResponsePlugin({
+                                                                    statuses: [0, 200]
+                                                                }),
+                                                            ],
+                                                        })
+                                                    );\n";
+                        }
+                    }
+                                
                     if (daftplugInstantify::getSetting('pwaOfflineGoogleAnalytics') == 'on') {
                         $this->serviceWorker .= "workbox.googleAnalytics.initialize();\n";
                     }
 
-                    $this->serviceWorker .= "}\n\n";
-                    $this->serviceWorker .= "self.addEventListener('activate', (event) => {
-                                                event.waitUntil(
-                                                    caches.keys()
-                                                        .then(keys => {
-                                                            return Promise.all(
-                                                                keys.map(key => {
-                                                                    if (/^(workbox-precache)/.test(key)) {
-                                                                        //console.log(key);
-                                                                    } else if (/^(([a-zA-Z0-9]{8})-([a-z]*))/.test(key)) {
-                                                                        //console.log(key);
-                                                                        if (key.indexOf(cacheName) !== 0) {
-                                                                            //console.log('delete');
-                                                                            return caches.delete(key);
-                                                                        }
-                                                                    }
-                                                                })
-                                                            );
-                                                        })
-                                                );
-                                            });\n\n";
-                    $this->serviceWorker = apply_filters("{$this->optionName}_pwa_serviceworker", $this->serviceWorker);
-                    $cacheName = hash('crc32', $this->serviceWorker, false);
-                    
-                    echo "(function() {\n'use strict';\n\nconst cacheName = '{$cacheName}';\n\n".$this->serviceWorker."\n})();\n";
-                    exit;
+                    $this->serviceWorker = apply_filters("{$this->optionName}_pwa_serviceworker_workbox", $this->serviceWorker);
+
+                $this->serviceWorker .= "}\n";
+
+                $this->serviceWorker .= "self.addEventListener('activate', (event) => {
+                    event.waitUntil(
+                        caches.keys()
+                            .then(keys => {
+                                return Promise.all(
+                                    keys.map(key => {
+                                        if (/^(workbox-precache)/.test(key)) {
+                                            //console.log(key);
+                                        } else if (/^(([a-zA-Z0-9]{8})-([a-z]*))/.test(key)) {
+                                            //console.log(key);
+                                            if (key.indexOf(CACHE) !== 0) {
+                                                //console.log('delete');
+                                                return caches.delete(key);
+                                            }
+                                        }
+                                    })
+                                );
+                            })
+                    );
+                });\n\n";
+
+                if (daftplugInstantify::isOnesignalActive()) {
+                    $this->serviceWorker .= "importScripts('https://cdn.onesignal.com/sdks/OneSignalSDKWorker.js');\n";
                 }
+                                        
+                $this->serviceWorker = apply_filters("{$this->optionName}_pwa_serviceworker", $this->serviceWorker);
+
+                echo "const CACHE = '".hash('crc32', $this->serviceWorker, false).'-'.$this->slug."';\n\n".$this->serviceWorker;
+                exit;
             }
-        }
-
-        public function addServiceWorkerQueryVar($queryVars) {
-            $queryVars[] = 'daftplugInstantifyPwaServiceWorker';
-
-            return $queryVars;
         }
 
         public function renderRegisterServiceWorker() {
@@ -148,12 +172,12 @@ if (!class_exists('daftplugInstantifyPwaPublicOfflineusage')) {
         }
 
         public static function getServiceWorkerUrl($encoded = true) {
-            $url = add_query_arg(array('daftplugInstantifyPwaServiceWorker' => 1), home_url('/', 'https'));
+            $serviceWorkerUrl = untrailingslashit(strtok(home_url('/', 'https'), '?') . self::$serviceWorkerName);
             if ($encoded) {
-                return wp_json_encode($url);
+                return wp_json_encode($serviceWorkerUrl);
             }
 
-            return $url;
+            return $serviceWorkerUrl;
         }
     }
 }

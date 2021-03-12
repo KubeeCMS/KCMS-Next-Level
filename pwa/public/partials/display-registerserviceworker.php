@@ -9,7 +9,7 @@ if (array_key_exists('path', $homeUrlParts)) {
     $path = $homeUrlParts['path'];
 }
 
-if (function_exists('is_amp_endpoint') && is_amp_endpoint()) {
+if (daftplugInstantify::isAmpPage()) {
 	?>
 	<amp-install-serviceworker
 	    src="<?php echo $this->getServiceWorkerUrl(false); ?>"

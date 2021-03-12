@@ -35,7 +35,7 @@ if (!class_exists('daftplugInstantifyPwaAdminAddtohomescreen')) {
     	}
 
 		public function generateLaunchScreens() {
-			if (has_site_icon() || isset($this->settings['pwaIcon'])) {
+			if (isset($this->settings['pwaIcon'])) {
 				if (isset($_POST["launchScreen"]) && !empty($_POST["launchScreen"])) {
 	            	$img = substr($_POST['launchScreen'], strpos($_POST['launchScreen'], ",") + 1);
 	            	$decoded = base64_decode($img);

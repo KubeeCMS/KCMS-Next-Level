@@ -41,7 +41,7 @@ if (!class_exists('daftplugInstantifyAmpPublic')) {
     	}
 
         public function loadAssets() {
-            wp_enqueue_style("{$this->slug}-amp-public", plugins_url('amp/public/assets/css/style-amp.css', $this->pluginFile), array(), $this->version);
+            wp_enqueue_style("{$this->slug}-amp-public", plugins_url('amp/public/assets/css/style-amp.min.css', $this->pluginFile), array(), $this->version);
         }
 
     	public function generatePartials() {

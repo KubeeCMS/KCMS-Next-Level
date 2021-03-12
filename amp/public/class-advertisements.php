@@ -54,7 +54,7 @@ if (!class_exists('daftplugInstantifyAmpPublicAdvertisements')) {
             $dataAdClient = daftplugInstantify::getSetting('ampAdSenseAutoAdsClient');
             $adCode = '<amp-auto-ads type="adsense" data-ad-client="'.$dataAdClient.'"></amp-auto-ads>';
 
-            if (is_amp_endpoint()) {
+            if (daftplugInstantify::isAmpPage()) {
                 return $adCode;
             } else {
                 return false;
@@ -88,7 +88,7 @@ if (!class_exists('daftplugInstantifyAmpPublicAdvertisements')) {
                        </amp-ad>';
             }
 
-            if (is_amp_endpoint()) {
+            if (daftplugInstantify::isAmpPage()) {
                 return $ad . $content;
             } else {
                 return $content;
@@ -122,7 +122,7 @@ if (!class_exists('daftplugInstantifyAmpPublicAdvertisements')) {
                        </amp-ad>';
             }
 
-            if (is_amp_endpoint()) {
+            if (daftplugInstantify::isAmpPage()) {
                 return $this->insertAfterParagraph($ad, 2, $content);
             } else {
                 return $content;
@@ -156,7 +156,7 @@ if (!class_exists('daftplugInstantifyAmpPublicAdvertisements')) {
                        </amp-ad>';
             }
 
-            if (is_amp_endpoint()) {
+            if (daftplugInstantify::isAmpPage()) {
                 return $content . $ad;
             } else {
                 return $content;

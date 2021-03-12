@@ -52,9 +52,10 @@ if (!class_exists('daftplugInstantifyFbiaAdmin')) {
 
         public function loadAssets() {
             $this->dependencies[] = 'jquery';
-
-            wp_enqueue_style("{$this->slug}-fbia-admin", plugins_url('fbia/admin/assets/css/style-fbia.css', $this->pluginFile), array(), $this->version);
-            wp_enqueue_script("{$this->slug}-fbia-admin", plugins_url('fbia/admin/assets/js/script-fbia.js', $this->pluginFile), $this->dependencies, $this->version, true);
+            $this->dependencies[] = "{$this->slug}-admin";
+            
+            wp_enqueue_style("{$this->slug}-fbia-admin", plugins_url('fbia/admin/assets/css/style-fbia.min.css', $this->pluginFile), array(), $this->version);
+            wp_enqueue_script("{$this->slug}-fbia-admin", plugins_url('fbia/admin/assets/js/script-fbia.min.js', $this->pluginFile), $this->dependencies, $this->version, true);
         }
 
         public function generateSubpages() {

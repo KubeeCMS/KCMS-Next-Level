@@ -41,9 +41,14 @@ if (!class_exists('daftplugInstantifyPwaPublic')) {
     	}
 
         public function loadAssets() {
+            if (daftplugInstantify::isAmpPage()) {
+                return;
+            }
+            
         	$this->dependencies[] = 'jquery';
+            $this->dependencies[] = "{$this->slug}-public";
 
-            wp_enqueue_script("{$this->slug}-pwa-clientjs", plugins_url('pwa/public/assets/js/script-clientjs.js', $this->pluginFile), array('jquery'), $this->version, true);
+            wp_enqueue_script("{$this->slug}-pwa-clientjs", plugins_url('pwa/public/assets/js/script-clientjs.js', $this->pluginFile), array(), $this->version, true);
             $this->dependencies[] = "{$this->slug}-pwa-clientjs";
 
             wp_enqueue_script("{$this->slug}-pwa-toast", plugins_url('pwa/public/assets/js/script-toast.js', $this->pluginFile), array('jquery'), $this->version, true);
@@ -52,11 +57,17 @@ if (!class_exists('daftplugInstantifyPwaPublic')) {
             if (daftplugInstantify::getSetting('pwaOfflineNotification') == 'on') {
                 wp_enqueue_style("{$this->slug}-pwa-offlinenotification", plugins_url('pwa/public/assets/css/style-offlinenotification.css', $this->pluginFile), array(), $this->version);
                 wp_enqueue_script("{$this->slug}-pwa-offlinenotification", plugins_url('pwa/public/assets/js/script-offlinenotification.js', $this->pluginFile), array(), $this->version, true);
+                $this->dependencies[] = "{$this->slug}-pwa-offlinenotification";
             }
 
             if (daftplugInstantify::getSetting('pwaOfflineForms') == 'on') {
                 wp_enqueue_script("{$this->slug}-pwa-offlineforms", plugins_url('pwa/public/assets/js/script-offlineforms.js', $this->pluginFile), array('jquery', "{$this->slug}-pwa-toast"), $this->version, true);
                 $this->dependencies[] = "{$this->slug}-pwa-offlineforms";
+            }
+
+            if (daftplugInstantify::getSetting('pwaDarkMode') == 'on') {
+                wp_enqueue_script("{$this->slug}-pwa-darkmode", plugins_url('pwa/public/assets/js/script-darkmode.js', $this->pluginFile), array(), $this->version, true);
+                $this->dependencies[] = "{$this->slug}-pwa-darkmode";
             }
 
             if (daftplugInstantify::getSetting('pwaAjaxify') == 'on') {
@@ -65,7 +76,9 @@ if (!class_exists('daftplugInstantifyPwaPublic')) {
             }
 
             if (wp_is_mobile()) {
-                wp_enqueue_script("{$this->slug}-pwa-garlic", plugins_url('pwa/public/assets/js/script-garlic.js', $this->pluginFile), array('jquery'), $this->version, true);
+                if (daftplugInstantify::getSetting('pwaNavigationTabBar') == 'on') {
+                    wp_enqueue_style("{$this->slug}-pwa-fontawesome", 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css', array(), $this->version);
+                }
 
                 if (daftplugInstantify::getSetting('pwaPullDownNavigation') == 'on') {
                     wp_enqueue_script("{$this->slug}-pwa-pulltonavigate", plugins_url('pwa/public/assets/js/script-pulltonavigate.js', $this->pluginFile), array(), $this->version, true);
@@ -88,22 +101,25 @@ if (!class_exists('daftplugInstantifyPwaPublic')) {
                 }
             }
 
-            wp_enqueue_style("{$this->slug}-pwa-public", plugins_url('pwa/public/assets/css/style-pwa.css', $this->pluginFile), array(), $this->version);
-            wp_enqueue_script("{$this->slug}-pwa-public", plugins_url('pwa/public/assets/js/script-pwa.js', $this->pluginFile), $this->dependencies, $this->version, true);
+            wp_enqueue_style("{$this->slug}-pwa-public", plugins_url('pwa/public/assets/css/style-pwa.min.css', $this->pluginFile), array(), $this->version);
+            wp_enqueue_script("{$this->slug}-pwa-public", plugins_url('pwa/public/assets/js/script-pwa.min.js', $this->pluginFile), $this->dependencies, $this->version, true);
         }
 
     	public function generatePartials() {
             $partials = array(
-                'manifestMetaTags' => plugin_dir_path(__FILE__) . implode(DIRECTORY_SEPARATOR, array('partials', 'display-manifestmetatags.php')),
+                'metaTags' => plugin_dir_path(__FILE__) . implode(DIRECTORY_SEPARATOR, array('partials', 'display-metatags.php')),
                 'rotateNotice' => plugin_dir_path(__FILE__) . implode(DIRECTORY_SEPARATOR, array('partials', 'display-rotatenotice.php')),
                 'fullscreenOverlays' => plugin_dir_path(__FILE__) . implode(DIRECTORY_SEPARATOR, array('partials', 'display-fullscreenoverlays.php')),
                 'headerOverlay' => plugin_dir_path(__FILE__) . implode(DIRECTORY_SEPARATOR, array('partials', 'display-headeroverlay.php')),
+                'snackbarOverlay' => plugin_dir_path(__FILE__) . implode(DIRECTORY_SEPARATOR, array('partials', 'display-snackbaroverlay.php')),
                 'checkoutOverlay' => plugin_dir_path(__FILE__) . implode(DIRECTORY_SEPARATOR, array('partials', 'display-checkoutoverlay.php')),
                 'postOverlay' => plugin_dir_path(__FILE__) . implode(DIRECTORY_SEPARATOR, array('partials', 'display-postoverlay.php')),
                 'registerServiceWorker' => plugin_dir_path(__FILE__) . implode(DIRECTORY_SEPARATOR, array('partials', 'display-registerserviceworker.php')),
                 'preloader' => plugin_dir_path(__FILE__) . implode(DIRECTORY_SEPARATOR, array('partials', 'display-preloader.php')),
-                'subscribeButton' => plugin_dir_path(__FILE__) . implode(DIRECTORY_SEPARATOR, array('partials', 'display-subscribebutton.php')),
+                'pushPrompt' => plugin_dir_path(__FILE__) . implode(DIRECTORY_SEPARATOR, array('partials', 'display-pushprompt.php')),
+                'pushButton' => plugin_dir_path(__FILE__) . implode(DIRECTORY_SEPARATOR, array('partials', 'display-pushbutton.php')),
                 'navigationTabBar' => plugin_dir_path(__FILE__) . implode(DIRECTORY_SEPARATOR, array('partials', 'display-navigationtabbar.php')),
+                'webShareButton' => plugin_dir_path(__FILE__) . implode(DIRECTORY_SEPARATOR, array('partials', 'display-websharebutton.php')),
             );
 
             return $partials;

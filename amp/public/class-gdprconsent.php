@@ -39,7 +39,7 @@ if (!class_exists('daftplugInstantifyAmpPublicGdprconsent')) {
     	}
 
 		public function injectCookieNotice() {
-            if (is_amp_endpoint()) {
+            if (daftplugInstantify::isAmpPage()) {
                 include_once($this->daftplugInstantifyAmpPublic->partials['cookieNotice']);
             } else {
                 return false;

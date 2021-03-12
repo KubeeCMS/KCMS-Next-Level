@@ -71,7 +71,7 @@ if (!class_exists('daftplugInstantifyAmpPublicAnalytics')) {
     	}
 
 		public function injectGoogleAnalytics() {
-            if (is_amp_endpoint()) {
+            if (daftplugInstantify::isAmpPage()) {
                 include_once($this->daftplugInstantifyAmpPublic->partials['googleAnalytics']);
             } else {
                 return false;
@@ -79,7 +79,7 @@ if (!class_exists('daftplugInstantifyAmpPublicAnalytics')) {
 		}
 
         public function injectFacebookPixel() {
-            if (is_amp_endpoint()) {
+            if (daftplugInstantify::isAmpPage()) {
                 include_once($this->daftplugInstantifyAmpPublic->partials['facebookPixel']);
             } else {
                 return false;
@@ -87,7 +87,7 @@ if (!class_exists('daftplugInstantifyAmpPublicAnalytics')) {
         }
 
         public function injectSegmentAnalytics() {
-            if (is_amp_endpoint()) {
+            if (daftplugInstantify::isAmpPage()) {
                 include_once($this->daftplugInstantifyAmpPublic->partials['segmentAnalytics']);
             } else {
                 return false;
@@ -95,7 +95,7 @@ if (!class_exists('daftplugInstantifyAmpPublicAnalytics')) {
         }
 
         public function injectStatCounter() {
-            if (is_amp_endpoint()) {
+            if (daftplugInstantify::isAmpPage()) {
                 include_once($this->daftplugInstantifyAmpPublic->partials['statCounter']);
             } else {
                 return false;
@@ -103,7 +103,7 @@ if (!class_exists('daftplugInstantifyAmpPublicAnalytics')) {
         }
 
         public function injectHistatsAnalytics() {
-            if (is_amp_endpoint()) {
+            if (daftplugInstantify::isAmpPage()) {
                 include_once($this->daftplugInstantifyAmpPublic->partials['histatsAnalytics']);
             } else {
                 return false;
@@ -111,7 +111,7 @@ if (!class_exists('daftplugInstantifyAmpPublicAnalytics')) {
         }
 
         public function injectYandexMetrika() {
-            if (is_amp_endpoint()) {
+            if (daftplugInstantify::isAmpPage()) {
                 include_once($this->daftplugInstantifyAmpPublic->partials['yandexMetrika']);
             } else {
                 return false;
@@ -119,7 +119,7 @@ if (!class_exists('daftplugInstantifyAmpPublicAnalytics')) {
         }
 
         public function injectChartbeatAnalytics() {
-            if (is_amp_endpoint()) {
+            if (daftplugInstantify::isAmpPage()) {
                 include_once($this->daftplugInstantifyAmpPublic->partials['chartbeatAnalytics']);
             } else {
                 return false;
@@ -127,7 +127,7 @@ if (!class_exists('daftplugInstantifyAmpPublicAnalytics')) {
         }
 
         public function injectClickyAnalytics() {
-            if (is_amp_endpoint()) {
+            if (daftplugInstantify::isAmpPage()) {
                 include_once($this->daftplugInstantifyAmpPublic->partials['clickyAnalytics']);
             } else {
                 return false;
@@ -135,7 +135,7 @@ if (!class_exists('daftplugInstantifyAmpPublicAnalytics')) {
         }
 
         public function injectAlexaMetrics() {
-            if (is_amp_endpoint()) {
+            if (daftplugInstantify::isAmpPage()) {
                 include_once($this->daftplugInstantifyAmpPublic->partials['alexaMetrics']);
             } else {
                 return false;

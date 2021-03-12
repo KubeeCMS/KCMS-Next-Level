@@ -11,7 +11,7 @@ if (!defined('ABSPATH')) exit;
                     <h4 class="daftplugAdminFieldset_title"><?php esc_html_e('Facebook Page', $this->textDomain); ?></h4>
                     <p class="daftplugAdminFieldset_description"><?php esc_html_e('Connect your Facebook page to the instant articles by getting the numeric ID of your page and entering it in the field below.', $this->textDomain); ?></p>
                     <div class="daftplugAdminField">
-                        <p class="daftplugAdminField_description"><?php _e('Enter the numeric ID of your Facebook page. If you have trouble finding it use <a class="daftplugAdminLink" href="https://findmyfbid.com/" target="_blank">this service</a> to get it.', $this->textDomain); ?></p>
+                        <p class="daftplugAdminField_description"><?php _e('Enter the numeric ID of your Facebook page. If you have trouble finding it use <a class="daftplugAdminLink" href="https://fb-search.com/find-my-facebook-id" target="_blank">this service</a> to get it.', $this->textDomain); ?></p>
                         <label for="fbiaPageId" class="daftplugAdminField_label -flex4"><?php esc_html_e('Facebook Page ID', $this->textDomain); ?></label>
                         <div class="daftplugAdminInputText -flexAuto">
                             <input type="text" pattern="[0-9]+" title="<?php esc_html_e('Facebook page ID must contain only numbers.', $this->textDomain); ?>" name="fbiaPageId" id="fbiaPageId" class="daftplugAdminInputText_field" value="<?php echo daftplugInstantify::getSetting('fbiaPageId'); ?>" data-placeholder="<?php esc_html_e('Facebook Page ID', $this->textDomain); ?>" autocomplete="off" required>

@@ -29,6 +29,7 @@ if (!class_exists('daftplugInstantifyPublic')) {
         public $partials;
 
         public $html;
+        public $css;
         public $js;
 
         public function __construct($config, $daftplugInstantifyPwa, $daftplugInstantifyAmp, $daftplugInstantifyFbia) {
@@ -57,17 +58,22 @@ if (!class_exists('daftplugInstantifyPublic')) {
             $this->partials = $this->generatePartials();
 
             $this->html = '';
+            $this->css = '';
             $this->js = '';
 
             add_action('wp_enqueue_scripts', array($this, 'loadAssets'));
-            add_action('wp_footer', array($this, 'addPublicHtmlJs'));
+            add_action('wp_footer', array($this, 'addPublicHtmlJs'), 70);
         }
 
         public function loadAssets() {
+            if (daftplugInstantify::isAmpPage()) {
+                return;
+            }
+            
             $this->dependencies[] = 'jquery';
                
-            wp_enqueue_style("{$this->slug}-public", plugins_url('public/assets/css/style-public.css', $this->pluginFile), array(), $this->version);
-            wp_enqueue_script("{$this->slug}-public", plugins_url('public/assets/js/script-public.js', $this->pluginFile), $this->dependencies, $this->version, true);
+            wp_enqueue_style("{$this->slug}-public", plugins_url('public/assets/css/style-public.min.css', $this->pluginFile), array(), $this->version);
+            wp_enqueue_script("{$this->slug}-public", plugins_url('public/assets/js/script-public.min.js', $this->pluginFile), $this->dependencies, $this->version, true);
 
             // Remove emoji
             remove_action('wp_head', 'print_emoji_detection_script', 7);
@@ -77,7 +83,7 @@ if (!class_exists('daftplugInstantifyPublic')) {
             wp_localize_script("{$this->slug}-public", "{$this->optionName}_public_js_vars", apply_filters("{$this->optionName}_public_js_vars", array(
                 'ajaxUrl' => admin_url('admin-ajax.php'),
                 'generalError' => esc_html__('An unexpected error occured', $this->textDomain),
-                'homeUrl' => trailingslashit(home_url('/', 'https')),
+                'homeUrl' => trailingslashit(strtok(home_url('/', 'https'), '?')),
                 'settings' => $this->settings,
             )));
         }
@@ -93,14 +99,15 @@ if (!class_exists('daftplugInstantifyPublic')) {
         public function addPublicHtmlJs() {
             ?>
             <div class="daftplugPublic" data-daftplug-plugin="<?php echo $this->optionName ?>">
+                <style type="text/css">
+                    <?php echo apply_filters("{$this->optionName}_public_css", $this->css); ?>
+                </style>
                 <?php echo apply_filters("{$this->optionName}_public_html", $this->html); ?>
                 <script type="text/javascript">
-                    (function($) {
-                    "use strict";
-                        jQuery(function() {
-                            <?php echo apply_filters("{$this->optionName}_public_js", $this->js); ?> 
-                        });
-                    })(jQuery);
+                    jQuery(function() {
+                        'use strict';
+                        <?php echo apply_filters("{$this->optionName}_public_js", $this->js); ?>
+                    });
                 </script>
             </div>
             <?php

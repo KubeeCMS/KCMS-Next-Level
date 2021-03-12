@@ -1,4 +1,4 @@
-self.addEventListener('push', event => {
+self.addEventListener('push', (event) => {
     if (event.data) {
 		const pushData = event.data.json();
 		event.waitUntil(
@@ -10,15 +10,15 @@ self.addEventListener('push', event => {
     }
 });
 
-self.addEventListener('notificationclick', event => {
+self.addEventListener('notificationclick', (event) => {
 	event.notification.close();
   	if (event.action === 'action1') {  
 		event.waitUntil(
-			clients.openWindow(event.notification.data.pushActionbutton1Url)
+			clients.openWindow(event.notification.data.pushActionButton1Url)
 		);
   	} else if (event.action === 'action2') {
 		event.waitUntil(
-			clients.openWindow(event.notification.data.pushActionbutton2Url)
+			clients.openWindow(event.notification.data.pushActionButton2Url)
 		);
   	} else {
 		event.waitUntil(

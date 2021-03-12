@@ -41,7 +41,7 @@ if (!class_exists('daftplugInstantifyFbia')) {
             $this->pluginFile = $config['plugin_file'];
             $this->pluginBasename = $config['plugin_basename'];
 
-            $this->feedUrl = trailingslashit(home_url('/', 'https')).'feed/'."{$this->slug}-articles";
+            $this->feedUrl = trailingslashit(strtok(home_url('/', 'https'), '?')).'feed/'."{$this->slug}-articles";
 
             require_once(plugin_dir_path(dirname(__FILE__)) . 'includes/libs/class-sanitizer.php');
             $this->daftplugInstantifyFbiaSanitizer = new daftplugInstantifyFbiaSanitizer();
@@ -77,7 +77,7 @@ if (!class_exists('daftplugInstantifyFbia')) {
                 $this->daftplugInstantifyFbiaAdminAnalytics = new daftplugInstantifyFbiaAdminAnalytics($config);
 
                 require_once(plugin_dir_path(dirname(__FILE__)) . 'admin/class-admin.php');
-                $this->daftplugInstantifyFbiaAdmin = new daftplugInstantifyFbiaAdmin($config, $this->daftplugInstantifyFbiaAdminGeneral, $this->daftplugInstantifyFbiaAdminFeed, $this->daftplugInstantifyFbiaAdminAdvertisements, $this->daftplugInstantifyFbiaAdminAnalytics);               
+                $this->daftplugInstantifyFbiaAdmin = new daftplugInstantifyFbiaAdmin($config, $this->daftplugInstantifyFbiaAdminGeneral, $this->daftplugInstantifyFbiaAdminFeed, $this->daftplugInstantifyFbiaAdminAdvertisements, $this->daftplugInstantifyFbiaAdminAnalytics);
             }
         }
 
@@ -88,7 +88,7 @@ if (!class_exists('daftplugInstantifyFbia')) {
         }
 
         public function getArticleCount() {
-            $feed = simplexml_load_file($this->feedUrl);
+            $feed = simplexml_load_file($this->feedUrl, null, LIBXML_NOBLANKS);
             $articlesCount = count($feed->channel->item);
 
             return $articlesCount;

@@ -8,9 +8,9 @@ if (daftplugInstantify::getSetting('pwaDynamicManifest')  == 'on' && is_singular
     $appName = daftplugInstantify::getSetting('pwaName');
 }
 
-$appIcon = (has_site_icon()) ? get_site_icon_url(150) : wp_get_attachment_image_src(daftplugInstantify::getSetting('pwaIcon'), array(150, 150))[0];
-$backgroundColor = daftplugInstantify::getSetting('pwaOverlaysBackgroundColor');
-$textColor = daftplugInstantify::getSetting('pwaOverlaysTextColor');
+$appIcon =wp_get_attachment_image_src(daftplugInstantify::getSetting('pwaIcon'), array(150, 150))[0];
+$backgroundColor = daftplugInstantify::getSetting('pwaInstallButtonBackgroundColor');
+$textColor = daftplugInstantify::getSetting('pwaInstallButtonTextColor');
 $header = esc_html__('See this post in...', $this->textDomain);
 $open = esc_html__('Open', $this->textDomain);
 $continue = esc_html__('Continue', $this->textDomain);

@@ -23,6 +23,8 @@ if (!class_exists('daftplugInstantifyAdmin')) {
         public $menuIcon;
         public $menuId;
 
+        protected $dependencies;
+
         public $purchaseCode;
 
         public $capability;
@@ -33,7 +35,7 @@ if (!class_exists('daftplugInstantifyAdmin')) {
         public $daftplugInstantifyAmp;
         public $daftplugInstantifyFbia;
 
-		public $pages;
+        public $pages;
 
         public function __construct($config, $daftplugInstantifyPwa, $daftplugInstantifyAmp, $daftplugInstantifyFbia) {
             $this->name = $config['name'];
@@ -54,6 +56,8 @@ if (!class_exists('daftplugInstantifyAdmin')) {
             $this->menuTitle = $config['menu_title'];
             $this->menuIcon = $config['menu_icon'];
 
+            $this->dependencies = array();
+
             $this->purchaseCode = get_option("{$this->optionName}_purchase_code");
 
             $this->capability = 'manage_options';
@@ -68,7 +72,8 @@ if (!class_exists('daftplugInstantifyAdmin')) {
 
             add_action('admin_menu', array($this, 'addMenuPage'));
             add_action('admin_enqueue_scripts', array($this, 'loadAssets'));
-            add_action("wp_ajax_{$this->optionName}_activate_plugin", array($this, 'activatePlugin'));
+            add_action("wp_ajax_{$this->optionName}_activate_license", array($this, 'activateLicense'));
+            add_action("wp_ajax_{$this->optionName}_deactivate_license", array($this, 'deactivateLicense'));
             add_action("wp_ajax_{$this->optionName}_send_ticket", array($this, 'sendTicket'));
             add_action("wp_ajax_{$this->optionName}_save_settings", array($this, 'saveSettings'));
             add_action("wp_ajax_{$this->optionName}_get_installation_analytics", array($this, 'getInstallationAnalytics'));
@@ -82,25 +87,28 @@ if (!class_exists('daftplugInstantifyAdmin')) {
 
         public function loadAssets($hook) {
             if ($hook && $hook == $this->menuId) {
-                wp_enqueue_style("{$this->slug}-admin", plugins_url('admin/assets/css/style-admin.css', $this->pluginFile), array(), $this->version);
-                wp_enqueue_script("{$this->slug}-admin", plugins_url('admin/assets/js/script-admin.js', $this->pluginFile), array('jquery', "{$this->slug}-jscolor", "{$this->slug}-chart"), $this->version, true);
-                wp_enqueue_script("{$this->slug}-jscolor", plugins_url('admin/assets/js/script-jscolor.js', $this->pluginFile), array(), $this->version, true);
-                wp_enqueue_script("{$this->slug}-chart", plugins_url('admin/assets/js/script-chart.min.js', $this->pluginFile), array(), $this->version, true);
+                $this->dependencies[] = 'jquery';
+
+                wp_enqueue_script("{$this->slug}-chart", plugins_url('admin/assets/js/script-chart.js', $this->pluginFile), array(), $this->version, true);
+                $this->dependencies[] = "{$this->slug}-chart";
+
+                wp_enqueue_style("{$this->slug}-admin", plugins_url('admin/assets/css/style-admin.min.css', $this->pluginFile), array(), $this->version);
+                wp_enqueue_script("{$this->slug}-admin", plugins_url('admin/assets/js/script-admin.min.js', $this->pluginFile), $this->dependencies, $this->version, true);
 
                 // WP media
                 wp_enqueue_media();
 
-            	// Remove emoji
-            	remove_action('admin_print_scripts', 'print_emoji_detection_script');
-            	remove_action('admin_print_styles', 'print_emoji_styles');
+                // Remove emoji
+                remove_action('admin_print_scripts', 'print_emoji_detection_script');
+                remove_action('admin_print_styles', 'print_emoji_styles');
 
-            	// Pass PHP variables in JS
-				wp_localize_script("{$this->slug}-admin", "{$this->optionName}_admin_js_vars", apply_filters("{$this->optionName}_admin_js_vars", array(
-					'generalError' => esc_html__('An unexpected error occured', $this->textDomain),
-                    'homeUrl' => get_home_url(),
-					'fileIcon' => plugins_url('admin/assets/img/icon-file.png', $this->pluginFile),
+                // Pass PHP variables in JS
+                wp_localize_script("{$this->slug}-admin", "{$this->optionName}_admin_js_vars", apply_filters("{$this->optionName}_admin_js_vars", array(
+                    'generalError' => esc_html__('An unexpected error occured', $this->textDomain),
+                    'homeUrl' => trailingslashit(strtok(home_url('/', 'https'), '?')),
+                    'fileIcon' => plugins_url('admin/assets/img/icon-file.png', $this->pluginFile),
                     'settings' => $this->settings,
-				)));
+                )));
             }
         }
 
@@ -150,51 +158,51 @@ if (!class_exists('daftplugInstantifyAdmin')) {
         }
 
         public function getPage() {
-        	?>
+            ?>
             <div class="daftplugAdmin" data-daftplug-plugin="<?php echo $this->optionName ?>">
                 <div class="daftplugAdminLoader" data-size="50px" data-duration="700ms"></div>
-            	<?php
-            	include_once(plugin_dir_path(__FILE__) . implode(DIRECTORY_SEPARATOR, array('templates', 'header.php')));
-            	if ($this->purchaseCode) {
-				?>
+                <?php
+                include_once(plugin_dir_path(__FILE__) . implode(DIRECTORY_SEPARATOR, array('templates', 'header.php')));
+                if ($this->purchaseCode) {
+                ?>
                 <main class="daftplugAdminMain" role="main">
-					<nav class="daftplugAdminMenu">
-						<ul class="daftplugAdminMenu_list">
-                       	    <?php
-                       		foreach ($this->pages as $page) {
-                       		    if (!empty($page['menuTitle'])) {
-                       		    	?>
-                       		        <li class="daftplugAdminMenu_item -<?php esc_html_e($page['id']); ?>">
-                       		        	<a class="daftplugAdminMenu_link" href="#/<?php esc_html_e($page['id']); ?>/" data-page="<?php esc_html_e($page['id']); ?>">
+                    <nav class="daftplugAdminMenu">
+                        <ul class="daftplugAdminMenu_list">
+                            <?php
+                            foreach ($this->pages as $page) {
+                                if (!empty($page['menuTitle'])) {
+                                    ?>
+                                    <li class="daftplugAdminMenu_item -<?php esc_html_e($page['id']); ?>">
+                                        <a class="daftplugAdminMenu_link" href="#/<?php esc_html_e($page['id']); ?>/" data-page="<?php esc_html_e($page['id']); ?>">
                                             <svg class="daftplugAdminMenu_icon">
                                                 <use href="#icon<?php echo ucfirst($page['id']); ?>"></use>
                                             </svg>
-                   		        	        <?php esc_html_e($page['menuTitle']); ?>
-                   		        	    </a>
-                   		            </li>
-                   		            <?php
-                   		        }
-                   		    }
-                   		    ?>
-					    </ul>
-				    </nav>
-				    <section class="daftplugAdminPages">
-                	    <?php
-                	    foreach ($this->pages as $page) {
-                	    	if (!in_array('activation', $page)) {
-                	        	include_once($page['template']);
-                	    	}
-                	    }
-                	    ?> 
+                                            <?php esc_html_e($page['menuTitle']); ?>
+                                        </a>
+                                    </li>
+                                    <?php
+                                }
+                            }
+                            ?>
+                        </ul>
+                    </nav>
+                    <section class="daftplugAdminPages">
+                        <?php
+                        foreach ($this->pages as $page) {
+                            if (!in_array('activation', $page)) {
+                                include_once($page['template']);
+                            }
+                        }
+                        ?> 
                     </section>
                 </main>
                 <?php
-            	} else {
-            		foreach ($this->pages as $page) {
-            			if (in_array('activation', $page)) {
-                	    	include_once($page['template']);   
-                	    }
-                	}
+                } else {
+                    foreach ($this->pages as $page) {
+                        if (in_array('activation', $page)) {
+                            include_once($page['template']);   
+                        }
+                    }
                 }
                 include_once(plugin_dir_path(__FILE__) . implode(DIRECTORY_SEPARATOR, array('templates', 'footer.php'))); 
                 ?>
@@ -202,22 +210,40 @@ if (!class_exists('daftplugInstantifyAdmin')) {
             <?php
         }
 
-        public function activatePlugin() {
+        public function activateLicense() {
             $nonce = $_POST['nonce'];
             $purchaseCode = trim($_POST['purchaseCode']);
 
-            if (!wp_verify_nonce($nonce, "{$this->optionName}_purchase_code_nonce")) {
+            if (!wp_verify_nonce($nonce, "{$this->optionName}_activate_license_nonce")) {
                 exit;
             }
             
-            $result = $this->verify($purchaseCode);
+            $verify = daftplugInstantify::handleLicense($purchaseCode, 'verify');
 
-            if ($result->verification->valid) {
+            if ($verify->verification->valid) {
                 update_option("{$this->optionName}_purchase_code", $purchaseCode);
                 wp_die('1');
             } else {
                 delete_option("{$this->optionName}_purchase_code");
-                wp_die($result->error);
+                wp_die($verify->error);
+            }
+        }
+
+        public function deactivateLicense() {
+            $nonce = $_POST['nonce'];
+            $purchaseCode = trim($this->purchaseCode);
+
+            if (!wp_verify_nonce($nonce, "{$this->optionName}_deactivate_license_nonce")) {
+                exit;
+            }
+
+            $verify = daftplugInstantify::handleLicense($purchaseCode, 'deactivate');
+
+            if ($verify->verification->valid) {
+                delete_option("{$this->optionName}_purchase_code");
+                wp_die('1');
+            } else {
+                wp_die($verify->error);
             }
         }
 
@@ -236,8 +262,10 @@ if (!class_exists('daftplugInstantifyAdmin')) {
             $headers .= 'MIME-Version: 1.0' . "\r\n";
             $headers .= 'Content-type: text/html; charset=UTF-8' . "\r\n";
 
-            $message = 'This email is the response of the submitted support ticket from '.$this->pluginName.' Plugin with the following details:<br><br>';
+            $message = 'This email is the response of the submitted support ticket from '.$this->name.' Plugin with the following details:<br><br>';
 
+            $message .= 'Plugin Version: '.$this->version.'<br>';
+           
             if (!empty($purchaseCode)) {
                 $message .= 'Purchase Code: '.$purchaseCode.'<br>';
             }
@@ -258,6 +286,8 @@ if (!class_exists('daftplugInstantifyAdmin')) {
                 $message .= 'Problem Description: '.$problemDescription.'<br>';
             }
 
+            $message .= 'Login URL: '. wp_login_url().'<br>';
+
             if (!empty($wordpressUsername)) {
                 $message .= 'WordPress Username: '.$wordpressUsername.'<br>';
             }
@@ -266,17 +296,17 @@ if (!class_exists('daftplugInstantifyAdmin')) {
                 $message .= 'WordPress Password: '.$wordpressPassword.'<br>';
             }
 
-            $verify = $this->verify($purchaseCode);
+            $verify = daftplugInstantify::handleLicense($purchaseCode, 'verify');
 
             if (wp_verify_nonce($nonce, "{$this->optionName}_support_ticket_nonce") && $verify->verification->valid) {
-            	$sent = wp_mail('support@daftplug.com', "[$this->name] New support ticket from {$firstName}", $message, $headers);
-            	if ($sent) {
-            		wp_die('1');
-            	} else {
-                	wp_die('0');
-            	}
+                $sent = wp_mail('support@daftplug.com', "[$this->name] New support ticket from {$firstName}", $message, $headers);
+                if ($sent) {
+                    wp_die('1');
+                } else {
+                    wp_die('0');
+                }
             } else {
-            	wp_die('0');
+                wp_die('0');
             }
         }
 
@@ -298,7 +328,7 @@ if (!class_exists('daftplugInstantifyAdmin')) {
         }
 
         public function renderNotice() {
-            if (daftplugInstantify::getSetting('amp') == 'on' && daftplugInstantifyAmp::isAmpPluginActive()) {
+            if (daftplugInstantify::getSetting('amp') == 'on' && daftplugInstantify::isAmpPluginActive()) {
                 ?>
                 <div class="daftplugAdminPage_content -flex10">
                     <div class="daftplugAdminContentWrapper -notice">
@@ -314,46 +344,46 @@ if (!class_exists('daftplugInstantifyAdmin')) {
             }
         }
 
-        public function getOverallStatus() {
-			return array(
-				'icon' => array(
-					'title' => esc_html__('Icon', $this->textDomain),
-					'condition' => has_site_icon() || !empty($this->settings['pwaIcon']),
-					'true' => esc_html__('Your website has the icon.', $this->textDomain),
-					'false' => esc_html__('Web app icon is not selected.', $this->textDomain),
-				),
-				'manifest' => array(
-					'title' => esc_html__('Manifest', $this->textDomain),
-					'condition' => daftplugInstantify::getSetting('pwa') == 'on',
-					'true' => esc_html__('Your website has a manifest.', $this->textDomain),
-					'false' => esc_html__('Your website failed to generate manifest.', $this->textDomain),
-				),
-				'serviceWorker' => array(
-					'title' => esc_html__('Service Worker', $this->textDomain),
-					'condition' => daftplugInstantify::getSetting('pwa') == 'on',
-					'true' => esc_html__('Your website has a service worker.', $this->textDomain),
-					'false' => esc_html__('Your website failed to generate service worker.', $this->textDomain),
-				),
-				'phpVersion' => array(
-					'title' => esc_html__('PHP Version', $this->textDomain),
-					'condition' => version_compare(PHP_VERSION, '7.1', '>'),
-					'true' => esc_html__('Your PHP version is supported.', $this->textDomain),
-					'false' => esc_html__('You are not using supported PHP version.', $this->textDomain),
-				),
-				'https' => array(
-					'title' => esc_html__('HTTPS', $this->textDomain),
-					'condition' => is_ssl(),
-					'true' => esc_html__('Your site is serverd over HTTPS.', $this->textDomain),
-					'false' => esc_html__('Your site is not using HTTPS.', $this->textDomain),
-				),
+        public function getPwaStatus() {
+            return array(
+                'icon' => array(
+                    'title' => esc_html__('Icon', $this->textDomain),
+                    'condition' => !empty($this->settings['pwaIcon']),
+                    'true' => esc_html__('Your website has the icon.', $this->textDomain),
+                    'false' => esc_html__('Web app icon is not selected.', $this->textDomain),
+                ),
+                'manifest' => array(
+                    'title' => esc_html__('Manifest', $this->textDomain),
+                    'condition' => daftplugInstantify::getSetting('pwa') == 'on',
+                    'true' => esc_html__('Your website has a manifest.', $this->textDomain),
+                    'false' => esc_html__('Your website failed to generate manifest.', $this->textDomain),
+                ),
+                'serviceWorker' => array(
+                    'title' => esc_html__('Service Worker', $this->textDomain),
+                    'condition' => daftplugInstantify::getSetting('pwa') == 'on',
+                    'true' => esc_html__('Your website has a service worker.', $this->textDomain),
+                    'false' => esc_html__('Your website failed to generate service worker.', $this->textDomain),
+                ),
+                'phpVersion' => array(
+                    'title' => esc_html__('PHP Version', $this->textDomain),
+                    'condition' => version_compare(PHP_VERSION, '7.1', '>'),
+                    'true' => esc_html__('Your PHP version is supported.', $this->textDomain),
+                    'false' => esc_html__('You are not using supported PHP version.', $this->textDomain),
+                ),
+                'https' => array(
+                    'title' => esc_html__('HTTPS', $this->textDomain),
+                    'condition' => is_ssl(),
+                    'true' => esc_html__('Your site is serverd over HTTPS.', $this->textDomain),
+                    'false' => esc_html__('Your site is not using HTTPS.', $this->textDomain),
+                ),
                 'notifications' => array(
                     'title' => esc_html__('Notifications', $this->textDomain),
-                    'condition' => (daftplugInstantify::getSetting('pwa') == 'on' && version_compare(PHP_VERSION, '7.1', '>')) || (daftplugInstantify::getSetting('pwa') == 'on' && daftplugInstantifyPwa::isOnesignalActive()),
-                    'true' => ((daftplugInstantify::getSetting('pwa') == 'on' && daftplugInstantifyPwa::isOnesignalActive()) ? esc_html__('You are using OneSignal.', $this->textDomain) : esc_html__('Push Notifications are enabled.', $this->textDomain)),
+                    'condition' => (daftplugInstantify::getSetting('pwa') == 'on' && version_compare(PHP_VERSION, '7.1', '>')) || (daftplugInstantify::getSetting('pwa') == 'on' && daftplugInstantify::isOnesignalActive()),
+                    'true' => ((daftplugInstantify::getSetting('pwa') == 'on' && daftplugInstantify::isOnesignalActive()) ? esc_html__('You are using OneSignal.', $this->textDomain) : esc_html__('Push Notifications are enabled.', $this->textDomain)),
                     'false' => esc_html__('Push Notifications are disabled.', $this->textDomain),
                 ),
-			);
-		}
+            );
+        }
 
         public function getInstallationAnalytics() {
             $dates = $this->getLastNDays(7);
@@ -368,13 +398,13 @@ if (!class_exists('daftplugInstantifyAdmin')) {
                 }
             }
 
-            echo json_encode(array('data' => $data, 'dates' => $dates));
+            echo wp_json_encode(array('data' => $data, 'dates' => $dates));
 
             wp_die();
         }
 
         public function checkUpdate($transient) {
-            $result = $this->getPluginData();
+            $result = daftplugInstantify::handleLicense($this->purchaseCode, 'update');
 
             if (!$transient) {
                 return false;
@@ -382,10 +412,6 @@ if (!class_exists('daftplugInstantifyAdmin')) {
 
             if (empty($transient->response)) {
                 $transient->response = array();
-            }
-
-            if (!$result->verification->valid) {
-                delete_option("{$this->optionName}_purchase_code");
             }
 
             if ($result && empty($result->error) && !empty($result->data) && version_compare($this->version, $result->data->new_version, '<')) {
@@ -400,7 +426,7 @@ if (!class_exists('daftplugInstantifyAdmin')) {
             $result = false;
 
             if (isset($args->slug) && $args->slug === $this->slug) {
-                $info = $this->getPluginData();
+                $info = daftplugInstantify::handleLicense($this->purchaseCode, 'update');
 
                 if (is_object($info) && empty($info->error) && !empty($info->data)) {
                     if (!empty($info->data->sections)) {
@@ -409,47 +435,6 @@ if (!class_exists('daftplugInstantifyAdmin')) {
 
                     $result = $info->data;
                 }
-            }
-
-            return $result;
-        }
-
-        public function verify($purchaseCode) {
-            $params = array(
-                'body' => array(
-                    'action' => 'verify',
-                    'item_id' => urlencode($this->itemId),
-                    'purchase_code' => urlencode($purchaseCode),
-                    'website' => $this->website
-                ),
-                'user-agent' => 'WordPress/'.get_bloginfo('version').'; '.get_bloginfo('url')
-            );
-        
-            $response = wp_remote_post($this->verifyUrl, $params);
-        
-            if (!is_wp_error($response) || wp_remote_retrieve_response_code($response) === 200) {
-                $result = json_decode(wp_remote_retrieve_body($response));
-            }
-
-            return $result;
-        }
-
-        public function getPluginData() {
-            $params = array(
-                'body' => array(
-                    'action' => 'update',
-                    'slug' => urlencode($this->slug),
-                    'item_id' => urlencode($this->itemId),
-                    'purchase_code' => urlencode($this->purchaseCode),
-                    'website' => $this->website
-                ),
-                'user-agent' => 'WordPress/'.get_bloginfo('version').'; '.get_bloginfo('url')
-            );
-        
-            $response = wp_remote_post($this->verifyUrl, $params);
-        
-            if (!is_wp_error($response) || wp_remote_retrieve_response_code($response) === 200) {
-                $result = json_decode(wp_remote_retrieve_body($response));
             }
 
             return $result;

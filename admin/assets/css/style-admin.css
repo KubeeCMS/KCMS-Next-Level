@@ -63,6 +63,7 @@
 
 .daftplugAdmin ::-webkit-scrollbar {
     width: 7px;
+    height: 7px;
 }
 
 .daftplugAdmin ::-webkit-scrollbar-track {
@@ -363,6 +364,286 @@
     max-width: 100%;
 }
 
+@media (max-width: 576px) {
+	.daftplugAdmin .-flexSmAuto {
+		-ms-flex-preferred-size: 0;
+		flex-basis: 0;
+		-ms-flex-positive: 1;
+		flex-g-row: 1;
+		max-width: 100%;
+	}
+	.daftplugAdmin .-flexSm1 {
+		-ms-flex: 0 0 8.333333%;
+		flex: 0 0 8.333333%;
+		max-width: 8.333333%;
+	}
+	.daftplugAdmin .-flexSm2 {
+		-ms-flex: 0 0 16.666667%;
+		flex: 0 0 16.666667%;
+		max-width: 16.666667%;
+	}
+	.daftplugAdmin .-flexSm3 {
+		-ms-flex: 0 0 25%;
+		flex: 0 0 25%;
+		max-width: 25%;
+	}
+	.daftplugAdmin .-flexSm4 {
+		-ms-flex: 0 0 33.333333%;
+		flex: 0 0 33.333333%;
+		max-width: 33.333333%;
+	}
+	.daftplugAdmin .-flexSm5 {
+		-ms-flex: 0 0 41.666667%;
+		flex: 0 0 41.666667%;
+		max-width: 41.666667%;
+	}
+	.daftplugAdmin .-flexSm6 {
+		-ms-flex: 0 0 50%;
+		flex: 0 0 50%;
+		max-width: 50%;
+	}
+	.daftplugAdmin .-flexSm7 {
+		-ms-flex: 0 0 58.333333%;
+		flex: 0 0 58.333333%;
+		max-width: 58.333333%;
+	}
+	.daftplugAdmin .-flexSm8 {
+		-ms-flex: 0 0 66.666667%;
+		flex: 0 0 66.666667%;
+		max-width: 66.666667%;
+	}
+	.daftplugAdmin .-flexSm9 {
+		-ms-flex: 0 0 75%;
+		flex: 0 0 75%;
+		max-width: 75%;
+	}
+	.daftplugAdmin .-flexSm10 {
+		-ms-flex: 0 0 83.333333%;
+		flex: 0 0 83.333333%;
+		max-width: 83.333333%;
+	}
+	.daftplugAdmin .-flexSm11 {
+		-ms-flex: 0 0 91.666667%;
+		flex: 0 0 91.666667%;
+		max-width: 91.666667%;
+	}
+	.daftplugAdmin .-flexSm12 {
+		-ms-flex: 0 0 100%;
+		flex: 0 0 100%;
+		max-width: 100%;
+	}
+}
+
+@media (max-width: 768px) {
+	.daftplugAdmin .-flexMdAuto {
+		-ms-flex-preferred-size: 0;
+		flex-basis: 0;
+		-ms-flex-positive: 1;
+		flex-g-row: 1;
+		max-width: 100%;
+	}
+	.daftplugAdmin .-flexMd1 {
+		-ms-flex: 0 0 8.333333%;
+		flex: 0 0 8.333333%;
+		max-width: 8.333333%;
+	}
+	.daftplugAdmin .-flexMd2 {
+		-ms-flex: 0 0 16.666667%;
+		flex: 0 0 16.666667%;
+		max-width: 16.666667%;
+	}
+	.daftplugAdmin .-flexMd3 {
+		-ms-flex: 0 0 25%;
+		flex: 0 0 25%;
+		max-width: 25%;
+	}
+	.daftplugAdmin .-flexMd4 {
+		-ms-flex: 0 0 33.333333%;
+		flex: 0 0 33.333333%;
+		max-width: 33.333333%;
+	}
+	.daftplugAdmin .-flexMd5 {
+		-ms-flex: 0 0 41.666667%;
+		flex: 0 0 41.666667%;
+		max-width: 41.666667%;
+	}
+	.daftplugAdmin .-flexMd6 {
+		-ms-flex: 0 0 50%;
+		flex: 0 0 50%;
+		max-width: 50%;
+	}
+	.daftplugAdmin .-flexMd7 {
+		-ms-flex: 0 0 58.333333%;
+		flex: 0 0 58.333333%;
+		max-width: 58.333333%;
+	}
+	.daftplugAdmin .-flexMd8 {
+		-ms-flex: 0 0 66.666667%;
+		flex: 0 0 66.666667%;
+		max-width: 66.666667%;
+	}
+	.daftplugAdmin .-flexMd9 {
+		-ms-flex: 0 0 75%;
+		flex: 0 0 75%;
+		max-width: 75%;
+	}
+	.daftplugAdmin .-flexMd10 {
+		-ms-flex: 0 0 83.333333%;
+		flex: 0 0 83.333333%;
+		max-width: 83.333333%;
+	}
+	.daftplugAdmin .-flexMd11 {
+		-ms-flex: 0 0 91.666667%;
+		flex: 0 0 91.666667%;
+		max-width: 91.666667%;
+	}
+	.daftplugAdmin .-flexMd12 {
+		-ms-flex: 0 0 100%;
+		flex: 0 0 100%;
+		max-width: 100%;
+	}
+}
+
+@media (max-width: 992px) {
+	.daftplugAdmin .-flexLgAuto {
+		-ms-flex-preferred-size: 0;
+		flex-basis: 0;
+		-ms-flex-positive: 1;
+		flex-g-row: 1;
+		max-width: 100%;
+	}
+	.daftplugAdmin .-flexLg1 {
+		-ms-flex: 0 0 8.333333%;
+		flex: 0 0 8.333333%;
+		max-width: 8.333333%;
+	}
+	.daftplugAdmin .-flexLg2 {
+		-ms-flex: 0 0 16.666667%;
+		flex: 0 0 16.666667%;
+		max-width: 16.666667%;
+	}
+	.daftplugAdmin .-flexLg3 {
+		-ms-flex: 0 0 25%;
+		flex: 0 0 25%;
+		max-width: 25%;
+	}
+	.daftplugAdmin .-flexLg4 {
+		-ms-flex: 0 0 33.333333%;
+		flex: 0 0 33.333333%;
+		max-width: 33.333333%;
+	}
+	.daftplugAdmin .-flexLg5 {
+		-ms-flex: 0 0 41.666667%;
+		flex: 0 0 41.666667%;
+		max-width: 41.666667%;
+	}
+	.daftplugAdmin .-flexLg6 {
+		-ms-flex: 0 0 50%;
+		flex: 0 0 50%;
+		max-width: 50%;
+	}
+	.daftplugAdmin .-flexLg7 {
+		-ms-flex: 0 0 58.333333%;
+		flex: 0 0 58.333333%;
+		max-width: 58.333333%;
+	}
+	.daftplugAdmin .-flexLg8 {
+		-ms-flex: 0 0 66.666667%;
+		flex: 0 0 66.666667%;
+		max-width: 66.666667%;
+	}
+	.daftplugAdmin .-flexLg9 {
+		-ms-flex: 0 0 75%;
+		flex: 0 0 75%;
+		max-width: 75%;
+	}
+	.daftplugAdmin .-flexLg10 {
+		-ms-flex: 0 0 83.333333%;
+		flex: 0 0 83.333333%;
+		max-width: 83.333333%;
+	}
+	.daftplugAdmin .-flexLg11 {
+		-ms-flex: 0 0 91.666667%;
+		flex: 0 0 91.666667%;
+		max-width: 91.666667%;
+	}
+	.daftplugAdmin .-flexLg12 {
+		-ms-flex: 0 0 100%;
+		flex: 0 0 100%;
+		max-width: 100%;
+	}
+}
+
+@media (max-width: 1200px) {
+	.daftplugAdmin .-flexXlAuto {
+		-ms-flex-preferred-size: 0;
+		flex-basis: 0;
+		-ms-flex-positive: 1;
+		flex-g-row: 1;
+		max-width: 100%;
+	}
+	.daftplugAdmin .-flexXl1 {
+		-ms-flex: 0 0 8.333333%;
+		flex: 0 0 8.333333%;
+		max-width: 8.333333%;
+	}
+	.daftplugAdmin .-flexXl2 {
+		-ms-flex: 0 0 16.666667%;
+		flex: 0 0 16.666667%;
+		max-width: 16.666667%;
+	}
+	.daftplugAdmin .-flexXl3 {
+		-ms-flex: 0 0 25%;
+		flex: 0 0 25%;
+		max-width: 25%;
+	}
+	.daftplugAdmin .-flexXl4 {
+		-ms-flex: 0 0 33.333333%;
+		flex: 0 0 33.333333%;
+		max-width: 33.333333%;
+	}
+	.daftplugAdmin .-flexXl5 {
+		-ms-flex: 0 0 41.666667%;
+		flex: 0 0 41.666667%;
+		max-width: 41.666667%;
+	}
+	.daftplugAdmin .-flexXl6 {
+		-ms-flex: 0 0 50%;
+		flex: 0 0 50%;
+		max-width: 50%;
+	}
+	.daftplugAdmin .-flexXl7 {
+		-ms-flex: 0 0 58.333333%;
+		flex: 0 0 58.333333%;
+		max-width: 58.333333%;
+	}
+	.daftplugAdmin .-flexXl8 {
+		-ms-flex: 0 0 66.666667%;
+		flex: 0 0 66.666667%;
+		max-width: 66.666667%;
+	}
+	.daftplugAdmin .-flexXl9 {
+		-ms-flex: 0 0 75%;
+		flex: 0 0 75%;
+		max-width: 75%;
+	}
+	.daftplugAdmin .-flexXl10 {
+		-ms-flex: 0 0 83.333333%;
+		flex: 0 0 83.333333%;
+		max-width: 83.333333%;
+	}
+	.daftplugAdmin .-flexXl11 {
+		-ms-flex: 0 0 91.666667%;
+		flex: 0 0 91.666667%;
+		max-width: 91.666667%;
+	}
+	.daftplugAdmin .-flexXl12 {
+		-ms-flex: 0 0 100%;
+		flex: 0 0 100%;
+		max-width: 100%;
+	}
+}
+
 .daftplugAdmin .-disabled {
     pointer-events: none !important;
     opacity: 0.6 !important;
@@ -412,35 +693,124 @@
     background: #3e4650;
     color: #fff;
     z-index: 1000;
-    bottom: calc(100% + 5px);
-    left: 50%;
-    transform: translate(-50%, -.5em);
-    animation: daftplugTooltip 200ms ease forwards;
+    animation: daftplugFade .15s ease forwards;
+}
+
+.daftplugAdmin .daftplugAdminLoader {
+    display: none;
+    position: absolute;
+    z-index: 99999999999;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 50%;
+    height: calc(var(--size) * 2);
+    width: calc(var(--size) * 3);
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    margin-top: calc(var(--size) * 1.5 * -1);
+    -webkit-transform: rotateX(60deg) rotateZ(45deg) rotateY(0deg) translateZ(0px);
+    transform: rotateX(60deg) rotateZ(45deg) rotateY(0deg) translateZ(0px);
+}
+
+.daftplugAdmin .daftplugAdminLoader .daftplugAdminLoader_box {
+    width: var(--size);
+    height: var(--size);
+    top: 0;
+    left: 0;
+    position: absolute;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+.daftplugAdmin .daftplugAdminLoader .daftplugAdminLoader_box:nth-child(1) {
+    -webkit-transform: translate(100%, 0);
+    transform: translate(100%, 0);
+    -webkit-animation: daftplugAdminLoaderBox1 var(--duration) linear infinite;
+    animation: daftplugAdminLoaderBox1 var(--duration) linear infinite;
+}
+
+.daftplugAdmin .daftplugAdminLoader .daftplugAdminLoader_box:nth-child(2) {
+    -webkit-transform: translate(0, 100%);
+    transform: translate(0, 100%);
+    -webkit-animation: daftplugAdminLoaderBox2 var(--duration) linear infinite;
+    animation: daftplugAdminLoaderBox2 var(--duration) linear infinite;
+}
+
+.daftplugAdmin .daftplugAdminLoader .daftplugAdminLoader_box:nth-child(3) {
+    -webkit-transform: translate(100%, 100%);
+    transform: translate(100%, 100%);
+    -webkit-animation: daftplugAdminLoaderBox3 var(--duration) linear infinite;
+    animation: daftplugAdminLoaderBox3 var(--duration) linear infinite;
+}
+
+.daftplugAdmin .daftplugAdminLoader .daftplugAdminLoader_box:nth-child(4) {
+    -webkit-transform: translate(200%, 0);
+    transform: translate(200%, 0);
+    -webkit-animation: daftplugAdminLoaderBox4 var(--duration) linear infinite;
+    animation: daftplugAdminLoaderBox4 var(--duration) linear infinite;
+}
+
+.daftplugAdmin .daftplugAdminLoader .daftplugAdminLoader_box > div {
+    --background: #5C8DF6;
+    --top: auto;
+    --right: auto;
+    --bottom: auto;
+    --left: auto;
+    --translateZ: calc(var(--size) / 2);
+    --rotateY: 0deg;
+    --rotateX: 0deg;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: var(--background);
+    top: var(--top);
+    right: var(--right);
+    bottom: var(--bottom);
+    left: var(--left);
+    -webkit-transform: rotateY(var(--rotateY)) rotateX(var(--rotateX)) translateZ(var(--translateZ));
+    transform: rotateY(var(--rotateY)) rotateX(var(--rotateX)) translateZ(var(--translateZ));
+}
+
+.daftplugAdmin .daftplugAdminLoader .daftplugAdminLoader_box > div:nth-child(1) {
+    --top: 0;
+    --left: 0;
+}
+
+.daftplugAdmin .daftplugAdminLoader .daftplugAdminLoader_box > div:nth-child(2) {
+    --background: #145af2;
+    --right: 0;
+    --rotateY: 90deg;
+}
+
+.daftplugAdmin .daftplugAdminLoader .daftplugAdminLoader_box > div:nth-child(3) {
+    --background: #447cf5;
+    --rotateX: -90deg;
+}
+
+.daftplugAdmin .daftplugAdminLoader .daftplugAdminLoader_box > div:nth-child(4) {
+    --background: #DBE3F4;
+    --top: 0;
+    --left: 0;
+    --translateZ: calc(var(--size) * 3 * -1);
 }
 
 .daftplugAdmin .daftplugAdminLink {
-  	position: relative;
-  	color: #4d84fe;
-  	outline: none;
-  	transition: color 0.2s ease;
-  	text-decoration: none;
+    text-decoration: none;
+    outline: 0;
+    border-bottom: solid 1px transparent;
+    -webkit-transition: color .2s ease-out, border-bottom-color .2s ease-out;
+    -moz-transition: color .2s ease-out, border-bottom-color .2s ease-out;
+    -ms-transition: color .2s ease-out, border-bottom-color .2s ease-out;
+    -o-transition: color .2s ease-out, border-bottom-color .2s ease-out;
+    transition: color .2s ease-out, border-bottom-color .2s ease-out;
 }
 
-.daftplugAdmin .daftplugAdminLink::after {
-  	content: '';
-  	position: absolute;
-  	z-index: 1;
-  	bottom: -0.15em;
-  	left: 0;
-  	width: 0;
-  	height: 1px;
-  	background: currentColor;
-  	-webkit-transition: width 0.4s ease;
-  	transition: width 0.4s ease;
-}
-
-.daftplugAdmin .daftplugAdminLink:hover::after {
-	width: 100%;
+.daftplugAdmin .daftplugAdminLink:hover {
+    color:#4d84fe;
+    border-bottom: solid 1px #4d84fe;
 }
 
 .daftplugAdmin .daftplugAdminButton {
@@ -448,7 +818,7 @@
     vertical-align: middle;
     text-decoration: none;
     background: #4d84fe;
-    box-shadow: 0 14px 26px -12px rgba(77, 132, 254, .3), 0 4px 23px 0 rgba(0, 0, 0, .12), 0 8px 10px -5px rgba(77, 132, 254, .3);
+    box-shadow: 0 14px 26px -12px rgba(77, 132, 254, .3), 0 8px 10px -5px rgba(77, 132, 254, .3);
     color: #FFF;
     font-size: 13px;
     font-weight: 500;
@@ -469,14 +839,14 @@
 .daftplugAdmin .daftplugAdminButton:hover,
 .daftplugAdmin .daftplugAdminButton:focus {
     color: #FFF;
-    box-shadow: 0 14px 26px -12px rgba(77, 132, 254, .3), 0 4px 23px 0 rgba(0, 0, 0, .12), 0 8px 10px -5px rgba(77, 132, 254, .3);
+    box-shadow: 0 14px 26px -12px rgba(77, 132, 254, .3), 0 8px 10px -5px rgba(77, 132, 254, .3);
 }
 
 .daftplugAdmin .daftplugAdminButton:active {
     color: #FFF;
     -webkit-transform: scale(0.97);
     transform: scale(0.97);
-    box-shadow: 0 14px 26px -12px rgba(77, 132, 254, .3), 0 4px 23px 0 rgba(0, 0, 0, .12), 0 8px 10px -5px rgba(77, 132, 254, .3);
+    box-shadow: 0 14px 26px -12px rgba(77, 132, 254, .3), 0 8px 10px -5px rgba(77, 132, 254, .3);
 }
 
 .daftplugAdmin .daftplugAdminButton.-submit {
@@ -586,6 +956,7 @@
     border: 1.5px solid #505a65;
     border-radius: 25px;
     box-shadow: none;
+    line-height: 30px;
     color: #505a65; 
 }
 
@@ -593,6 +964,15 @@
     color: #ffffff;
     background: #4ad504;
     margin-top: 15px;
+}
+
+.daftplugAdmin .daftplugAdminButton.-miniGenerateApp {
+    color: #ffffff;
+    background: #4ad504;
+    height: 20px;
+    line-height: 20px;
+    padding: 0 10px;
+    font-size: 12px;
 }
 
 .daftplugAdmin .daftplugAdminButton_textset {
@@ -777,6 +1157,21 @@
     transform: rotate(-90deg) scale(1);
 }
 
+.daftplugAdmin .daftplugAdminFeaturePill {
+    display: inline-block;
+    font-size: 8px;
+    vertical-align: middle;
+    text-align: center;
+    padding: 8px;
+    margin-left: 8px;
+    margin-bottom: 2px;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 0;
+    color: #fff;
+    border-radius: 30px;
+}
+
 .daftplugAdmin .daftplugAdminPopup {
     display: -webkit-box;
     display: flex;
@@ -861,7 +1256,7 @@
     border: 1.5px solid #E5E7EB;
 }
 
-.daftplugAdmin .daftplugAdminMinifielset_close {
+.daftplugAdmin .daftplugAdminMiniFieldset_close {
     position: absolute;
     top: -8px;
     right: -10px;
@@ -885,6 +1280,13 @@
 .daftplugAdmin .daftplugAdminFieldset_button {
     text-align: center;
     margin-bottom: 25px;
+}
+
+.daftplugAdmin .daftplugAdminSettings_submit {
+    position: fixed;
+    bottom: 30px;
+    right: 18px;
+    z-index: 999;
 }
 
 .daftplugAdmin .daftplugAdminField,
@@ -988,7 +1390,28 @@
 .daftplugAdmin .daftplugAdminStatus_text {
     color: #6e7277;
     font-size: 13px;
-}    
+}
+
+.daftplugAdmin .CodeMirror {
+    position: relative;
+    height: 230px;
+    border-radius: 4px;
+    box-shadow: none;
+    outline: 0;
+    font-weight: 400;
+    margin: 0;
+    width: 100%;
+    overflow: hidden;
+    font-size: 12px;
+}
+
+.daftplugAdmin .CodeMirror-linenumber {
+    text-align: center;
+}
+
+.daftplugAdmin .CodeMirror-scroll {
+    overflow-x: hidden !important;
+}
 
 .daftplugAdmin .daftplugAdminInputText,
 .daftplugAdmin .daftplugAdminInputTextarea,
@@ -1244,6 +1667,7 @@
 }
 
 .daftplugAdmin .daftplugAdminInputSelect_option {
+    display: list-item;
     margin: 0;
     padding: 0;
     opacity: 0;
@@ -1577,6 +2001,100 @@
     display: none;
 }
 
+.daftplugAdmin .daftplugAdminInputCheckbox.-imgcustom {
+    width: 100%;
+    height: auto;
+    margin-bottom: 30px;
+    display: inline-block;
+}
+
+.daftplugAdmin .daftplugAdminInputCheckbox.-imgcustom .daftplugAdminInputCheckbox_custom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #d9dbde;
+    box-shadow: none;
+    outline: 0;
+    background: #fff;
+    color: #444f5b;
+}
+
+.daftplugAdmin .daftplugAdminInputCheckbox.-imgcustom .daftplugAdminInputCheckbox_icon {
+    position: absolute;
+    z-index: 1;
+    top: -5px;
+    left: 10px;
+    stroke: #ffffff;
+    background: #4d84fe;
+    width: 20px;
+    height: 20px;
+    padding: 4px;
+    border-radius: 25px;
+    display: inline-block;
+    fill: #4d84fe;
+    stroke-width: 4px;
+    vertical-align: middle;
+    transition-duration: 0.1s;
+    transform: scale(0);
+}
+
+.daftplugAdmin .daftplugAdminInputCheckbox.-imgcustom .daftplugAdminInputCheckbox_img {
+    width: auto;
+    height: 55px;
+}
+
+.daftplugAdmin .daftplugAdminInputCheckbox.-imgcustom .daftplugAdminInputCheckbox_text {
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+.daftplugAdmin .daftplugAdminInputCheckbox.-imgcustom .daftplugAdminInputCheckbox_edit {
+    -webkit-appearance: none;
+    background: #ECEFFC;
+    color: #646B8C;
+    outline: none;
+    cursor: pointer;
+    border-radius: 25px;
+    margin: 0;
+    font-size: 11px;
+    font-weight: 500;
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 7px;
+    right: 22px;
+    transition: opacity .1s;
+}
+
+.daftplugAdmin .daftplugAdminInputCheckbox.-imgcustom .daftplugAdminInputCheckbox_edit:hover {
+    background: #E1E6F9;
+}
+
+.daftplugAdmin .daftplugAdminInputCheckbox.-imgcustom .daftplugAdminInputCheckbox_field:checked~.daftplugAdminInputCheckbox_custom {
+    border: 1.5px solid #4073ff;
+    padding: 9.5px;
+}
+
+.daftplugAdmin .daftplugAdminInputCheckbox.-imgcustom .daftplugAdminInputCheckbox_field:checked~.daftplugAdminInputCheckbox_custom:hover .daftplugAdminInputCheckbox_edit {
+    opacity: 1;
+    visibility: visible;
+    border: none;
+    padding: 2px 8px;
+}
+
+.daftplugAdmin .daftplugAdminInputCheckbox.-imgcustom .daftplugAdminInputCheckbox_field:checked~.daftplugAdminInputCheckbox_custom .daftplugAdminInputCheckbox_icon {
+    transform: scale(1);
+}
+
+.daftplugAdmin .daftplugAdminInputCheckbox.-imgcustom .daftplugAdminInputCheckbox_field:checked~.daftplugAdminInputCheckbox_custom .daftplugAdminInputCheckbox_edit {
+    border: 1.5px solid #4073ff;
+    padding: 9.5px;
+}
+
 .daftplugAdmin .daftplugAdminInputUpload.-invalid .daftplugAdminInputUpload_icon.-iconUpload #circleActive {
     stroke-dasharray: 195 !important;
     stroke-dashoffset: 390 !important;
@@ -1765,6 +2283,12 @@
     color: #4e6884;
 }
 
+.daftplugAdmin .daftplugAdminTable_data.-user {
+    font-size: 13px;
+    font-weight: 400;
+    color: #758dbd;
+}
+
 .daftplugAdmin .daftplugAdminTable_nodata {
     text-align: center;
     padding: 10px;
@@ -1776,7 +2300,7 @@
     height: 38px;
     border-radius: 50%;
     text-align: center;
-    line-height: 33px;
+    line-height: 35px;
 }
 
 .daftplugAdmin .daftplugAdminTable_action:hover {
@@ -1963,15 +2487,16 @@
 .daftplugAdmin .daftplugAdminSubmenu_list {
     list-style-type: none;
     display: inline-block;
-    background: #ebedec;
+    background-color: #fff;
+    box-shadow: 0 0 25px -10px rgb(64 115 255 / 0.3);
     margin: 0;
-    border-radius: 50px;
+    border-radius: 30px;
 }
 
 .daftplugAdmin .daftplugAdminSubmenu_item {
     display: inline-block;
     margin: 10px;
-    border-radius: 50px;
+    border-radius: 30px;
     white-space:nowrap;
 }
 
@@ -1985,14 +2510,12 @@
 }
 
 .daftplugAdmin .daftplugAdminSubmenu_item.-active {
-    background: #4073ff;
-    border-radius: 50px;
-    -webkit-box-shadow: 0px 10px 20px rgba(255, 255, 255, 0.3);
-    box-shadow: 0px 10px 20px rgba(255, 255, 255, 0.3);
+    background: #e6eef9;
+    border-radius: 30px;
 }
 
 .daftplugAdmin .daftplugAdminSubmenu_item.-active .daftplugAdminSubmenu_link {
-    color: #fff;
+    color: #4073ff;
 }
 
 .daftplugAdmin .daftplugAdminPages {
@@ -2030,7 +2553,7 @@
     display: flex;
     opacity: 1;
     z-index: 1;
-    animation: daftplugFade 0.3s;
+    animation: daftplugFade .15s;
 }
 
 .daftplugAdmin .daftplugAdminPage_illustration {
@@ -2065,7 +2588,7 @@
 .daftplugAdmin .daftplugAdminPage_subpage.-active {
     display: -ms-flexbox;
     display: flex;
-    animation: daftplugFade 0.3s;
+    animation: daftplugFade .15s;
 }
 
 .daftplugAdmin .daftplugAdminPage_content {
@@ -2155,7 +2678,7 @@
     display: block;
     padding-bottom: 24px;
     margin-top: -5px;
-    animation: daftplugFade 0.3s;
+    animation: daftplugFade .15s;
 }
 
 .daftplugAdmin .daftplugAdminFaq_image {
@@ -2221,105 +2744,25 @@
     margin-left: 10px;
 }
 
-.daftplugAdmin .daftplugAdminLoader {
-    display: none;
-    position: absolute;
-    z-index: 99999999999;
-    margin: auto;
-    left: 0;
-    right: 0;
-    top: 50%;
-    height: calc(var(--size) * 2);
-    width: calc(var(--size) * 3);
-    -webkit-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-    -webkit-transform-origin: 50% 50%;
-    transform-origin: 50% 50%;
-    margin-top: calc(var(--size) * 1.5 * -1);
-    -webkit-transform: rotateX(60deg) rotateZ(45deg) rotateY(0deg) translateZ(0px);
-    transform: rotateX(60deg) rotateZ(45deg) rotateY(0deg) translateZ(0px);
+.daftplugAdmin .daftplugAdminChangelog {
+    max-height: 550px;
+    overflow: auto;
 }
 
-.daftplugAdmin .daftplugAdminLoader .daftplugAdminLoader_box {
-    width: var(--size);
-    height: var(--size);
-    top: 0;
-    left: 0;
-    position: absolute;
-    -webkit-transform-style: preserve-3d;
-    transform-style: preserve-3d;
+.daftplugAdmin .daftplugAdminChangelog_date {
+    font-style: italic;
+    font-weight: 700;
+    margin-bottom: 5px;
 }
 
-.daftplugAdmin .daftplugAdminLoader .daftplugAdminLoader_box:nth-child(1) {
-    -webkit-transform: translate(100%, 0);
-    transform: translate(100%, 0);
-    -webkit-animation: daftplugAdminLoaderBox1 var(--duration) linear infinite;
-    animation: daftplugAdminLoaderBox1 var(--duration) linear infinite;
+.daftplugAdmin .daftplugAdminChangelog_list,
+.daftplugAdmin .daftplugAdminChangelog_item {
+    margin: 0;
 }
 
-.daftplugAdmin .daftplugAdminLoader .daftplugAdminLoader_box:nth-child(2) {
-    -webkit-transform: translate(0, 100%);
-    transform: translate(0, 100%);
-    -webkit-animation: daftplugAdminLoaderBox2 var(--duration) linear infinite;
-    animation: daftplugAdminLoaderBox2 var(--duration) linear infinite;
-}
-
-.daftplugAdmin .daftplugAdminLoader .daftplugAdminLoader_box:nth-child(3) {
-    -webkit-transform: translate(100%, 100%);
-    transform: translate(100%, 100%);
-    -webkit-animation: daftplugAdminLoaderBox3 var(--duration) linear infinite;
-    animation: daftplugAdminLoaderBox3 var(--duration) linear infinite;
-}
-
-.daftplugAdmin .daftplugAdminLoader .daftplugAdminLoader_box:nth-child(4) {
-    -webkit-transform: translate(200%, 0);
-    transform: translate(200%, 0);
-    -webkit-animation: daftplugAdminLoaderBox4 var(--duration) linear infinite;
-    animation: daftplugAdminLoaderBox4 var(--duration) linear infinite;
-}
-
-.daftplugAdmin .daftplugAdminLoader .daftplugAdminLoader_box > div {
-    --background: #5C8DF6;
-    --top: auto;
-    --right: auto;
-    --bottom: auto;
-    --left: auto;
-    --translateZ: calc(var(--size) / 2);
-    --rotateY: 0deg;
-    --rotateX: 0deg;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: var(--background);
-    top: var(--top);
-    right: var(--right);
-    bottom: var(--bottom);
-    left: var(--left);
-    -webkit-transform: rotateY(var(--rotateY)) rotateX(var(--rotateX)) translateZ(var(--translateZ));
-    transform: rotateY(var(--rotateY)) rotateX(var(--rotateX)) translateZ(var(--translateZ));
-}
-
-.daftplugAdmin .daftplugAdminLoader .daftplugAdminLoader_box > div:nth-child(1) {
-    --top: 0;
-    --left: 0;
-}
-
-.daftplugAdmin .daftplugAdminLoader .daftplugAdminLoader_box > div:nth-child(2) {
-    --background: #145af2;
-    --right: 0;
-    --rotateY: 90deg;
-}
-
-.daftplugAdmin .daftplugAdminLoader .daftplugAdminLoader_box > div:nth-child(3) {
-    --background: #447cf5;
-    --rotateX: -90deg;
-}
-
-.daftplugAdmin .daftplugAdminLoader .daftplugAdminLoader_box > div:nth-child(4) {
-    --background: #DBE3F4;
-    --top: 0;
-    --left: 0;
-    --translateZ: calc(var(--size) * 3 * -1);
+.daftplugAdmin .daftplugAdminChangelog_text {
+    display: inline-block;
+    font-weight: 500;
 }
 
 .daftplugAdmin .daftplugAdminInstallationAnalytics_chartArea {
@@ -2480,26 +2923,32 @@
     }
 }
 
-@-webkit-keyframes daftplugTooltip {
-    to {
-        opacity: .9;
-        transform: translate(-50%, 0);
-    }
-}
-
-@keyframes daftplugTooltip {
-    to {
-        opacity: .9;
-        transform: translate(-50%, 0);
-    }
+@-webkit-keyframes daftplugFade {
+	0% {
+		opacity: 0;
+	}
+	40% {
+		opacity: 0.4;
+	}
+	60% {
+		opacity: 0.6;
+	}
+	100% {
+		opacity: 1;
+	}
 }
 
 @keyframes daftplugFade {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
+	0% {
+		opacity: 0;
+	}
+	40% {
+		opacity: 0.4;
+	}
+	60% {
+		opacity: 0.6;
+	}
+	100% {
+		opacity: 1;
+	}
 }

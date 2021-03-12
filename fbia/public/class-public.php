@@ -47,10 +47,15 @@ if (!class_exists('daftplugInstantifyFbiaPublic')) {
     	}
 
         public function loadAssets() {
+            if (daftplugInstantify::isAmpPage()) {
+                return;
+            }
+            
             $this->dependencies[] = 'jquery';
+            $this->dependencies[] = "{$this->slug}-public";
 
-            wp_enqueue_style("{$this->slug}-fbia-public", plugins_url('fbia/public/assets/css/style-fbia.css', $this->pluginFile), array(), $this->version);
-            wp_enqueue_script("{$this->slug}-fbia-public", plugins_url('fbia/public/assets/js/script-fbia.js', $this->pluginFile), $this->dependencies, $this->version, true);
+            wp_enqueue_style("{$this->slug}-fbia-public", plugins_url('fbia/public/assets/css/style-fbia.min.css', $this->pluginFile), array(), $this->version);
+            wp_enqueue_script("{$this->slug}-fbia-public", plugins_url('fbia/public/assets/js/script-fbia.min.js', $this->pluginFile), $this->dependencies, $this->version, true);
         }
 
     	public function generatePartials() {

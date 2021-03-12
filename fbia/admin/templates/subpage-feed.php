@@ -9,7 +9,14 @@ if (!defined('ABSPATH')) exit;
             <form name="daftplugAdminSettings_form" class="daftplugAdminSettings_form" data-nonce="<?php echo wp_create_nonce("{$this->optionName}_settings_nonce"); ?>" spellcheck="false" autocomplete="off">
                 <fieldset class="daftplugAdminFieldset">
                     <h4 class="daftplugAdminFieldset_title"><?php esc_html_e('Feed Preferences', $this->textDomain); ?></h4>
-                    <p class="daftplugAdminFieldset_description"><?php esc_html_e('From this section you are allowed to set FBIA feed preferences. You can set custom copyright details, enable RTL publishing and define number of latest articles in your feed.', $this->textDomain); ?></p>
+                    <p class="daftplugAdminFieldset_description"><?php esc_html_e('From this section you are allowed to set FBIA feed preferences. You can assign your Instant Articles a custom style, set copyright details, enable RTL publishing and define number of latest articles in your feed and choose update frequency of the feed.', $this->textDomain); ?></p>
+                    <div class="daftplugAdminField">
+                        <p class="daftplugAdminField_description"><?php esc_html_e('Enter the name of your custom article style.', $this->textDomain); ?></p>
+                        <label for="fbiaCopyright" class="daftplugAdminField_label -flex4"><?php esc_html_e('Article Style', $this->textDomain); ?></label>
+                        <div class="daftplugAdminInputText -flexAuto">
+                            <input type="text" name="fbiaArticleStyle" id="fbiaArticleStyle" class="daftplugAdminInputText_field" value="<?php echo daftplugInstantify::getSetting('fbiaArticleStyle'); ?>" data-placeholder="<?php esc_html_e('Article Style', $this->textDomain); ?>" autocomplete="off" required>
+                        </div>
+                    </div>
                     <div class="daftplugAdminField">
                         <p class="daftplugAdminField_description"><?php esc_html_e('Enter the standard copyright details for your instant articles.', $this->textDomain); ?></p>
                         <label for="fbiaCopyright" class="daftplugAdminField_label -flex4"><?php esc_html_e('Copyright', $this->textDomain); ?></label>
@@ -29,6 +36,19 @@ if (!defined('ABSPATH')) exit;
                         <label for="fbiaArticleQuantity" class="daftplugAdminField_label -flex4"><?php esc_html_e('Article Quantity', $this->textDomain); ?></label>
                         <div class="daftplugAdminInputRange -flexAuto">
                             <input type="range" name="fbiaArticleQuantity" id="fbiaArticleQuantity" class="daftplugAdminInputRange_field" value="<?php echo daftplugInstantify::getSetting('fbiaArticleQuantity'); ?>" min="1" step="1" max="100" data-placeholder="<?php esc_html_e('Article Quantity', $this->textDomain); ?>" required>
+                        </div>
+                    </div>
+                    <div class="daftplugAdminField">
+                        <p class="daftplugAdminField_description"><?php esc_html_e('Select update frequency of the Instant Articles feed. Lower value will update your feed more frequently, but it might increase the server load.', $this->textDomain); ?></p>
+                        <label for="ampMode" class="daftplugAdminField_label -flex4"><?php esc_html_e('Update Frequency', $this->textDomain); ?></label>
+                        <div class="daftplugAdminInputSelect -flexAuto">
+                            <select name="fbiaUpdateFrequency" id="fbiaUpdateFrequency" class="daftplugAdminInputSelect_field" data-placeholder="<?php esc_html_e('Update Frequency', $this->textDomain); ?>" autocomplete="off" required>
+                                <option value="5" <?php selected('5', daftplugInstantify::getSetting('fbiaUpdateFrequency')) ?>><?php esc_html_e('Once every 5 hours', $this->textDomain); ?></option>
+                                <option value="4" <?php selected('4', daftplugInstantify::getSetting('fbiaUpdateFrequency')) ?>><?php esc_html_e('Once every 4 hours', $this->textDomain); ?></option>
+                                <option value="3" <?php selected('3', daftplugInstantify::getSetting('fbiaUpdateFrequency')) ?>><?php esc_html_e('Once every 3 hours', $this->textDomain); ?></option>
+                                <option value="2" <?php selected('2', daftplugInstantify::getSetting('fbiaUpdateFrequency')) ?>><?php esc_html_e('Once every 2 hours', $this->textDomain); ?></option>
+                                <option value="1" <?php selected('1', daftplugInstantify::getSetting('fbiaUpdateFrequency')) ?>><?php esc_html_e('Once every 1 hours', $this->textDomain); ?></option>
+                            </select>
                         </div>
                     </div>
                 </fieldset>

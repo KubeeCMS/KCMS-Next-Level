@@ -23,11 +23,10 @@ if (!class_exists('daftplugInstantifyPwaAdmin')) {
         public $daftplugInstantifyPwaAdminAddtohomescreen;
         public $daftplugInstantifyPwaAdminOfflineusage;
         public $daftplugInstantifyPwaAdminAccessibility;
-        public $daftplugInstantifyPwaAdminOptimizations;
+        public $daftplugInstantifyPwaAdminEnhancements;
         public $daftplugInstantifyPwaAdminPushnotifications;
 
-    	public function __construct($config, $daftplugInstantifyPwaAdminAddtohomescreen, $daftplugInstantifyPwaAdminOfflineusage, $daftplugInstantifyPwaAdminAccessibility,
-                    $daftplugInstantifyPwaAdminOptimizations, $daftplugInstantifyPwaAdminPushnotifications) {
+    	public function __construct($config, $daftplugInstantifyPwaAdminAddtohomescreen, $daftplugInstantifyPwaAdminOfflineusage, $daftplugInstantifyPwaAdminAccessibility, $daftplugInstantifyPwaAdminEnhancements, $daftplugInstantifyPwaAdminPushnotifications) {
     		$this->name = $config['name'];
             $this->description = $config['description'];
             $this->slug = $config['slug'];
@@ -45,9 +44,9 @@ if (!class_exists('daftplugInstantifyPwaAdmin')) {
             $this->subpages = $this->generateSubpages();
 
             $this->daftplugInstantifyPwaAdminAddtohomescreen = $daftplugInstantifyPwaAdminAddtohomescreen;
-            $this->daftplugInstantifyPwaAdminOfflineusage = $daftplugInstantifyPwaAdminAddtohomescreen;
+            $this->daftplugInstantifyPwaAdminOfflineusage = $daftplugInstantifyPwaAdminOfflineusage;
             $this->daftplugInstantifyPwaAdminAccessibility = $daftplugInstantifyPwaAdminAccessibility;
-            $this->daftplugInstantifyPwaAdminOptimizations = $daftplugInstantifyPwaAdminOptimizations;
+            $this->daftplugInstantifyPwaAdminEnhancements = $daftplugInstantifyPwaAdminEnhancements;
             $this->daftplugInstantifyPwaAdminPushnotifications = $daftplugInstantifyPwaAdminPushnotifications;
 
             add_action('admin_enqueue_scripts', array($this, 'loadAssets'));
@@ -55,9 +54,10 @@ if (!class_exists('daftplugInstantifyPwaAdmin')) {
 
         public function loadAssets() {
             $this->dependencies[] = 'jquery';
+            $this->dependencies[] = "{$this->slug}-admin";
 
-            wp_enqueue_style("{$this->slug}-pwa-admin", plugins_url('pwa/admin/assets/css/style-pwa.css', $this->pluginFile), array(), $this->version);
-            wp_enqueue_script("{$this->slug}-pwa-admin", plugins_url('pwa/admin/assets/js/script-pwa.js', $this->pluginFile), $this->dependencies, $this->version, true);
+            wp_enqueue_style("{$this->slug}-pwa-admin", plugins_url('pwa/admin/assets/css/style-pwa.min.css', $this->pluginFile), array(), $this->version);
+            wp_enqueue_script("{$this->slug}-pwa-admin", plugins_url('pwa/admin/assets/js/script-pwa.min.js', $this->pluginFile), $this->dependencies, $this->version, true);
         }
 
         public function generateSubpages() {
@@ -78,9 +78,9 @@ if (!class_exists('daftplugInstantifyPwaAdmin')) {
                     'template' => plugin_dir_path(__FILE__) . implode(DIRECTORY_SEPARATOR, array('templates', 'subpage-accessibility.php')),
                 ),
                 array(
-                    'id' => 'optimizations',
-                    'title' => esc_html__('Optimizations', $this->textDomain),
-                    'template' => plugin_dir_path(__FILE__) . implode(DIRECTORY_SEPARATOR, array('templates', 'subpage-optimizations.php'))
+                    'id' => 'enhancements',
+                    'title' => esc_html__('Enhancements', $this->textDomain),
+                    'template' => plugin_dir_path(__FILE__) . implode(DIRECTORY_SEPARATOR, array('templates', 'subpage-enhancements.php'))
                 ),
                 array(
                     'id' => 'pushnotifications',

@@ -21,11 +21,12 @@ if (!class_exists('daftplugInstantifyAmpAdmin')) {
         public $subpages;
 
         public $daftplugInstantifyAmpAdminGeneral;
+        public $daftplugInstantifyAmpAdminCompatibility;
         public $daftplugInstantifyAmpAdminAdvertisements;
         public $daftplugInstantifyAmpAdminAnalytics;
         public $daftplugInstantifyAmpAdminGdprconsent;
 
-    	public function __construct($config, $daftplugInstantifyAmpAdminGeneral, $daftplugInstantifyAmpAdminAdvertisements, $daftplugInstantifyAmpAdminAnalytics, $daftplugInstantifyAmpAdminGdprconsent) {
+    	public function __construct($config, $daftplugInstantifyAmpAdminGeneral, $daftplugInstantifyAmpAdminCompatibility, $daftplugInstantifyAmpAdminAdvertisements, $daftplugInstantifyAmpAdminAnalytics, $daftplugInstantifyAmpAdminGdprconsent) {
     		$this->name = $config['name'];
             $this->description = $config['description'];
             $this->slug = $config['slug'];
@@ -43,18 +44,24 @@ if (!class_exists('daftplugInstantifyAmpAdmin')) {
             $this->subpages = $this->generateSubpages();
 
             $this->daftplugInstantifyAmpAdminGeneral = $daftplugInstantifyAmpAdminGeneral;
+            $this->daftplugInstantifyAmpAdminCompatibility = $daftplugInstantifyAmpAdminCompatibility;
             $this->daftplugInstantifyAmpAdminAdvertisements = $daftplugInstantifyAmpAdminAdvertisements;
             $this->daftplugInstantifyAmpAdminAnalytics = $daftplugInstantifyAmpAdminAnalytics;
             $this->daftplugInstantifyAmpAdminGdprconsent = $daftplugInstantifyAmpAdminGdprconsent;
 
             add_action('admin_enqueue_scripts', array($this, 'loadAssets'));
+            remove_action('admin_notices', 'amp_enhancer_admin_notice');
+            AMP_Options_Manager::update_option('plugin_configured', 'true');
     	}
 
         public function loadAssets() {
             $this->dependencies[] = 'jquery';
+            $this->dependencies[] = "{$this->slug}-admin";
 
-            wp_enqueue_style("{$this->slug}-amp-admin", plugins_url('amp/admin/assets/css/style-amp.css', $this->pluginFile), array(), $this->version);
-            wp_enqueue_script("{$this->slug}-amp-admin", plugins_url('amp/admin/assets/js/script-amp.js', $this->pluginFile), $this->dependencies, $this->version, true);
+            wp_enqueue_code_editor(array('type' => 'text/css'));
+
+            wp_enqueue_style("{$this->slug}-amp-admin", plugins_url('amp/admin/assets/css/style-amp.min.css', $this->pluginFile), array(), $this->version);
+            wp_enqueue_script("{$this->slug}-amp-admin", plugins_url('amp/admin/assets/js/script-amp.min.js', $this->pluginFile), $this->dependencies, $this->version, true);
         }
 
         public function generateSubpages() {
@@ -63,6 +70,11 @@ if (!class_exists('daftplugInstantifyAmpAdmin')) {
                     'id' => 'general',
                     'title' => esc_html__('General', $this->textDomain),
                     'template' => plugin_dir_path(__FILE__) . implode(DIRECTORY_SEPARATOR, array('templates', 'subpage-general.php'))
+                ),
+                array(
+                    'id' => 'compatibility',
+                    'title' => esc_html__('Compatibility', $this->textDomain),
+                    'template' => plugin_dir_path(__FILE__) . implode(DIRECTORY_SEPARATOR, array('templates', 'subpage-compatibility.php')),
                 ),
                 array(
                     'id' => 'advertisements',

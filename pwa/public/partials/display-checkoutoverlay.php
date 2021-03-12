@@ -2,10 +2,10 @@
 
 if (!defined('ABSPATH')) exit;
 
-$appIcon = (has_site_icon()) ? get_site_icon_url(150) : wp_get_attachment_image_src(daftplugInstantify::getSetting('pwaIcon'), array(150, 150))[0];
-$message = esc_html__('Keep track of your orders. Our web app is fast, small and works offline.', $this->textDomain);
-$backgroundColor = daftplugInstantify::getSetting('pwaOverlaysBackgroundColor');
-$textColor = daftplugInstantify::getSetting('pwaOverlaysTextColor');
+$appIcon = wp_get_attachment_image_src(daftplugInstantify::getSetting('pwaIcon'), array(150, 150))[0];
+$message = esc_html__(daftplugInstantify::getSetting('pwaOverlaysTypeCheckoutMessage'), $this->textDomain);
+$backgroundColor = daftplugInstantify::getSetting('pwaOverlaysTypeCheckoutBackgroundColor');
+$textColor = daftplugInstantify::getSetting('pwaOverlaysTypeCheckoutTextColor');
 $notNow = esc_html__('Not now', $this->textDomain);
 $install = esc_html__('Install', $this->textDomain);
 

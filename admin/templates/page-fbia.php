@@ -14,7 +14,7 @@ if (!defined('ABSPATH')) exit;
     	?>
         <div class="daftplugAdminPage_content -flex8">
             <fieldset class="daftplugAdminFieldset">
-                <h4 class="daftplugAdminFieldset_title">FBIA Disabled</h4>
+                <h4 class="daftplugAdminFieldset_title"><?php _e('FBIA Disabled', $this->textDomain); ?></h4>
                 <p class="daftplugAdminFieldset_description"><?php _e('Facebook Instant Articles features are disabled. If you want to enable it just navigate to <a class="daftplugAdminLink" href="#/overview/" data-page="overview">Overview</a> section and enable it.', $this->textDomain); ?></p>
             </fieldset>
         </div>

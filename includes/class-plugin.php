@@ -66,15 +66,19 @@ if (!class_exists('daftplugInstantify')) {
                 'pwaDynamicManifest' => 'off',
                 'pwaName' => get_bloginfo('name'),
                 'pwaShortName' => get_bloginfo('name'),
-                'pwaStartPage' => trailingslashit(home_url('/', 'https')),
+                'pwaStartPage' => trailingslashit(strtok(home_url('/', 'https'), '?')),
                 'pwaDescription' => get_bloginfo('description'),
-                'pwaIcon' => '',
-                'pwaIconMaskable' => 'off',
+                'pwaIcon' => get_option('site_icon'),
                 'pwaDisplayMode' => 'standalone',
                 'pwaOrientation' => 'any',
                 'pwaIosStatusBarStyle' => 'default',
-                'pwaThemeColor' => '',
-                'pwaBackgroundColor' => '',
+                'pwaThemeColor' => '#FFFFFF',
+                'pwaBackgroundColor' => '#FFFFFF',
+                'pwaCategories' => array(),
+                'pwaRelatedApplication' => 'off',
+                'pwaRelatedApplicationPlatform' => '',
+                'pwaRelatedApplicationUrl' => '',
+                'pwaRelatedApplicationId' => '',
                 'pwaAppShortcut1' => '',
                 'pwaAppShortcut1Name' => '',
                 'pwaAppShortcut1Url' => '',
@@ -92,73 +96,158 @@ if (!class_exists('daftplugInstantify')) {
                 'pwaAppShortcut4Url' => '',
                 'pwaAppShortcut4Icon' => '',
                 'pwaOverlays' => 'on',
-                'pwaOverlaysBrowsers' => array('chrome', 'firefox', 'safari'),
-                'pwaOverlaysTypes' => array('fullscreen'),
-                'pwaOverlaysBackgroundColor' => '#0A10FF',
-                'pwaOverlaysTextColor' => '#FFFFFF',
+                'pwaOverlaysBrowsers' => array('chrome', 'firefox', 'opera', 'safari'),
+                'pwaOverlaysTypeFullscreen' => 'off',
+                'pwaOverlaysTypeHeader' => 'on',
+                'pwaOverlaysTypeHeaderMessage' => 'Get our web app. It won\'t take up space on your phone.',
+                'pwaOverlaysTypeHeaderBackgroundColor' => '#0A10FF',
+                'pwaOverlaysTypeHeaderTextColor' => '#FFFFFF',
+                'pwaOverlaysTypeSnackbar' => 'off',
+                'pwaOverlaysTypeSnackbarMessage' => 'Installing uses almost no storage and provides a quick way to return to this app.',
+                'pwaOverlaysTypeSnackbarBackgroundColor' => '#0A10FF',
+                'pwaOverlaysTypeSnackbarTextColor' => '#FFFFFF',
+                'pwaOverlaysTypePost' => 'on',
+                'pwaOverlaysTypeMenu' => 'off',
+                'pwaOverlaysTypeMenuMessage' => 'Find what you need faster with our web app!',
+                'pwaOverlaysTypeMenuBackgroundColor' => '#0A10FF',
+                'pwaOverlaysTypeMenuTextColor' => '#FFFFFF',
+                'pwaOverlaysTypeFeed' => 'off',
+                'pwaOverlaysTypeFeedMessage' => 'Keep reading, even when you\'re on the train!',
+                'pwaOverlaysTypeFeedBackgroundColor' => '#0A10FF',
+                'pwaOverlaysTypeFeedTextColor' => '#FFFFFF',
+                'pwaOverlaysTypeCheckout' => 'off',
+                'pwaOverlaysTypeCheckoutMessage' => 'Keep track of your orders. Our web app is fast, small and works offline.',
+                'pwaOverlaysTypeCheckoutBackgroundColor' => '#0A10FF',
+                'pwaOverlaysTypeCheckoutTextColor' => '#FFFFFF',
+                'pwaOverlaysSkip' => 'off',
+                'pwaOverlaysDelay' => '3',
                 'pwaOverlaysShowAgain' => '2',
                 'pwaInstallButton' => 'off',
                 'pwaInstallButtonShortcode' => '[pwa-install-button]',
-                'pwaInstallButtonBrowsers' => array('chrome', 'firefox', 'safari'),
+                'pwaInstallButtonBrowsers' => array('chrome', 'firefox', 'opera', 'safari'),
                 'pwaInstallButtonText' => 'Install App',
                 'pwaInstallButtonBackgroundColor' => '#0A10FF',
                 'pwaInstallButtonTextColor' => '#FFFFFF',
-                'pwaOfflinePage' => '',
-                'pwaOfflineContent' => array(''),
+                'pwaOfflineFallbackPage' => '',
                 'pwaOfflineNotification' => 'on',
                 'pwaOfflineForms' => 'off',
                 'pwaOfflineGoogleAnalytics' => 'off',
-                'pwaOfflineDefaultStrategy' => 'networkFirst',
-                'pwaOfflineAssetsStrategy' => 'staleWhileRevalidate',
-                'pwaOfflineFontsStrategy' => 'cacheFirst',
-                'pwaOfflineImagesStrategy' => 'cacheFirst',
-                'pwaAjaxify' => 'off',
-                'pwaAjaxifyForms' => 'off',
+                'pwaOfflineHtmlStrategy' => 'StaleWhileRevalidate',
+                'pwaOfflineJavascriptStrategy' => 'StaleWhileRevalidate',
+                'pwaOfflineStylesheetsStrategy' => 'StaleWhileRevalidate',
+                'pwaOfflineImagesStrategy' => 'StaleWhileRevalidate',
+                'pwaOfflineFontsStrategy' => 'StaleWhileRevalidate',
+                'pwaOfflineCacheExpiration' => '10',
                 'pwaNavigationTabBar' => 'off',
                 'pwaNavigationTabBarBgColor' => '#FFFFFF',
-                'pwaNavigationTabBarIconColor' => '#99A3BA',
-                'pwaNavigationTabBarIconActiveColor' => '#2552FE',
-                'pwaNavigationTabBarHome' => '',
-                'pwaNavigationTabBarSearch' => '*directSearch*',
-                'pwaNavigationTabBarShop' => '',
-                'pwaNavigationTabBarCart' => '',
-                'pwaNavigationTabBarCheckout' => '',
-                'pwaNavigationTabBarNotifications' => '',
-                'pwaNavigationTabBarCategories' => '',
-                'pwaNavigationTabBarProfile' => '',
-                'pwaNavigationTabBarAbout' => '',
-                'pwaNavigationTabBarContact' => '',
-                'pwaNavigationTabBarSettings' => '',
+                'pwaNavigationTabBarIconColor' => '#B3B9CA',
+                'pwaNavigationTabBarIconActiveColor' => '#FFFFFF',
+                'pwaNavigationTabBarIconActiveBgColor' => '#2552FE',
+                'pwaNavigationTabBarItem1' => 'off',
+                'pwaNavigationTabBarItem1Icon' => '',
+                'pwaNavigationTabBarItem1Label' => '',
+                'pwaNavigationTabBarItem1Page' => '',
+                'pwaNavigationTabBarItem1Url' => '',
+                'pwaNavigationTabBarItem1CustomUrl' => 'off',
+                'pwaNavigationTabBarItem2' => 'off',
+                'pwaNavigationTabBarItem2Icon' => '',
+                'pwaNavigationTabBarItem2Label' => '',
+                'pwaNavigationTabBarItem2Page' => '',
+                'pwaNavigationTabBarItem2Url' => '',
+                'pwaNavigationTabBarItem2CustomUrl' => 'off',
+                'pwaNavigationTabBarItem3' => 'off',
+                'pwaNavigationTabBarItem3Icon' => '',
+                'pwaNavigationTabBarItem3Label' => '',
+                'pwaNavigationTabBarItem3Page' => '',
+                'pwaNavigationTabBarItem3Url' => '',
+                'pwaNavigationTabBarItem3CustomUrl' => 'off',
+                'pwaNavigationTabBarItem4' => 'off',
+                'pwaNavigationTabBarItem4Icon' => '',
+                'pwaNavigationTabBarItem4Label' => '',
+                'pwaNavigationTabBarItem4Page' => '',
+                'pwaNavigationTabBarItem4Url' => '',
+                'pwaNavigationTabBarItem4CustomUrl' => 'off',
+                'pwaNavigationTabBarItem5' => 'off',
+                'pwaNavigationTabBarItem5Icon' => '',
+                'pwaNavigationTabBarItem5Label' => '',
+                'pwaNavigationTabBarItem5Page' => '',
+                'pwaNavigationTabBarItem5Url' => '',
+                'pwaNavigationTabBarItem5CustomUrl' => 'off',
+                'pwaNavigationTabBarItem6' => 'off',
+                'pwaNavigationTabBarItem6Icon' => '',
+                'pwaNavigationTabBarItem6Label' => '',
+                'pwaNavigationTabBarItem6Page' => '',
+                'pwaNavigationTabBarItem6Url' => '',
+                'pwaNavigationTabBarItem6CustomUrl' => 'off',
+                'pwaNavigationTabBarItem7' => 'off',
+                'pwaNavigationTabBarItem7Icon' => '',
+                'pwaNavigationTabBarItem7Label' => '',
+                'pwaNavigationTabBarItem7Page' => '',
+                'pwaNavigationTabBarItem7Url' => '',
+                'pwaNavigationTabBarItem7CustomUrl' => 'off',
+                'pwaDarkMode' => 'off',
+                'pwaDarkModeSwitchButtonPosition' => 'bottom-right',
+                'pwaDarkModeOSAware' => 'off',
+                'pwaDarkModeBatteryLow' => 'off',
+                'pwaWebShareButton' => 'off',
+                'pwaWebShareButtonIconColor' => '#FFFFFF',
+                'pwaWebShareButtonBgColor' => '#3740FF',
+                'pwaWebShareButtonPosition' => 'bottom-right',
                 'pwaPullDownNavigation' => 'off',
-                'pwaPullDownNavigationBgColor' => '',
-                'pwaToastMessages' => 'on',
+                'pwaPullDownNavigationBgColor' => '#3740FF',
                 'pwaSwipeNavigation' => 'off',
                 'pwaShakeToRefresh' => 'off',
-                'pwaVibration' => 'off',
                 'pwaPreloader' => 'off',
-                'pwaCssDeliveryOptimization' => 'off',
-                'pwaJsDeliveryOptimization' => 'off',
-                'pwaCacheMinify' => 'off',
-                'pwaCompression' => 'off',
-                'pwaCachingHeaders' => 'off',
-                'pwaPromptOnLoad' => 'off',
-                'pwaNotificationBarIcon' => '',
-                'pwaPushNewPost'=> 'off',
-                'pwaPushNewPostPostTypes'=> array('post'),
-                'pwaPushNewProduct'=> 'off',
-                'pwaPushPriceDrop'=> 'off',
-                'pwaPushSalePrice'=> 'off',
-                'pwaPushBackInStock'=> 'off',
-                'pwaSubscribeButton' => 'on',
-                'pwaBellIconColor' => '#FFFFFF',
-                'pwaButtonBackgroundColor' => '#FF3838',
-                'pwaButtonPosition' => 'bottom-left',
+                'pwaPreloaderStyle' => 'default',
+                'pwaToastMessages' => 'on',
+                'pwaAjaxify' => 'off',
+                'pwaAjaxifyForms' => 'off',
+                'pwaAjaxifySelectors' => '',
+                'pwaBackgroundSync' => 'off',
+                'pwaPersistentStorage' => 'off',
+                'pwaWebShareTarget' => 'off',
+                'pwaWebShareTargetAction' => '',
+                'pwaWebShareTargetUrlQuery' => '',
+                'pwaVibration' => 'off',
+                'pwaScreenWakeLock' => 'off',
+                'pwaPushPrompt' => 'on',
+                'pwaPushPromptMessage' => 'We would like to show you notifications for the latest news and updates.',
+                'pwaPushPromptTextColor' => '#444F5B',
+                'pwaPushPromptBgColor' => '#FFFFFF',
+                'pwaPushButton' => 'on',
+                'pwaPushButtonIconColor' => '#FFFFFF',
+                'pwaPushButtonBgColor' => '#FF3838',
+                'pwaPushButtonPosition' => 'bottom-left',
+                'pwaPushButtonBehavior' => 'shown',
+                'pwaPushNewContent' => 'off',
+                'pwaPushNewContentPostTypes' => array('post'),
+                'pwaPushWooNewProduct' => 'off',
+                'pwaPushWooPriceDrop' => 'off',
+                'pwaPushWooSalePrice' => 'off',
+                'pwaPushWooBackInStock' => 'off',
+                'pwaPushWooNewOrder' => 'off',
+                'pwaPushWooNewOrderRoles' => array('administrator'),
+                'pwaPushWooLowStock' => 'off',
+                'pwaPushWooLowStockRole' => array('administrator'),
+                'pwaPushWooLowStockThreshold' => '5',
+                'pwaPushBpMemberMention' => 'off',
+                'pwaPushBpMemberReply' => 'off',
+                'pwaPushBpNewMessage' => 'off',
+                'pwaPushBpFriendRequest' => 'off',
+                'pwaPushBpFriendAccepted' => 'off',
+                'pwaPushPeepsoNotifications' => 'off',
                 'amp' => 'on',
-                'ampMode' => 'paired',
-                'ampGenerationStrategy' => '1',
+                'ampMode' => 'both',
                 'ampOnAll' => 'on',
-                'ampOnPages' => '',
-                'ampOnPostTypes' => '',
+                'ampOnPages' => array('post'),
+                'ampOnPostTypes' => array('is_singular'),
+                'ampPluginSuppression' => 'off',
+                'ampPluginSuppressionList' => array(),
+                'ampSidebarMenu' => 'off',
+                'ampSidebarMenuId' => '',
+                'ampSidebarMenuBgColor' => '#2E3334',
+                'ampSidebarMenuPosition' => 'right',
+                'ampCustomCss' => '',
                 'ampAdSenseAutoAds' => 'off',
                 'ampAdSenseAutoAdsClient' => '',
                 'ampAdAboveContentSize' => 'responsive',
@@ -200,9 +289,11 @@ if (!class_exists('daftplugInstantify')) {
                 'fbia' => 'on',
                 'fbiaPageId' => '',
                 'fbiaPostTypes' => array('post'),
+                'fbiaArticleStyle' => 'default',
                 'fbiaCopyright' => '',
                 'fbiaRtlPublishing' => 'off',
                 'fbiaArticleQuantity' => '10',
+                'fbiaUpdateFrequency' => '1',
                 'fbiaArticleInteraction' => 'off',
                 'fbiaAudienceNetwork' => 'off',
                 'fbiaAudienceNetworkPlacementId' => '',
@@ -211,7 +302,7 @@ if (!class_exists('daftplugInstantify')) {
             );
             
             if (get_transient("{$this->optionName}_updated")) {
-                update_option("{$this->optionName}_settings", self::$settings + $this->defaultSettings);
+                update_option("{$this->optionName}_settings", wp_parse_args(self::$settings, $this->defaultSettings));
                 delete_transient("{$this->optionName}_updated");
             }
 
@@ -252,7 +343,6 @@ if (!class_exists('daftplugInstantify')) {
             add_action('upgrader_process_complete', array($this, 'onUpdate'), 10, 2);
             register_deactivation_hook($this->pluginFile, array($this, 'onDeactivate'));
             add_action("{$this->optionName}_verify_license_schedule", array($this, 'verifyLicenseSchedule'));
-            add_filter('cron_schedules', array($this, 'addWeeklySchedules'));
         }
 
         public function loadTextDomain() {
@@ -268,17 +358,7 @@ if (!class_exists('daftplugInstantify')) {
         }
 
         public function onActivate() {
-            global $wp_version;
-
             $errors = array(
-                'wpVersion' => array(
-                    'message' => __('⚠️ Instantify features require later version of WordPress core. Please upgrade your WordPress core to later versions.', $this->textDomain),
-                    'condition' => version_compare($wp_version, '4.7', '<'),
-                ),
-                'phpVersion' => array(
-                    'message' => __('⚠️ Instantify features require at least PHP version 7.0 to function properly.', $this->textDomain),
-                    'condition' => version_compare(PHP_VERSION, '7.0', '<'),
-                ),
                 'curl' => array(
                     'message' => __('⚠️ Instantify features require <i>curl</i> extension to function properly.', $this->textDomain),
                     'condition' => !extension_loaded('curl'),
@@ -325,8 +405,8 @@ if (!class_exists('daftplugInstantify')) {
             }
         }
 
-        public function onUpdate($upgrader_object, $options) {
-            if($options['action'] == 'update' && $options['type'] == 'plugin' && isset($options['plugins'])) {
+        public function onUpdate($upgraderObject, $options) {
+            if ($options['action'] == 'update' && $options['type'] == 'plugin' && isset($options['plugins'])) {
                 foreach ($options['plugins'] as $plugin) {
                     if ($plugin == $this->pluginBasename) {
                         set_transient("{$this->optionName}_updated", 'yes');
@@ -341,20 +421,12 @@ if (!class_exists('daftplugInstantify')) {
 
         public function verifyLicenseSchedule() {
             $verify = $this->handleLicense($this->purchaseCode, 'verify');
-
-            if (!$verify->verification->valid) {
+            if ($verify->code !== '200' && $verify->code !== '429') {
                 delete_option("{$this->optionName}_purchase_code");
+                include_once(ABSPATH . 'wp-admin/includes/plugin.php');
+                deactivate_plugins($this->pluginBasename);
             }
         }
-
-        public function addWeeklySchedules($schedules) {
-            $schedules['weekly'] = array(
-                'interval' => 604800,
-                'display' => __('Once Weekly')
-            );
-
-            return $schedules;
-         }
 
         public static function handleLicense($purchaseCode, $action) {
             $params = array(
@@ -439,23 +511,61 @@ if (!class_exists('daftplugInstantify')) {
             }
         }
 
-        public static function isWooCommerceActive() {
+        public static function isWoocommerceActive() {
             include_once(ABSPATH . 'wp-admin/includes/plugin.php');
-            if (is_plugin_active('woocommerce/woocommerce.php')) {
-                return true;
+            return is_plugin_active('woocommerce/woocommerce.php');
+        }
+
+        public static function isBuddyPressActive() {
+            include_once(ABSPATH . 'wp-admin/includes/plugin.php');
+            return is_plugin_active('buddypress/bp-loader.php');
+        }
+
+        public static function isPeepsoActive() {
+            include_once(ABSPATH . 'wp-admin/includes/plugin.php');
+            return is_plugin_active('peepso-core/peepso.php');
+        }
+
+        public static function isOnesignalActive() {
+            include_once(ABSPATH . 'wp-admin/includes/plugin.php');
+            return is_plugin_active('onesignal-free-web-push-notifications/onesignal.php');
+        }
+
+        public static function isWprocketActive() {
+            include_once(ABSPATH . 'wp-admin/includes/plugin.php');
+            return is_plugin_active('wp-rocket/wp-rocket.php');
+        }
+
+        public static function isAmpPluginActive() {
+            include_once(ABSPATH . 'wp-admin/includes/plugin.php');
+            if (is_plugin_active('amp/amp.php') || is_plugin_active('better-amp/better-amp.php') || is_plugin_active('accelerated-mobile-pages/accelerated-mobile-pages.php') || is_plugin_active('weeblramp/weeblramp.php') || is_plugin_active('amp-wp/amp-wp.php')) {
+            	return true;
             } else {
-                return false;
+            	return false;
             }
         }
 
-        public static function getCurrentUrl() {
+        public static function isAmpPage() {
+            if (function_exists('amp_is_request')) {
+                return amp_is_request();
+            } else if (function_exists('is_amp_endpoint')) {
+                return is_amp_endpoint();
+            }
+        }
+        
+        public static function getCurrentUrl($clean = false) {
             $http = 'http';
             if (isset($_SERVER['HTTPS'])) {
                 $http = 'https';
             }
             $host = $_SERVER['HTTP_HOST'];
             $requestUri = $_SERVER['REQUEST_URI'];
-            return $http.'://'.htmlentities($host).htmlentities($requestUri);
+
+            if ($clean == true) {
+                return trim(strtok($http.'://'.htmlentities($host).htmlentities($requestUri), '?'));
+            } else {
+                return $http.'://'.htmlentities($host).htmlentities($requestUri);
+            }
         }
     }
 }

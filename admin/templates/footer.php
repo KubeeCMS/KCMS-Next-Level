@@ -14,6 +14,29 @@ if (!defined('ABSPATH')) exit;
             </div>
         </div>
     </div>
+    <div class="daftplugAdminPopup" data-popup="generateAppModal">
+        <div class="daftplugAdminPopup_container">
+            <div class="daftplugAdminRating">
+                <h4 class="daftplugAdminRating_title"><?php esc_html_e('Order your PWA Android app now', $this->textDomain); ?></h4>
+                <p class="daftplugAdminRating_description"><?php _e('After the successful payment, we will create your Android app package  for your website and send it to you along with the next few steps to submit and make it live on Google Play Store. If you are unable to proceed with the payment or having any other issue, please send us an email at <a class="daftplugAdminLink" href="mailto:support@daftplug.com">support@daftplug.com</a> or use the <a class="daftplugAdminLink" href="https://codecanyon.net/user/daftplug#contact" target="_blank">contact form</a> found on our CodeCanyon profile page.', $this->textDomain); ?></p>
+                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+                    <input type="hidden" name="cmd" value="_s-xclick">
+                    <input type="hidden" name="hosted_button_id" value="7CS4MNKLWDP24">
+                    <input type="hidden" name="on0" value="Website URL">
+                    <input type="hidden" name="os0" value="<?php echo strtok(home_url('/', 'https'), '?'); ?>">
+                    <input type="hidden" name="on1" value="Delivery Email">
+                    <div class="daftplugAdminField">
+                        <p class="daftplugAdminField_description"><?php esc_html_e('Enter email address where we\'ll contact you and send your Android app package.', $this->textDomain); ?></p>
+                        <div class="daftplugAdminInputText -flexAuto">
+                            <input type="email" name="os1" id="os1" class="daftplugAdminInputText_field" data-placeholder="<?php esc_html_e('Delivery Email', $this->textDomain); ?>" value="" autocomplete="off" required>
+                        </div>
+                    </div>
+                    <input type="image" src="<?php echo plugins_url('admin/assets/img/image-paypal-check-out-button.png', $this->pluginFile)?>" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                    <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                </form>
+            </div>
+        </div>
+	</div>
 	<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
 		<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="iconOverview">
         	<g stroke-linecap="round" stroke-linejoin="round">

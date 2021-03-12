@@ -14,16 +14,18 @@ if (!class_exists('daftplugInstantifyAmp')) {
         public $pluginFile;
         public $pluginBasename;
 
-        public $ampGenerationStrategy;
+        public $daftplugInstantifyAmpWoocommerce;
 
         public $daftplugInstantifyAmpPublic;
         public $daftplugInstantifyAmpPublicGeneral;
+        public $daftplugInstantifyAmpPublicCompatibility;
         public $daftplugInstantifyAmpPublicAdvertisements;
         public $daftplugInstantifyAmpPublicAnalytics;
         public $daftplugInstantifyAmpPublicGdprconsent;
 
         public $daftplugInstantifyAmpAdmin;
         public $daftplugInstantifyAmpAdminGeneral;
+        public $daftplugInstantifyAmpAdminCompatibility;
         public $daftplugInstantifyAmpAdminAdvertisements;
         public $daftplugInstantifyAmpAdminAnalytics;
         public $daftplugInstantifyAmpAdminGdprconsent;
@@ -39,10 +41,9 @@ if (!class_exists('daftplugInstantifyAmp')) {
             $this->pluginFile = $config['plugin_file'];
             $this->pluginBasename = $config['plugin_basename'];
 
-            $this->ampGenerationStrategy = daftplugInstantify::getSetting('ampGenerationStrategy');
-
-            if (!$this->isAmpPluginActive()) {
-                require_once(plugin_dir_path(dirname(__FILE__)) . "includes/libs/{$this->ampGenerationStrategy}/amp/amp.php");
+            if (!daftplugInstantify::isAmpPluginActive()) {
+                require_once(plugin_dir_path(dirname(__FILE__)) . 'includes/libs/amp/amp.php');
+                require_once(plugin_dir_path(dirname(__FILE__)) . 'includes/libs/amp-enhancer/amp-enhancer.php');
 
 	            if (daftplugInstantify::isPublic()) {
                     require_once(plugin_dir_path(dirname(__FILE__)) . 'public/class-public.php');
@@ -50,6 +51,9 @@ if (!class_exists('daftplugInstantifyAmp')) {
 
                     require_once(plugin_dir_path(dirname(__FILE__)) . 'public/class-general.php');
                     $this->daftplugInstantifyAmpPublicGeneral = new daftplugInstantifyAmpPublicGeneral($config, $this->daftplugInstantifyAmpPublic);
+
+                    require_once(plugin_dir_path(dirname(__FILE__)) . 'public/class-compatibility.php');
+                    $this->daftplugInstantifyAmpPublicCompatibility = new daftplugInstantifyAmpPublicCompatibility($config, $this->daftplugInstantifyAmpPublic);
 
                     require_once(plugin_dir_path(dirname(__FILE__)) . 'public/class-advertisements.php');
                     $this->daftplugInstantifyAmpPublicAdvertisements = new daftplugInstantifyAmpPublicAdvertisements($config, $this->daftplugInstantifyAmpPublic);
@@ -65,6 +69,9 @@ if (!class_exists('daftplugInstantifyAmp')) {
                     require_once(plugin_dir_path(dirname(__FILE__)) . 'admin/class-general.php');
                     $this->daftplugInstantifyAmpAdminGeneral = new daftplugInstantifyAmpAdminGeneral($config);
 
+                    require_once(plugin_dir_path(dirname(__FILE__)) . 'admin/class-compatibility.php');
+                    $this->daftplugInstantifyAmpAdminCompatibility = new daftplugInstantifyAmpAdminCompatibility($config);
+
                     require_once(plugin_dir_path(dirname(__FILE__)) . 'admin/class-advertisements.php');
                     $this->daftplugInstantifyAmpAdminAdvertisements = new daftplugInstantifyAmpAdminAdvertisements($config);
 
@@ -75,18 +82,9 @@ if (!class_exists('daftplugInstantifyAmp')) {
                     $this->daftplugInstantifyAmpAdminGdprconsent = new daftplugInstantifyAmpAdminGdprconsent($config);
 
                     require_once(plugin_dir_path(dirname(__FILE__)) . 'admin/class-admin.php');
-                    $this->daftplugInstantifyAmpAdmin = new daftplugInstantifyAmpAdmin($config, $this->daftplugInstantifyAmpAdminGeneral, $this->daftplugInstantifyAmpAdminAdvertisements, $this->daftplugInstantifyAmpAdminAnalytics, $this->daftplugInstantifyAmpAdminGdprconsent);
+                    $this->daftplugInstantifyAmpAdmin = new daftplugInstantifyAmpAdmin($config, $this->daftplugInstantifyAmpAdminGeneral, $this->daftplugInstantifyAmpAdminCompatibility, $this->daftplugInstantifyAmpAdminAdvertisements, $this->daftplugInstantifyAmpAdminAnalytics, $this->daftplugInstantifyAmpAdminGdprconsent);
                 }
         	}
-        }
-
-        public static function isAmpPluginActive() {
-            include_once(ABSPATH . 'wp-admin/includes/plugin.php');
-            if (is_plugin_active('amp/amp.php') || is_plugin_active('better-amp/better-amp.php') || is_plugin_active('accelerated-mobile-pages/accelerated-mobile-pages.php') || is_plugin_active('weeblramp/weeblramp.php') || is_plugin_active('amp-wp/amp-wp.php')) {
-            	return true;
-            } else {
-            	return false;
-            }
         }
     }
 }

@@ -11,23 +11,12 @@ if (!defined('ABSPATH')) exit;
                     <h4 class="daftplugAdminFieldset_title"><?php esc_html_e('Offline Usage', $this->textDomain); ?></h4>
                     <p class="daftplugAdminFieldset_description"><?php esc_html_e('Offline usage adds offline support and reliable performance on your web app. This allows a visitor to load any previously viewed page while they are offline or on low connectivity network. The plugin also defines a special “Offline Page”, which allows you to customize a message and the experience if the app is offline and the page is not in the offline cache.', $this->textDomain); ?></p>
                     <div class="daftplugAdminField">
-                        <p class="daftplugAdminField_description"><?php esc_html_e('Select the special offline fallback page for your web application. This page will show up your users when they navigate your website without an Internet connection.', $this->textDomain); ?></p>
-                        <label for="pwaOfflinePage" class="daftplugAdminField_label -flex4"><?php esc_html_e('Offline Page', $this->textDomain); ?></label>
+                        <p class="daftplugAdminField_description"><?php esc_html_e('Select the special offline fallback page for your web application. This page will show up your users when they navigate your website without an internet connection and the requested page won\'t be in cache.', $this->textDomain); ?></p>
+                        <label for="pwaOfflineFallbackPage" class="daftplugAdminField_label -flex4"><?php esc_html_e('Offline Fallback Page', $this->textDomain); ?></label>
                         <div class="daftplugAdminInputSelect -flexAuto">
-                            <select name="pwaOfflinePage" id="pwaOfflinePage" class="daftplugAdminInputSelect_field" data-placeholder="<?php esc_html_e('Offline Page', $this->textDomain); ?>" autocomplete="off" required>
+                            <select name="pwaOfflineFallbackPage" id="pwaOfflineFallbackPage" class="daftplugAdminInputSelect_field" data-placeholder="<?php esc_html_e('Offline Fallback Page', $this->textDomain); ?>" autocomplete="off" required>
                                 <?php foreach (get_pages() as $page) { ?>
-                                <option value="<?php echo get_page_link($page->ID) ?>" <?php selected(daftplugInstantify::getSetting('pwaOfflinePage'), get_page_link($page->ID)) ?>><?php echo $page->post_title ?></option>
-                                <?php } ?>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="daftplugAdminField">
-                        <p class="daftplugAdminField_description"><?php esc_html_e('Select the pages that should be available for offline usage. This pages will be accessible when the user navigates your website without an internet connection.', $this->textDomain); ?></p>
-                        <label for="pwaOfflineContent" class="daftplugAdminField_label -flex4"><?php esc_html_e('Offline Content', $this->textDomain); ?></label>
-                        <div class="daftplugAdminInputSelect -flexAuto">
-                            <select multiple name="pwaOfflineContent" id="pwaOfflineContent" class="daftplugAdminInputSelect_field" data-placeholder="<?php esc_html_e('Offline Content', $this->textDomain); ?>" autocomplete="off" required>
-                                <?php foreach (get_pages() as $page) { ?>
-                                <option value="<?php echo get_page_link($page->ID) ?>" <?php selected(true, in_array(get_page_link($page->ID), (array)daftplugInstantify::getSetting('pwaOfflineContent'))); ?>><?php echo $page->post_title ?></option>
+                                <option value="<?php echo get_page_link($page->ID) ?>" <?php selected(daftplugInstantify::getSetting('pwaOfflineFallbackPage'), get_page_link($page->ID)) ?>><?php echo $page->post_title ?></option>
                                 <?php } ?>
                             </select>
                         </div>
@@ -56,60 +45,79 @@ if (!defined('ABSPATH')) exit;
                 </fieldset>
                 <fieldset class="daftplugAdminFieldset">
                     <h4 class="daftplugAdminFieldset_title"><?php esc_html_e('Caching Strategies', $this->textDomain); ?></h4>
-                    <p class="daftplugAdminFieldset_description"><?php esc_html_e('All network requests are cached by Instantify, so that your website can serve content from cache if available and display requested content as fast as possible. Here you are able to manually change the caching strategy for some request types. Available caching strategies (hover for description):', $this->textDomain); ?>
-                        <strong class="daftplugAdminCacheStrategy" data-tooltip="<?php esc_html_e('This strategy will use a cached response for a request if it is available and update the cache in the background with a response form the network. (If it’s not cached it will wait for the network response and use that). This is a fairly safe strategy as it means users are regularly updating their cache. The downside of this strategy is that it’s always requesting an asset from the network, using up the user’s bandwidth.', $this->textDomain); ?>"><?php esc_html_e('Stale While Revalidate', $this->textDomain); ?></strong>
-                        <strong class="daftplugAdminCacheStrategy" data-tooltip="<?php esc_html_e('This will try and get a request from the network first. If it receives a response, it’ll pass that to the browser and also save it to a cache. If the network request fails, the last cached response will be used.', $this->textDomain); ?>"><?php esc_html_e('Network First', $this->textDomain); ?></strong>
-                        <strong class="daftplugAdminCacheStrategy" data-tooltip="<?php esc_html_e('This strategy will check the cache for a response first and use that if one is available. If the request isn’t in the cache, the network will be used and any valid response will be added to the cache before being passed to the browser.', $this->textDomain); ?>"><?php esc_html_e('Cache First', $this->textDomain); ?></strong>
-                        <strong class="daftplugAdminCacheStrategy" data-tooltip="<?php esc_html_e('This strategy won\'t chache anything. The network will be used and the response will be passed directly to the browser (That\'s how the browser would handle the request without the Instantify).', $this->textDomain); ?>"><?php esc_html_e('Network Only', $this->textDomain); ?></strong>
+                    <p class="daftplugAdminFieldset_description"><?php esc_html_e('All network requests are cached by Instantify, so that your website can serve content from the browser cache if available and display requested content as fast as possible. Here you are able to manually change the caching strategy for some request types. Available caching strategies (hover for description):', $this->textDomain); ?>
+                        <strong class="daftplugAdminCacheStrategy" data-tooltip="<?php esc_html_e('This strategy will use a cached response for a request if it is available and update the cache in the background with a response form the network. (If it’s not cached it will wait for the network response and use that). This is a fairly safe strategy as it means users are regularly updating their cache. The downside of this strategy is that it’s always requesting an asset from the network, using up the user’s bandwidth.', $this->textDomain); ?>" data-tooltip-flow="bottom"><?php esc_html_e('Stale While Revalidate', $this->textDomain); ?></strong>
+                        <strong class="daftplugAdminCacheStrategy" data-tooltip="<?php esc_html_e('This will try and get a request from the network first. If it receives a response, it’ll pass that to the browser and also save it to a cache. If the network request fails, the last cached response will be used.', $this->textDomain); ?>" data-tooltip-flow="bottom"><?php esc_html_e('Network First', $this->textDomain); ?></strong>
+                        <strong class="daftplugAdminCacheStrategy" data-tooltip="<?php esc_html_e('This strategy will check the cache for a response first and use that if one is available. If the request isn’t in the cache, the network will be used and any valid response will be added to the cache before being passed to the browser.', $this->textDomain); ?>" data-tooltip-flow="bottom"><?php esc_html_e('Cache First', $this->textDomain); ?></strong>
+                        <strong class="daftplugAdminCacheStrategy" data-tooltip="<?php esc_html_e('This strategy won\'t cache anything. The network will be used and the response will be passed directly to the browser (That\'s how the browser would handle the request without the Instantify).', $this->textDomain); ?>" data-tooltip-flow="bottom"><?php esc_html_e('Network Only', $this->textDomain); ?></strong>
                     </p>
                     <div class="daftplugAdminField">
-                        <p class="daftplugAdminField_description"><?php esc_html_e('Select the default caching strategy for your web application. This strategy will be used on all content except assets, fonts and images.', $this->textDomain); ?></p>
-                        <label for="pwaOfflineDefaultStrategy" class="daftplugAdminField_label -flex4"><?php esc_html_e('Default Strategy', $this->textDomain); ?></label>
+                        <p class="daftplugAdminField_description"><?php esc_html_e('Select the caching strategy for your pages (HTML files). We recommend you to set it on Stale While Revalidate to improve performance and always update users with latest version of your website in their cache.', $this->textDomain); ?></p>
+                        <label for="pwaOfflineHtmlStrategy" class="daftplugAdminField_label -flex4"><?php esc_html_e('HTML Strategy', $this->textDomain); ?></label>
                         <div class="daftplugAdminInputSelect -flexAuto">
-                            <select name="pwaOfflineDefaultStrategy" id="pwaOfflineDefaultStrategy" class="daftplugAdminInputSelect_field" data-placeholder="<?php esc_html_e('Default Strategy', $this->textDomain); ?>" autocomplete="off" required>
-                                <option value="staleWhileRevalidate" <?php selected(daftplugInstantify::getSetting('pwaOfflineDefaultStrategy'), 'staleWhileRevalidate') ?>><?php esc_html_e('Stale While Revalidate', $this->textDomain); ?></option>
-                                <option value="networkFirst" <?php selected(daftplugInstantify::getSetting('pwaOfflineDefaultStrategy'), 'networkFirst') ?>><?php esc_html_e('Network First', $this->textDomain); ?></option>
-                                <option value="cacheFirst" <?php selected(daftplugInstantify::getSetting('pwaOfflineDefaultStrategy'), 'cacheFirst') ?>><?php esc_html_e('Cache First', $this->textDomain); ?></option>
-                                <option value="networkOnly" <?php selected(daftplugInstantify::getSetting('pwaOfflineDefaultStrategy'), 'networkOnly') ?>><?php esc_html_e('Network Only', $this->textDomain); ?></option>
+                            <select name="pwaOfflineHtmlStrategy" id="pwaOfflineHtmlStrategy" class="daftplugAdminInputSelect_field" data-placeholder="<?php esc_html_e('HTML Strategy', $this->textDomain); ?>" autocomplete="off" required>
+                                <option value="StaleWhileRevalidate" <?php selected(daftplugInstantify::getSetting('pwaOfflineHtmlStrategy'), 'StaleWhileRevalidate') ?>><?php esc_html_e('Stale While Revalidate', $this->textDomain); ?></option>
+                                <option value="NetworkFirst" <?php selected(daftplugInstantify::getSetting('pwaOfflineHtmlStrategy'), 'NetworkFirst') ?>><?php esc_html_e('Network First', $this->textDomain); ?></option>
+                                <option value="CacheFirst" <?php selected(daftplugInstantify::getSetting('pwaOfflineHtmlStrategy'), 'CacheFirst') ?>><?php esc_html_e('Cache First', $this->textDomain); ?></option>
+                                <option value="NetworkOnly" <?php selected(daftplugInstantify::getSetting('pwaOfflineHtmlStrategy'), 'NetworkOnly') ?>><?php esc_html_e('Network Only', $this->textDomain); ?></option>
                             </select>
                         </div>
                     </div>
                     <div class="daftplugAdminField">
-                        <p class="daftplugAdminField_description"><?php esc_html_e('Select the caching strategy for your assets (CSS and JS files). We recommend you to set it on Stale While Revalidate to improve performance and always update users with latest version of your website in their cache.', $this->textDomain); ?></p>
-                        <label for="pwaOfflineAssetsStrategy" class="daftplugAdminField_label -flex4"><?php esc_html_e('Assets Strategy', $this->textDomain); ?></label>
+                        <p class="daftplugAdminField_description"><?php esc_html_e('Select the caching strategy for your JavaScript (JS files). We recommend you to set it on Stale While Revalidate to improve performance and always update users with latest version of your website in their cache.', $this->textDomain); ?></p>
+                        <label for="pwaOfflineJavascriptStrategy" class="daftplugAdminField_label -flex4"><?php esc_html_e('JavaScript Strategy', $this->textDomain); ?></label>
                         <div class="daftplugAdminInputSelect -flexAuto">
-                            <select name="pwaOfflineAssetsStrategy" id="pwaOfflineAssetsStrategy" class="daftplugAdminInputSelect_field" data-placeholder="<?php esc_html_e('Assets Strategy', $this->textDomain); ?>" autocomplete="off" required>
-                                <option value="staleWhileRevalidate" <?php selected(daftplugInstantify::getSetting('pwaOfflineAssetsStrategy'), 'staleWhileRevalidate') ?>><?php esc_html_e('Stale While Revalidate', $this->textDomain); ?></option>
-                                <option value="networkFirst" <?php selected(daftplugInstantify::getSetting('pwaOfflineAssetsStrategy'), 'networkFirst') ?>><?php esc_html_e('Network First', $this->textDomain); ?></option>
-                                <option value="cacheFirst" <?php selected(daftplugInstantify::getSetting('pwaOfflineAssetsStrategy'), 'cacheFirst') ?>><?php esc_html_e('Cache First', $this->textDomain); ?></option>
-                                <option value="networkOnly" <?php selected(daftplugInstantify::getSetting('pwaOfflineAssetsStrategy'), 'networkOnly') ?>><?php esc_html_e('Network Only', $this->textDomain); ?></option>
+                            <select name="pwaOfflineJavascriptStrategy" id="pwaOfflineJavascriptStrategy" class="daftplugAdminInputSelect_field" data-placeholder="<?php esc_html_e('JavaScript Strategy', $this->textDomain); ?>" autocomplete="off" required>
+                                <option value="StaleWhileRevalidate" <?php selected(daftplugInstantify::getSetting('pwaOfflineJavascriptStrategy'), 'StaleWhileRevalidate') ?>><?php esc_html_e('Stale While Revalidate', $this->textDomain); ?></option>
+                                <option value="NetworkFirst" <?php selected(daftplugInstantify::getSetting('pwaOfflineJavascriptStrategy'), 'NetworkFirst') ?>><?php esc_html_e('Network First', $this->textDomain); ?></option>
+                                <option value="CacheFirst" <?php selected(daftplugInstantify::getSetting('pwaOfflineJavascriptStrategy'), 'CacheFirst') ?>><?php esc_html_e('Cache First', $this->textDomain); ?></option>
+                                <option value="NetworkOnly" <?php selected(daftplugInstantify::getSetting('pwaOfflineJavascriptStrategy'), 'NetworkOnly') ?>><?php esc_html_e('Network Only', $this->textDomain); ?></option>
                             </select>
                         </div>
                     </div>
                     <div class="daftplugAdminField">
-                        <p class="daftplugAdminField_description"><?php esc_html_e('Select the caching strategy for your fonts (WOFF, WOFF2, EOT, TTF and SVG files). We recommend you to set it on Cache First to load fonts faster.', $this->textDomain); ?></p>
-                        <label for="pwaOfflineFontsStrategy" class="daftplugAdminField_label -flex4"><?php esc_html_e('Fonts Strategy', $this->textDomain); ?></label>
+                        <p class="daftplugAdminField_description"><?php esc_html_e('Select the caching strategy for your Stylesheets (CSS files). We recommend you to set it on Stale While Revalidate to improve performance and always update users with latest version of your website in their cache.', $this->textDomain); ?></p>
+                        <label for="pwaOfflineStylesheetsStrategy" class="daftplugAdminField_label -flex4"><?php esc_html_e('Stylesheets Strategy', $this->textDomain); ?></label>
                         <div class="daftplugAdminInputSelect -flexAuto">
-                            <select name="pwaOfflineFontsStrategy" id="pwaOfflineFontsStrategy" class="daftplugAdminInputSelect_field" data-placeholder="<?php esc_html_e('Fonts Strategy', $this->textDomain); ?>" autocomplete="off" required>
-                                <option value="staleWhileRevalidate" <?php selected(daftplugInstantify::getSetting('pwaOfflineFontsStrategy'), 'staleWhileRevalidate') ?>><?php esc_html_e('Stale While Revalidate', $this->textDomain); ?></option>
-                                <option value="networkFirst" <?php selected(daftplugInstantify::getSetting('pwaOfflineFontsStrategy'), 'networkFirst') ?>><?php esc_html_e('Network First', $this->textDomain); ?></option>
-                                <option value="cacheFirst" <?php selected(daftplugInstantify::getSetting('pwaOfflineFontsStrategy'), 'cacheFirst') ?>><?php esc_html_e('Cache First', $this->textDomain); ?></option>
-                                <option value="networkOnly" <?php selected(daftplugInstantify::getSetting('pwaOfflineFontsStrategy'), 'networkOnly') ?>><?php esc_html_e('Network Only', $this->textDomain); ?></option>
+                            <select name="pwaOfflineStylesheetsStrategy" id="pwaOfflineStylesheetsStrategy" class="daftplugAdminInputSelect_field" data-placeholder="<?php esc_html_e('Stylesheets Strategy', $this->textDomain); ?>" autocomplete="off" required>
+                                <option value="StaleWhileRevalidate" <?php selected(daftplugInstantify::getSetting('pwaOfflineStylesheetsStrategy'), 'StaleWhileRevalidate') ?>><?php esc_html_e('Stale While Revalidate', $this->textDomain); ?></option>
+                                <option value="NetworkFirst" <?php selected(daftplugInstantify::getSetting('pwaOfflineStylesheetsStrategy'), 'NetworkFirst') ?>><?php esc_html_e('Network First', $this->textDomain); ?></option>
+                                <option value="CacheFirst" <?php selected(daftplugInstantify::getSetting('pwaOfflineStylesheetsStrategy'), 'CacheFirst') ?>><?php esc_html_e('Cache First', $this->textDomain); ?></option>
+                                <option value="NetworkOnly" <?php selected(daftplugInstantify::getSetting('pwaOfflineStylesheetsStrategy'), 'NetworkOnly') ?>><?php esc_html_e('Network Only', $this->textDomain); ?></option>
                             </select>
                         </div>
                     </div>
                     <div class="daftplugAdminField">
-                        <p class="daftplugAdminField_description"><?php esc_html_e('Select the caching strategy for your images (PNG, JPG, JPEG, GIF and ICO files). We recommend you to set it on Cache First to load images faster.', $this->textDomain); ?></p>
+                        <p class="daftplugAdminField_description"><?php esc_html_e('Select the caching strategy for your Images (PNG, JPG, JPEG, GIF and ICO files). We recommend you to set it on Stale While Revalidate to improve performance and always update users with latest version of your website in their cache.', $this->textDomain); ?></p>
                         <label for="pwaOfflineImagesStrategy" class="daftplugAdminField_label -flex4"><?php esc_html_e('Images Strategy', $this->textDomain); ?></label>
                         <div class="daftplugAdminInputSelect -flexAuto">
                             <select name="pwaOfflineImagesStrategy" id="pwaOfflineImagesStrategy" class="daftplugAdminInputSelect_field" data-placeholder="<?php esc_html_e('Images Strategy', $this->textDomain); ?>" autocomplete="off" required>
-                                <option value="staleWhileRevalidate" <?php selected(daftplugInstantify::getSetting('pwaOfflineImagesStrategy'), 'staleWhileRevalidate') ?>><?php esc_html_e('Stale While Revalidate', $this->textDomain); ?></option>
-                                <option value="networkFirst" <?php selected(daftplugInstantify::getSetting('pwaOfflineImagesStrategy'), 'networkFirst') ?>><?php esc_html_e('Network First', $this->textDomain); ?></option>
-                                <option value="cacheFirst" <?php selected(daftplugInstantify::getSetting('pwaOfflineImagesStrategy'), 'cacheFirst') ?>><?php esc_html_e('Cache First', $this->textDomain); ?></option>
-                                <option value="networkOnly" <?php selected(daftplugInstantify::getSetting('pwaOfflineImagesStrategy'), 'networkOnly') ?>><?php esc_html_e('Network Only', $this->textDomain); ?></option>
+                                <option value="StaleWhileRevalidate" <?php selected(daftplugInstantify::getSetting('pwaOfflineImagesStrategy'), 'StaleWhileRevalidate') ?>><?php esc_html_e('Stale While Revalidate', $this->textDomain); ?></option>
+                                <option value="NetworkFirst" <?php selected(daftplugInstantify::getSetting('pwaOfflineImagesStrategy'), 'NetworkFirst') ?>><?php esc_html_e('Network First', $this->textDomain); ?></option>
+                                <option value="CacheFirst" <?php selected(daftplugInstantify::getSetting('pwaOfflineImagesStrategy'), 'CacheFirst') ?>><?php esc_html_e('Cache First', $this->textDomain); ?></option>
+                                <option value="NetworkOnly" <?php selected(daftplugInstantify::getSetting('pwaOfflineImagesStrategy'), 'NetworkOnly') ?>><?php esc_html_e('Network Only', $this->textDomain); ?></option>
                             </select>
                         </div>
                     </div>
+                    <div class="daftplugAdminField">
+                        <p class="daftplugAdminField_description"><?php esc_html_e('Select the caching strategy for your Fonts (WOFF, WOFF2, EOT, TTF and SVG files). We recommend you to set it on Stale While Revalidate to improve performance and always update users with latest version of your website in their cache.', $this->textDomain); ?></p>
+                        <label for="pwaOfflineFontsStrategy" class="daftplugAdminField_label -flex4"><?php esc_html_e('Fonts Strategy', $this->textDomain); ?></label>
+                        <div class="daftplugAdminInputSelect -flexAuto">
+                            <select name="pwaOfflineFontsStrategy" id="pwaOfflineFontsStrategy" class="daftplugAdminInputSelect_field" data-placeholder="<?php esc_html_e('Fonts Strategy', $this->textDomain); ?>" autocomplete="off" required>
+                                <option value="StaleWhileRevalidate" <?php selected(daftplugInstantify::getSetting('pwaOfflineFontsStrategy'), 'StaleWhileRevalidate') ?>><?php esc_html_e('Stale While Revalidate', $this->textDomain); ?></option>
+                                <option value="NetworkFirst" <?php selected(daftplugInstantify::getSetting('pwaOfflineFontsStrategy'), 'NetworkFirst') ?>><?php esc_html_e('Network First', $this->textDomain); ?></option>
+                                <option value="CacheFirst" <?php selected(daftplugInstantify::getSetting('pwaOfflineFontsStrategy'), 'CacheFirst') ?>><?php esc_html_e('Cache First', $this->textDomain); ?></option>
+                                <option value="NetworkOnly" <?php selected(daftplugInstantify::getSetting('pwaOfflineFontsStrategy'), 'NetworkOnly') ?>><?php esc_html_e('Network Only', $this->textDomain); ?></option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="daftplugAdminField">
+                        <p class="daftplugAdminField_description"><?php esc_html_e('Define how many days should cached content be remained in the browser cache storage. We recommend you to leave it on default as browser cache is updated automatically if your caching strategy is StaleWhileRevalidate but if you are using CacheFirst strategy, then lower expiration times might be a right choice.', $this->textDomain); ?></p>
+                        <label for="pwaOfflineCacheExpiration" class="daftplugAdminField_label -flex4"><?php esc_html_e('Cache Expiration Time', $this->textDomain); ?></label>
+                        <div class="daftplugAdminInputNumber -flexAuto">
+                            <input type="number" name="pwaOfflineCacheExpiration" id="pwaOfflineCacheExpiration" class="daftplugAdminInputNumber_field" value="<?php echo daftplugInstantify::getSetting('pwaOfflineCacheExpiration'); ?>" min="1" step="1" max="365" data-placeholder="<?php esc_html_e('Cache Expiration Time', $this->textDomain); ?>" required>
+                        </div>
+                    </div>             
                 </fieldset>
                 <div class="daftplugAdminSettings_submit">
                     <button type="submit" class="daftplugAdminButton -submit" data-submit="<?php esc_html_e('Save Settings', $this->textDomain); ?>" data-waiting="<?php esc_html_e('Waiting', $this->textDomain); ?>" data-submitted="<?php esc_html_e('Settings Saved', $this->textDomain); ?>" data-failed="<?php esc_html_e('Saving Failed', $this->textDomain); ?>"></button>

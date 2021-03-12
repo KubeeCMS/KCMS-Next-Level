@@ -3,9 +3,9 @@
 if (!defined('ABSPATH')) exit;
 
 $appName = daftplugInstantify::getSetting('pwaName');
-$backgroundColor = daftplugInstantify::getSetting('pwaOverlaysBackgroundColor');
-$textColor = daftplugInstantify::getSetting('pwaOverlaysTextColor');
-$text = esc_html__('Get our web app. It won\'t take up space on your phone.', $this->textDomain);
+$message = esc_html__(daftplugInstantify::getSetting('pwaOverlaysTypeHeaderMessage'), $this->textDomain);
+$backgroundColor = daftplugInstantify::getSetting('pwaOverlaysTypeHeaderBackgroundColor');
+$textColor = daftplugInstantify::getSetting('pwaOverlaysTypeHeaderTextColor');
 $buttonText = esc_html__('Install', $this->textDomain);
 
 ?>
@@ -19,7 +19,7 @@ $buttonText = esc_html__('Install', $this->textDomain);
     </svg>
     <div class="daftplugPublicHeaderOverlay_message">
         <div class="daftplugPublicHeaderOverlay_appname"><?php echo $appName; ?></div>
-        <div class="daftplugPublicHeaderOverlay_text"><?php echo $text; ?></div>
+        <div class="daftplugPublicHeaderOverlay_text"><?php echo $message; ?></div>
     </div>
     <div class="daftplugPublicHeaderOverlay_button" style="background: <?php echo $textColor; ?>; color: <?php echo $backgroundColor; ?>;">
         <?php echo $buttonText; ?>
