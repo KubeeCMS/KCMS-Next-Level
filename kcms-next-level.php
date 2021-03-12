@@ -3,7 +3,7 @@
 Plugin Name: KCMS Next Level
 Description: Take the user experience to the next level with future of mobile web...
 Plugin URI: https://github.com/KubeeCMS/KCMS-Next-Level/
-Version: 4.7
+Version: 4.6
 Author: KubeCMS
 Author URI: https://github.com/KubeeCMS/
 Text Domain: daftplug-instantify

@@ -4,8 +4,8 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: svg, vector, safesvg, css, style, mime, mime type, embed, img, inline, animation, animate, js
 Requires at least: 4.8
 Tested up to: 5.7
-Requires PHP: 5.3
-Stable tag: 4.8
+Requires PHP: 7.3
+Stable tag: 4.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
