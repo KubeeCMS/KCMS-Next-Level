@@ -1,6 +1,6 @@
 {
   "name": "kubeecms/kcms-next-level",
-  "type": "wordpress-plugin",
+  "type": "wordpress-muplugin",
   "license": "GNU",
   "description":
     "Take the user experience to the next level with future of mobile web...",
